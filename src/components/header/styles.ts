@@ -22,6 +22,7 @@ export const Container = styled.div`
     @media (max-width: ${breakpoints.tablet}) {
     text-align: center;
     margin: 0;
+    margin-left: 16px;
   }
 
     svg {
@@ -35,9 +36,17 @@ export const Links = styled.ul`
   gap: 124px;
   margin-right: 200px;
 
+  &.active {
+      display: flex;
+    }
+
   @media (max-width: ${breakpoints.tablet}) {
+    display: none;
     margin-top: 18px;
-    gap: 60px;
+    margin-right: 16px;
+    gap: 0;
+    justify-content: center;
+    align-items: center;
   }
 
   a {
@@ -45,9 +54,35 @@ export const Links = styled.ul`
     color: #D3D3D3;
     font-size: 18px;
 
+    @media (max-width: ${breakpoints.tablet}) {
+    margin-right: 32px;
+  }
+
     &:hover {
       border-bottom: 2px solid #65dddd;
       color: #fff;
     }
   }
+`
+
+export const HamburguerMenu = styled.div`
+  display: none;
+  width: 32px;
+  margin-right: 16px;
+  span {
+    height: 2px;
+    background-color: #fff;
+    width: 100%;
+    display: block;
+    margin-bottom: 4px;
+  }
+    @media (max-width: ${breakpoints.tablet}) {
+    display: block;
+  }
+`
+
+export const TopHeader = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `

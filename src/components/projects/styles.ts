@@ -42,6 +42,10 @@ export const Project = styled.div`
       margin-bottom: 8px;
       text-align: center;
     }
+
+    p {
+      text-align: center;
+    }
 `
 
 export const ProjectList = styled.div`

@@ -52,6 +52,10 @@ export const Description = styled.div`
   p {
     color:#D3D3D3;
     margin-bottom: 12px;
+
+    @media (max-width: ${breakpoints.tablet}) {
+    text-align: center;
+    }
   }
 
   button {
@@ -62,6 +66,10 @@ export const Description = styled.div`
   color: #65dddd;
   border: 2px solid #65dddd;
   border-radius: 12px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 280px;
+  }
 
     &:hover {
       color: #2a3342;

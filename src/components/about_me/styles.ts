@@ -82,6 +82,10 @@ export const Description = styled.div`
   p {
     font-weight: 300;
     color: #D3D3D3;
+
+    @media (max-width: ${breakpoints.tablet}) {
+    text-align: center;
+  }
   }
 
   .bold {
