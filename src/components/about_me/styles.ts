@@ -1,7 +1,12 @@
 import styled from "styled-components"
+import { breakpoints } from "../../styles"
 
 export const Photo = styled.div`
   margin-right: 180px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    margin: 0;
+  }
 
   img {
     height: 160px;
@@ -10,6 +15,10 @@ export const Photo = styled.div`
     border: 3px solid #65dddd;
     padding: 5px;
     margin-bottom: 16px;
+
+    @media (max-width: ${breakpoints.tablet}) {
+    margin-top: 18px;
+  }
   }
 
   h3 {
@@ -23,6 +32,11 @@ export const Photo = styled.div`
 export const Container = styled.div`
   display: flex;
   padding: 80px 0;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    flex-direction: column-reverse;
+    align-items: center;
+}
 `
 
 export const Icons = styled.div`
@@ -48,9 +62,17 @@ export const Description = styled.div`
   aling-items: center;
   justify-content: center;
 
+  @media (max-width: ${breakpoints.tablet}) {
+
+}
+
   h2 {
     font-size: 24px;
     margin-bottom: 32px;
+
+    @media (max-width: ${breakpoints.tablet}) {
+    text-align: center;
+  }
 
     svg {
       margin-right: 6px;

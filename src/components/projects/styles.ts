@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { breakpoints } from "../../styles"
 
 export const Container = styled.div`
   padding-top: 32px;
@@ -22,10 +23,19 @@ export const Project = styled.div`
   height: 480px;
   border-radius: 20px;
 
+  @media (max-width: ${breakpoints.tablet}) {
+      height: 488px;
+      width: 320px;
+    }
+
   img {
     width: 280px;
     max-width: 100%;
     border-radius: 20px 20px 0 0;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      width: 320px;
+    }
   }
 
   h2 {
@@ -38,6 +48,11 @@ export const ProjectList = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 25px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+      grid-template-columns: 1fr;
+      justify-items: center;
+    }
 `
 
 export const TagList = styled.div`
@@ -67,6 +82,10 @@ export const PrimaryButton = styled.button`
   &:hover{
     cursor: pointer;
   }
+
+  @media (max-width: ${breakpoints.tablet}) {
+      width: 280px;;
+    }
 `
 
 export const SecundaryButton = styled.button`
@@ -80,6 +99,10 @@ export const SecundaryButton = styled.button`
   &:hover{
     cursor: pointer;
   }
+
+  @media (max-width: ${breakpoints.tablet}) {
+      width: 280px;;
+    }
 `
 
 

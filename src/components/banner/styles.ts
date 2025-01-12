@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { breakpoints } from "../../styles"
 
 
 export const background = styled.div`
@@ -12,6 +13,12 @@ export const Container = styled.div`
   img {
     width: 264px;
   }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
 `
 
 export const Description = styled.div`
@@ -20,6 +27,16 @@ export const Description = styled.div`
   justify-content: center;
   aling-items: center;
   margin-right: 280px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
+
+    h4 {
+      margin-top: 16px;
+    }
+  }
 
   h4 {
     font-size: 12px;

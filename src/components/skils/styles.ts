@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { breakpoints } from "../../styles"
 
 export const Background = styled.div`
   padding-top: 32px;
@@ -19,6 +20,10 @@ export const ListSkil = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-items: center;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 
 `
 
