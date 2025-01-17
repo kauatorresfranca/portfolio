@@ -1,5 +1,6 @@
 import AboutMe from './components/about_me/index'
 import Banner from './components/banner'
+import Contact from './components/Contact'
 import Header from './components/header'
 import Projects from './components/projects'
 import Skils from './components/skils'
@@ -16,6 +17,7 @@ function App() {
       <AboutMe />
       <Skils />
       <Projects />
+      <Contact />
     </>
   )
 }
