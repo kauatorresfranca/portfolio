@@ -17,10 +17,6 @@ export const Description = styled.div`
   aling-items: center;
   justify-content: center;
 
-  @media (max-width: ${breakpoints.tablet}) {
-
-}
-
   h2 {
     font-size: 24px;
     margin-bottom: 32px;
@@ -35,6 +31,10 @@ export const Description = styled.div`
     font-weight: 300;
     color: #D3D3D3;
     text-align: center;
+
+    @media (max-width: ${breakpoints.tablet}) {
+    width: 85vw;
+}
   }
 
   .bold {

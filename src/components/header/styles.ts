@@ -11,7 +11,6 @@ export const Container = styled.div`
   padding-top: 24px;
   padding-bottom: 24px;
   background-color: ${colors.darkBlack};
-  border-bottom: 1px solid ${colors.blue};
 
   @media (max-width: ${breakpoints.tablet}) {
     display: block;
@@ -19,6 +18,8 @@ export const Container = styled.div`
 }
 
     H1 {
+    display: flex;
+    align-items: center;
     font-size: 29px;
     margin-left: 200px;
     color: #fff;
@@ -31,7 +32,7 @@ export const Container = styled.div`
   }
 
     svg {
-      margin-right: 3px;
+      margin-right: 5px;
     }
   }
 `

@@ -44,6 +44,7 @@ export const Acordeon = styled.div`
   margin-bottom: 32px;
   background-color: ${colors.lightBlack};
   cursor: pointer;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 
   @media (max-width: ${breakpoints.tablet}) {
     margin: 0 auto;
@@ -72,7 +73,7 @@ export const ListSkil = styled.div`
   }
 
   @media (max-width: ${breakpoints.desktop}) {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
 `

@@ -5,14 +5,14 @@ export const ProgressContainer = styled.div`
   margin-top: 16px;
   height: 8px;
   width: 100px;
-  background-color: #e0e0e0;
+  background-color: ${colors.white};
   border-radius: 10px;
   overflow: hidden;
 `
 
 export const ProgressFill = styled.div`
   height: 100%;
-  background: linear-gradient(90deg, ${colors.lightPurple}, ${colors.blue});
+  background: linear-gradient(90deg, ${colors.blue}, ${colors.lightPurple});
 
   &.Html {
     width: 90%;
