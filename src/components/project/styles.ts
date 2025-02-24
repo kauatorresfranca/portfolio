@@ -1,21 +1,6 @@
 import styled from "styled-components"
 import { breakpoints, colors } from "../../styles"
 
-export const Container = styled.div`
-  padding-top: 32px;
-  padding-bottom: 64px;
-
-  h3 {
-    font-size: 24px;
-    margin-bottom: 32px;
-    text-align: center;
-
-      svg {
-        margin-right: 6px;
-      }
-  }
-`
-
 export const Project = styled.div`
   width: 280px;
   position: relative;
@@ -54,19 +39,6 @@ export const Project = styled.div`
       text-align: center;
     }
 `
-
-export const ProjectList = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 25px;
-  justify-items: center;
-
-  @media (max-width: ${breakpoints.tablet}) {
-      grid-template-columns: 1fr;
-      justify-items: center;
-    }
-`
-
 export const TagList = styled.div`
   margin-top: 16px;
   margin-bottom: 16px;
@@ -120,7 +92,3 @@ export const SecundaryButton = styled.button`
       width: 280px;;
     }
 `
-
-
-
-

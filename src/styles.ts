@@ -5,6 +5,15 @@ export const breakpoints = {
   tablet: '768px'
 }
 
+export const colors = {
+  blue: '#8257e6',
+  lightPurple: '#a793d6',
+  white: '#fff',
+  lightBlack: '#2a3342',
+  darkBlack: '#1f2732',
+  textColor: '#D3D3D3'
+}
+
 export const GlobalCss = createGlobalStyle`
   * {
   margin: 0;
@@ -21,7 +30,10 @@ export const GlobalCss = createGlobalStyle`
   }
 
   body {
-    background-color: #2a3342;
+    background-color: ${colors.darkBlack};
   }
 }
+  html {
+    scroll-behavior: smooth;
+  }
 `
