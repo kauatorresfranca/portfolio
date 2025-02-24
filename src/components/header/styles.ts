@@ -11,10 +11,12 @@ export const Container = styled.div`
   padding-top: 24px;
   padding-bottom: 24px;
   background-color: ${colors.darkBlack};
+  border-bottom: 2px solid ${colors.blue};
 
   @media (max-width: ${breakpoints.tablet}) {
     display: block;
     padding-bottom: 0;
+    border-bottom: none;
 }
 
     H1 {
@@ -51,7 +53,7 @@ export const Links = styled.ul`
     visibility: hidden;
     margin-top: 18px;
     margin-right: 0;
-    gap: 24px;
+    gap: 0;
     padding: 0;
     justify-content: center;
     align-items: center;
@@ -80,6 +82,8 @@ export const Links = styled.ul`
     display: block;
     padding-bottom: 6px;
     text-align: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
 
     @media (min-width: ${breakpoints.desktop}) {
 
@@ -112,6 +116,7 @@ export const HamburguerMenu = styled.div`
   margin-right: 16px;
   position: absolute;
   right: 10px;
+  cursor: pointer;
   span {
     height: 2px;
     background-color: #fff;
@@ -129,7 +134,6 @@ export const TopHeader = styled.div`
   align-items: center;
   justify-content: space-between;
   position: relative;
-
   a {
     text-decoration: none;
   }
@@ -143,6 +147,7 @@ export const ExitHamburguerMenu = styled.div`
   margin-right: 10px;
   position: absolute;
   right: 10px;
+  cursor: pointer;
 
   @media (max-width: ${breakpoints.tablet}) {
     display: block;

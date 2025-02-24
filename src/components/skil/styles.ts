@@ -5,7 +5,7 @@ export const ProgressContainer = styled.div`
   margin-top: 16px;
   height: 8px;
   width: 100px;
-  background-color: ${colors.white};
+  background-color: ${colors.textColor};
   border-radius: 10px;
   overflow: hidden;
 `
@@ -19,7 +19,7 @@ export const ProgressFill = styled.div`
   }
 
   &.Css {
-    width: 80%;
+    width: 95%;
   }
 
   &.Js {
@@ -38,7 +38,7 @@ export const ProgressFill = styled.div`
     width: 65%;
   }
 
-  &.Py {
+  &.Python {
     width: 70%;
   }
 
@@ -52,6 +52,10 @@ export const ProgressFill = styled.div`
 
   &.django {
     width: 50%;
+  }
+
+  &.Css-in-Js {
+    width: 90%;
   }
 `
 

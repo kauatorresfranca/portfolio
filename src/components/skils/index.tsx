@@ -1,13 +1,14 @@
-import html from '../../../assets/images/html.webp'
-import css from '../../../assets/images/css.svg'
-import js from '../../../assets/images/js.png'
-import ts from '../../../assets/images/ts.png'
-import react from '../../../assets/images/react.png'
-import postgres from '../../../assets/images/postgrees.png'
-import py from '../../../assets/images/py.png'
-import git from '../../../assets/images/git.png'
-import redux from '../../../assets/images/redux.svg'
-import django from '../../../assets/images/django.png'
+import html from '/html.webp'
+import css from '/css.svg'
+import js from '/js.png'
+import ts from '/ts.png'
+import react from '/react.png'
+import postgres from '/postgrees.png'
+import py from '/py.png'
+import git from '/git.png'
+import redux from '/redux.svg'
+import django from '/django.png'
+import sc from '/styledcomponents.svg'
 
 import * as S from "./styles"
 import Skil from '../skil'
@@ -47,11 +48,12 @@ const Skils = () => {
             </S.Acordeon>
             <S.ListSkil className={frontIsOpen ? 'active' : ''}>
               <Skil percentage='90%' title='Html' img={html} />
-              <Skil percentage='80%' title='Css' img={css} />
+              <Skil percentage='95%' title='Css' img={css} />
               <Skil percentage='70%' title='Js' img={js} />
               <Skil percentage='65%' title='Ts' img={ts} />
               <Skil percentage='75%' title='React' img={react} />
               <Skil percentage='65%' title='Redux' img={redux} />
+              <Skil percentage='90%' title='Css-in-Js' img={sc} />
             </S.ListSkil>
           </S.SkilArea>
           <S.SkilArea className="back">

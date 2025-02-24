@@ -8,7 +8,7 @@ export const background = styled.div`
 
 export const Container = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-top: 128px;
   padding-bottom: 32px;
 

@@ -54,7 +54,7 @@ export const Acordeon = styled.div`
   }
 
   & > svg {
-    transition: ease-in-out .5s;
+    transition: ease-in-out .4s;
   }
 
   & > svg.open {
@@ -64,12 +64,18 @@ export const Acordeon = styled.div`
 
 
 export const ListSkil = styled.div`
-  display: none;
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-items: center;
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  transition: opacity .9s ease-in, height .9s ease-in;
 
   &.active {
-    display: grid;
+    opacity: 1;
+    visibility: visible;
+    height: auto;
   }
 
   @media (max-width: ${breakpoints.desktop}) {
