@@ -67,13 +67,19 @@ export const Links = styled.ul`
     }
   }
 
+  li {
+    width: 100%;
+  }
+
   a {
+    width: 100%;
     text-decoration: none;
     color: #D3D3D3;
     font-size: 18px;
     position: relative;
-    display: inline-block;
+    display: block;
     padding-bottom: 6px;
+    text-align: center;
 
     @media (min-width: ${breakpoints.desktop}) {
 
@@ -123,6 +129,10 @@ export const TopHeader = styled.div`
   align-items: center;
   justify-content: space-between;
   position: relative;
+
+  a {
+    text-decoration: none;
+  }
 `
 
 export const ExitHamburguerMenu = styled.div`
