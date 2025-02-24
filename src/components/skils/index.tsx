@@ -46,12 +46,12 @@ const Skils = () => {
               </svg>
             </S.Acordeon>
             <S.ListSkil className={frontIsOpen ? 'active' : ''}>
-              <Skil title='Html' img={html} />
-              <Skil title='Css' img={css} />
-              <Skil title='Js' img={js} />
-              <Skil title='Ts' img={ts} />
-              <Skil title='React' img={react} />
-              <Skil title='Redux' img={redux} />
+              <Skil percentage='90%' title='Html' img={html} />
+              <Skil percentage='80%' title='Css' img={css} />
+              <Skil percentage='70%' title='Js' img={js} />
+              <Skil percentage='65%' title='Ts' img={ts} />
+              <Skil percentage='75%' title='React' img={react} />
+              <Skil percentage='65%' title='Redux' img={redux} />
             </S.ListSkil>
           </S.SkilArea>
           <S.SkilArea className="back">
@@ -70,9 +70,9 @@ const Skils = () => {
               </svg>
             </S.Acordeon>
             <S.ListSkil className={backIsOpen ? 'active' : ''}>
-              <Skil title='Postgres' img={postgres} />
-              <Skil title='Python' img={py} />
-              <Skil title='django' img={django} />
+              <Skil percentage='65%' title='Postgres' img={postgres} />
+              <Skil percentage='70%' title='Python' img={py} />
+              <Skil percentage='50%' title='django' img={django} />
             </S.ListSkil>
           </S.SkilArea>
           <S.SkilArea className="tools">
@@ -91,7 +91,7 @@ const Skils = () => {
               </svg>
             </S.Acordeon>
             <S.ListSkil className={toolsIsOpen ? 'active' : ''}>
-              <Skil title='Git' img={git} />
+              <Skil percentage='80%' title='Git' img={git} />
             </S.ListSkil>
           </S.SkilArea>
         </div>

@@ -3,9 +3,10 @@ import * as S from './styles'
 type Props = {
   title: string
   img: string
+  percentage: string
 }
 
-const Skil = ({ title, img }: Props) => {
+const Skil = ({ title, img, percentage }: Props) => {
 
   return (
     <S.SkilContainer>
@@ -14,6 +15,7 @@ const Skil = ({ title, img }: Props) => {
       <S.ProgressContainer>
         <S.ProgressFill className={title} />
       </S.ProgressContainer>
+      <p>{percentage}</p>
     </S.SkilContainer>
   )
 }

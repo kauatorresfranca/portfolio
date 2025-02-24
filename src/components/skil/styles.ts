@@ -23,11 +23,11 @@ export const ProgressFill = styled.div`
   }
 
   &.Js {
-    width: 60%;
+    width: 70%;
   }
 
   &.Ts {
-    width: 55%;
+    width: 65%;
   }
 
   &.React {
@@ -35,11 +35,11 @@ export const ProgressFill = styled.div`
   }
 
   &.Postgres {
-    width: 50%;
+    width: 65%;
   }
 
   &.Py {
-    width: 60%;
+    width: 70%;
   }
 
   &.Git {
@@ -47,11 +47,11 @@ export const ProgressFill = styled.div`
   }
 
   &.Redux {
-    width: 60%;
+    width: 65%;
   }
 
   &.django {
-    width: 40%;
+    width: 50%;
   }
 `
 
@@ -74,7 +74,7 @@ export const SkilContainer = styled.div`
     h4 {
       text-align: center;
       margin-bottom: 8px;
-      color: #D3D3D3;
+      color: ${colors.white};
     }
 
     .diferent {
@@ -84,5 +84,11 @@ export const SkilContainer = styled.div`
     img {
       width: 70px;
       text-align: center;
+    }
+
+    p {
+      color: ${colors.textColor};
+      margin-top: 6px;
+      font-size: 10px;
     }
 `

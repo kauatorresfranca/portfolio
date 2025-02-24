@@ -13,7 +13,7 @@ export const Container = styled.div`
   padding-bottom: 32px;
 
   img {
-    width: 264px;
+    width: 320px;
   }
 
   @media (max-width: ${breakpoints.tablet}) {

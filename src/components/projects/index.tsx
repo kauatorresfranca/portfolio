@@ -37,7 +37,7 @@ const Projects = () => {
                 <Tag tagType='css'>css</Tag>
               </>
             </Project>
-            <Project imgUrl='/camila_matos.png' gitHubUrl='https://github.com/kauatorresfranca/portfolio' projectViewUrl='https://portfolio-tau-eight-25.vercel.app/' title='DENTIST WEBSITE' description='dsadasdadas'>
+            <Project imgUrl='/camila_matos.png' gitHubUrl='https://github.com/kauatorresfranca/DraCamilaMatos' projectViewUrl='https://dracamilamatos.vercel.app/' title='DENTIST WEBSITE' description='dsadasdadas'>
               <>
                 <Tag tagType='react'>react</Tag>
                 <Tag tagType='ts'>ts</Tag>
@@ -45,7 +45,7 @@ const Projects = () => {
                 <Tag tagType='css'>css</Tag>
               </>
             </Project>
-            <Project imgUrl='/mySite.png' gitHubUrl='https://github.com/kauatorresfranca/DraCamilaMatos' projectViewUrl='https://dracamilamatos.vercel.app/' title='PORTFOLIO' description='dsadasdadas'>
+            <Project imgUrl='/mySite.png' gitHubUrl='https://github.com/kauatorresfranca/portfolio' projectViewUrl='https://portfolio-tau-eight-25.vercel.app/' title='PORTFOLIO' description='dsadasdadas'>
               <>
                 <Tag tagType='react'>react</Tag>
                 <Tag tagType='ts'>ts</Tag>
