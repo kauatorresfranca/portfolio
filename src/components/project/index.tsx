@@ -2,7 +2,7 @@ import { useState } from 'react'
 import * as S from './styles'
 
 type skil = {
-  type: 'react' | 'html' | 'css' | 'js' | 'ts' | 'redux' | 'python' | 'django' | 'postgress' | 'git' | 'sc'
+  type: 'react' | 'html' | 'css' | 'js' | 'ts' | 'redux' | 'python' | 'django' | 'postgress' | 'git' | 'sc' | 'vue'
 }
 
 type Props = {
@@ -26,7 +26,8 @@ const skillIcons: Record<skil['type'], string> = {
   django: '/django_icon.png',
   postgress: '/postgress_icon.png',
   git: '/git_icon.png',
-  sc: '/styledcomponents.svg'
+  sc: '/styledcomponents.svg',
+  vue: '/vue.icon.png'
 }
 
 const Project = ({ title, description, gitHubUrl, projectViewUrl, imgUrl, skils, date }: Props) => {
@@ -56,7 +57,7 @@ const Project = ({ title, description, gitHubUrl, projectViewUrl, imgUrl, skils,
       <S.OverlayModal onClick={() => setModalIsOpen(false)} className={modalIsOpen ? 'active' : ''}>
         <S.Modal onClick={(e) => e.stopPropagation()}>
           <div className='imgGroup'>
-            <img src={imgUrl} alt="" />
+            <img src={imgUrl} alt="project image" />
             <S.ButtonGroup>
               <a href={gitHubUrl}><S.PrimaryButton>View on github</S.PrimaryButton></a>
               <a href={projectViewUrl}><S.SecundaryButton>View project</S.SecundaryButton></a>
@@ -64,7 +65,7 @@ const Project = ({ title, description, gitHubUrl, projectViewUrl, imgUrl, skils,
           </div>
           <S.Description>
             <h2>{title}</h2>
-            <p>{description} Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad delectus beatae, officiis voluptatibus doloremque, atque animi ducimus odit fugiat eius doloribus at consequatur consectetur! Fugit beatae debitis officia sint quos.</p>
+            <p className='description'>{description}</p>
             <p className='date'>{date}</p>
           </S.Description>
           <svg onClick={() => { setModalIsOpen(false) }} xmlns="http://www.w3.org/2000/svg" width="24" height="18" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">

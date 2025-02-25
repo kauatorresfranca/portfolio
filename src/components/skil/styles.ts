@@ -57,6 +57,10 @@ export const ProgressFill = styled.div`
   &.Css-in-Js {
     width: 90%;
   }
+
+  &.Vue{
+    width: 40%
+  }
 `
 
 export const SkilContainer = styled.div`

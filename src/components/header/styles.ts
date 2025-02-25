@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import { breakpoints, colors } from "../../styles"
 
+
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
@@ -34,7 +35,7 @@ export const Container = styled.div`
   }
 
     svg {
-      margin-right: 5px;
+      margin-right: 8px;
     }
   }
 `
@@ -109,7 +110,6 @@ export const Links = styled.ul`
 
 `;
 
-
 export const HamburguerMenu = styled.div`
   display: none;
   width: 32px;
@@ -117,6 +117,7 @@ export const HamburguerMenu = styled.div`
   position: absolute;
   right: 10px;
   cursor: pointer;
+
   span {
     height: 2px;
     background-color: #fff;
@@ -126,6 +127,27 @@ export const HamburguerMenu = styled.div`
   }
     @media (max-width: ${breakpoints.tablet}) {
     display: block;
+
+    &::before {
+      content: '';
+      display: block;
+      height: 2px;
+      margin-bottom: 4px;
+      background-color: #fff;
+      width: 100%;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      height: 2px;
+      background-color: #fff;
+      width: 100%;
+
+      .active {
+
+      }
+    }
   }
 `
 

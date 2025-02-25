@@ -21,30 +21,41 @@ export const Background = styled.div`
 `
 
 export const ContactForms = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: space-evenly;
-  margin-top: 18px;
+  margin-top: 32px;
   gap: 72px;
 
-  h5 {
-    align-items: center
-  }
-
   @media (max-width: ${breakpoints.tablet}){
-    display: block;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    justify-content: center;
   }
 `
 
 export const ContactForm = styled.div`
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin-top: 8px;
+
+  a {
+    text-decoration: none;
+  }
+
+  h5 {
+    color: ${colors.textColor};
+    align-items: center;
+    margin-top: 4px;
+  }
 
   @media (max-width: ${breakpoints.tablet}){
     margin-bottom: 16px;
   }
 
   svg {
-    margin-right: 6px;
+    margin-bottom: 8px;
   }
 `

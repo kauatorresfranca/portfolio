@@ -9,6 +9,7 @@ import git from '/git.png'
 import redux from '/redux.svg'
 import django from '/django.png'
 import sc from '/styledcomponents.svg'
+import vue from '/vue.icon.png'
 
 import * as S from "./styles"
 import Skil from '../skil'
@@ -54,6 +55,7 @@ const Skils = () => {
               <Skil percentage='75%' title='React' img={react} />
               <Skil percentage='65%' title='Redux' img={redux} />
               <Skil percentage='90%' title='Css-in-Js' img={sc} />
+              <Skil percentage='40%' title='Vue' img={vue} />
             </S.ListSkil>
           </S.SkilArea>
           <S.SkilArea className="back">

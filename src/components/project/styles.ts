@@ -25,7 +25,7 @@ export const ProjectViewContainer = styled.div`
   > img {
     width: 446px;
     max-width: 100%;
-    border-radius: 11px 11px 20px 20px;
+    border-radius: 11px 11px;
 
     @media (max-width: ${breakpoints.tablet}) {
       width: 320px;
@@ -37,18 +37,19 @@ export const ProjectViewContainer = styled.div`
 export const Overlay = styled.div`
   position: absolute;
   background: rgba(0, 0, 0, 0.8);
-  box-shadow: 1px 0px 1px 1px rgba(0, 0, 0, 0.9);
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  border-radius: 10px 10px 20px 20px;
+  border-radius: 10px 10px 14px 14px;
   z-index: 1;
   transition: background 0.4s ease-in;
   cursor: pointer;
+  border-bottom: 4px solid ${colors.blue};
 
   &:hover {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: none;
   }
 `
 
@@ -66,8 +67,7 @@ export const projectViewGroup = styled.div`
 
 export const TagList = styled.div`
   margin-top: 6px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
   justify-content: center;
 
   img {
@@ -88,7 +88,7 @@ export const Modal = styled.div`
   box-shadow: 0 4px 10px rgba(1, 0, 0, 0.7);
 
   @media (max-width: ${breakpoints.tablet}) {
-    height: 65%;
+    height: 70%;
     flex-direction: column;
   }
 
@@ -139,6 +139,10 @@ export const Description = styled.div`
 
   h2 {
     margin-bottom: 18px;
+  }
+
+  .description {
+    color: ${colors.textColor};
   }
 
   .date {
@@ -198,7 +202,8 @@ export const PrimaryButton = styled.button`
   }
 
   @media (max-width: ${breakpoints.tablet}) {
-      width: 280px;;
+      width: 360px;
+      height: 40px;
     }
 `
 
@@ -219,7 +224,8 @@ export const SecundaryButton = styled.button`
   }
 
   @media (max-width: ${breakpoints.tablet}) {
-      width: 280px;;
+      width: 360px;;
+      height: 40px;
       margin-top: 8px;
       margin-right: 0;
     }
