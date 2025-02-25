@@ -44,6 +44,7 @@ export const Links = styled.ul`
   display: flex;
   gap: 124px;
   margin-right: 200px;
+  padding-bottom: 16px;
 
   @media (max-width: ${breakpoints.tablet}) {
     border-radius: 18px;
@@ -84,7 +85,10 @@ export const Links = styled.ul`
     padding-bottom: 6px;
     text-align: center;
     padding-top: 16px;
-    padding-bottom: 16px;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      padding-bottom: 16px;
+    }
 
     @media (min-width: ${breakpoints.desktop}) {
 
@@ -112,44 +116,58 @@ export const Links = styled.ul`
 
 export const HamburguerMenu = styled.div`
   display: none;
-  width: 32px;
-  margin-right: 16px;
-  position: absolute;
-  right: 10px;
+  width: 28px;
+  height: 28px;
+  position: relative;
   cursor: pointer;
+  margin-right: 12px;
 
-  span {
+  @media (max-width: ${breakpoints.tablet}) {
+    display: block;
+  }
+
+  span,
+  &::before,
+  &::after {
+    content: '';
     height: 2px;
     background-color: #fff;
     width: 100%;
-    display: block;
-    margin-bottom: 4px;
+    position: absolute;
+    transition: all 0.4s ease-out;
+    border-radius: 10px;
   }
-    @media (max-width: ${breakpoints.tablet}) {
-    display: block;
+
+  span {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &::before {
+    top: 8px; /* Define uma posição inicial fixa */
+  }
+
+  &::after {
+    bottom: 8px; /* Define uma posição inicial fixa */
+  }
+
+  &.active {
+    span {
+      transform: rotate(45deg);
+    }
 
     &::before {
-      content: '';
-      display: block;
-      height: 2px;
-      margin-bottom: 4px;
-      background-color: #fff;
-      width: 100%;
+      top: 50%; /* Move para o centro */
+      transform: translateY(-50%) rotate(-45deg); /* Centraliza e rotaciona */
     }
 
     &::after {
-      content: '';
-      display: block;
-      height: 2px;
-      background-color: #fff;
-      width: 100%;
-
-      .active {
-
-      }
+      top: 50%; /* Move para o centro */
+      transform: translateY(-50%) rotate(45deg); /* Centraliza e rotaciona */
     }
   }
-`
+`;
+
 
 export const TopHeader = styled.div`
   display: flex;

@@ -8,10 +8,10 @@ const Banner = () => {
       <S.Container>
         <S.Description>
           <S.Title>
-            Hi, i am<span> Kauã Torres</span>
+            Olá, eu sou<span> Kauã Torres</span>
           </S.Title>
-          <h4>DEVELOPER FULL-STACK</h4>
-          <a href="/curriculo.pdf"><button>DOWNLOAD RESUME</button></a>
+          <h4>DESENVOLVEDOR FULL-STACK</h4>
+          <a href="/curriculo.pdf"><button>BAIXAR CURRICULO</button></a>
         </S.Description>
         <div>
           <img src={dev} alt="dev working" />

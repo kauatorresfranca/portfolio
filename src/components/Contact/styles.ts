@@ -13,6 +13,12 @@ export const Background = styled.div`
     align-items: center;
     text-align: center;
 
+    @media (max-width: ${breakpoints.tablet}) {
+    p {
+      max-width: 90vw;
+    }
+  }
+
     h3 {
     font-size: 24px;
     padding-bottom: 24px;
@@ -56,6 +62,14 @@ export const ContactForm = styled.div`
   }
 
   svg {
-    margin-bottom: 8px;
+    margin-bottom: 4px;
+    padding: 12px;
+    border-radius: 20px;
+    transition: .4s ease;
+    background-color: ${colors.lightBlack};
+
+    &:hover{
+      transform: scale(1.2);
+    }
   }
 `

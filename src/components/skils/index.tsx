@@ -7,7 +7,7 @@ import postgres from '/postgrees.png'
 import py from '/py.png'
 import git from '/git.png'
 import redux from '/redux.svg'
-import django from '/django.png'
+import django from '/django_icon.png'
 import sc from '/styledcomponents.svg'
 import vue from '/vue.icon.png'
 
@@ -40,7 +40,7 @@ const Skils = () => {
                 </svg>
                 <div>
                   <h4>Front-end</h4>
-                  <p>more than 1 year</p>
+                  <p>mais de 2 ano</p>
                 </div>
               </S.AreaLeft>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill={colors.blue} className={frontIsOpen ? 'bi bi-chevron-compact-down open' : 'bi bi-chevron-compact-down'} viewBox="0 0 16 16">
@@ -66,7 +66,7 @@ const Skils = () => {
                 </svg>
                 <div>
                   <h4>Back-end</h4>
-                  <p>more than 1 year</p>
+                  <p>mais de 1 ano</p>
                 </div>
               </S.AreaLeft>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill={colors.blue} className={backIsOpen ? 'bi bi-chevron-compact-down open' : 'bi bi-chevron-compact-down'} viewBox="0 0 16 16">
@@ -87,7 +87,7 @@ const Skils = () => {
                 </svg>
                 <div>
                   <h4>Tools</h4>
-                  <p>more than 1 year</p>
+                  <p>mais de 1 ano</p>
                 </div>
               </S.AreaLeft>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill={colors.blue} className={toolsIsOpen ? 'bi bi-chevron-compact-down open' : 'bi bi-chevron-compact-down'} viewBox="0 0 16 16">

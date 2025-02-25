@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const ProgressContainer = styled.div`
   margin-top: 16px;
@@ -8,6 +8,10 @@ export const ProgressContainer = styled.div`
   background-color: ${colors.textColor};
   border-radius: 10px;
   overflow: hidden;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 100%;
+  }
 `
 
 export const ProgressFill = styled.div`
@@ -75,6 +79,10 @@ export const SkilContainer = styled.div`
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   transition: transform 0.5s ease;
 
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 80px;
+  }
+
     &:hover {
       transform: scale(1.1);
     }
@@ -85,13 +93,13 @@ export const SkilContainer = styled.div`
       color: ${colors.white};
     }
 
-    .diferent {
-      margin-left: 4px;
-    }
-
     img {
       width: 70px;
       text-align: center;
+
+      @media (max-width: ${breakpoints.tablet}) {
+        width: 56px;
+      }
     }
 
     p {

@@ -9,6 +9,7 @@ import Header from './components/header'
 import Projects from './components/projects'
 import Skills from './components/skils'
 import { colors, GlobalCss } from './styles'
+import Footer from './components/footer'
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
       <Skills />
       <Projects />
       <Contact />
+      <Footer />
     </>
   )
 }

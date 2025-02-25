@@ -94,11 +94,11 @@ export const Modal = styled.div`
 
   img {
   width: 38vw;
-  border-radius: 12px 12px 20px 20px;
+  border-radius: 4px 4px 6px 6px;
 
   @media (max-width: ${breakpoints.tablet}) {
     margin-left: 10px;
-    margin-top: 24px;
+    margin-top: 22px;
     margin-bottom: 12px;
     width:75vw;
   }
@@ -139,10 +139,18 @@ export const Description = styled.div`
 
   h2 {
     margin-bottom: 18px;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      margin-bottom: 8px;
+  }
   }
 
   .description {
     color: ${colors.textColor};
+
+    @media (max-width: ${breakpoints.tablet}) {
+      font-size: 15px;
+  }
   }
 
   .date {
@@ -150,7 +158,7 @@ export const Description = styled.div`
     bottom: 18px;
     right: 12px;
     font-size: 14px;
-    color: ${colors.blue}
+    color: ${colors.blue};
   }
 
   @media (max-width: ${breakpoints.tablet}) {
@@ -202,7 +210,7 @@ export const PrimaryButton = styled.button`
   }
 
   @media (max-width: ${breakpoints.tablet}) {
-      width: 360px;
+      width: 320px;
       height: 40px;
     }
 `
@@ -224,7 +232,7 @@ export const SecundaryButton = styled.button`
   }
 
   @media (max-width: ${breakpoints.tablet}) {
-      width: 360px;;
+      width: 320px;
       height: 40px;
       margin-top: 8px;
       margin-right: 0;
