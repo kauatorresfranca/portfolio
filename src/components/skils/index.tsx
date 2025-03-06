@@ -1,4 +1,4 @@
-import html from '/html.webp'
+import html from '/html.png'
 import css from '/css.svg'
 import js from '/js.png'
 import ts from '/ts.png'
@@ -48,14 +48,14 @@ const Skils = () => {
               </svg>
             </S.Acordeon>
             <S.ListSkil className={frontIsOpen ? 'active' : ''}>
-              <Skil percentage='90%' title='Html' img={html} />
-              <Skil percentage='95%' title='Css' img={css} />
-              <Skil percentage='70%' title='Js' img={js} />
-              <Skil percentage='65%' title='Ts' img={ts} />
-              <Skil percentage='75%' title='React' img={react} />
-              <Skil percentage='65%' title='Redux' img={redux} />
-              <Skil percentage='90%' title='Css-in-Js' img={sc} />
-              <Skil percentage='40%' title='Vue' img={vue} />
+              <Skil description="Linguagem de marcação usada para estruturar páginas web" percentage='90%' title='Html' img={html} />
+              <Skil description="Responsável pela estilização das páginas, permitindo layouts responsivos e designs atraentes" percentage='95%' title='Css' img={css} />
+              <Skil description="Linguagem de programação que adiciona interatividade e dinamismo às páginas web" percentage='70%' title='Js' img={js} />
+              <Skil description="Superset do JavaScript que adiciona tipagem estática, melhorando a manutenção e segurança do código" percentage='65%' title='Ts' img={ts} />
+              <Skil description="Biblioteca JavaScript para criação de interfaces interativas e componentes reutilizáveis" percentage='75%' title='React' img={react} />
+              <Skil description="Biblioteca para gerenciamento de estado global, facilitando a comunicação entre componentes" percentage='65%' title='Redux' img={redux} />
+              <Skil description="Técnica para escrever estilos dentro do JavaScript, permitindo maior modularidade e dinamismo" percentage='90%' title='Css-in-Js' img={sc} />
+              <Skil description="Framework progressivo para construção de interfaces reativas, focado em simplicidade e desempenho" percentage='40%' title='Vue' img={vue} />
             </S.ListSkil>
           </S.SkilArea>
           <S.SkilArea className="back">
@@ -74,9 +74,9 @@ const Skils = () => {
               </svg>
             </S.Acordeon>
             <S.ListSkil className={backIsOpen ? 'active' : ''}>
-              <Skil percentage='65%' title='Postgres' img={postgres} />
-              <Skil percentage='70%' title='Python' img={py} />
-              <Skil percentage='50%' title='django' img={django} />
+              <Skil description="Banco de dados relacional poderoso e escalável, conhecido por sua confiabilidade e recursos avançados" percentage='65%' title='Postgres' img={postgres} />
+              <Skil description="Linguagem de programação versátil e fácil de aprender, usada para desenvolvimento web, automação, ciência de dados e muito mais" percentage='70%' title='Python' img={py} />
+              <Skil description="Framework web em Python que facilita o desenvolvimento rápido e seguro de aplicações robustas" percentage='50%' title='django' img={django} />
             </S.ListSkil>
           </S.SkilArea>
           <S.SkilArea className="tools">
@@ -95,7 +95,7 @@ const Skils = () => {
               </svg>
             </S.Acordeon>
             <S.ListSkil className={toolsIsOpen ? 'active' : ''}>
-              <Skil percentage='80%' title='Git' img={git} />
+              <Skil description="Sistema de controle de versão distribuído, essencial para colaboração e gerenciamento de código-fonte" percentage='80%' title='Git' img={git} />
             </S.ListSkil>
           </S.SkilArea>
         </div>
