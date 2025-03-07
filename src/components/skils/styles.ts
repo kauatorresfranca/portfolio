@@ -3,7 +3,7 @@ import { breakpoints, colors } from "../../styles"
 
 export const Background = styled.div`
   padding-top: 32px;
-  background-color: ${colors.darkBlack};
+  background-color: ${(props) => props.theme.background};
 
   h3 {
     font-size: 24px;
@@ -31,7 +31,7 @@ export const AreaLeft = styled.div`
 
   p {
     font-size: 10px;
-    color: ${colors.textColor}
+    color: ${(props) => props.theme.textColor}
   }
 `
 
@@ -42,9 +42,9 @@ export const Acordeon = styled.div`
   padding: 24px;
   border-radius: 25px;
   margin-bottom: 32px;
-  background-color: ${colors.lightBlack};
+  background-color: ${(props) => props.theme.secondaryBackground};
   cursor: pointer;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px 1.5px rgba(0, 0, 0, 0.2);
 
   @media (max-width: ${breakpoints.tablet}) {
     margin: 0 auto;

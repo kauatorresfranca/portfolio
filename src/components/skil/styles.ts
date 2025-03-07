@@ -75,7 +75,7 @@ export const SkilContainer = styled.div`
   padding: 16px;
   margin-bottom: 40px;
   border-radius: 18%;
-  background-color:hsl(218, 22.20%, 21.20%);
+  background-color: ${(props) => props.theme.secondaryBackground};
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   transition: transform .6s ease-in-out;
   transform-style: preserve-3d;
@@ -98,11 +98,11 @@ export const SkilContainer = styled.div`
     h4 {
       text-align: center;
       margin-bottom: 8px;
-      color: ${colors.white};
+      color: ${(props) => props.theme.titleColor};
     }
 
     p {
-      color: ${colors.textColor};
+      color: ${(props) => props.theme.textColor};
       margin-top: 6px;
       font-size: 10px;
     }
@@ -140,7 +140,7 @@ export const CardBack = styled.div`
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  background-color: ${colors.lightBlack};
+  background-color: ${(props) => props.theme.secondaryBackground};
   color: ${colors.white};
   display: flex;
   flex-direction: column;

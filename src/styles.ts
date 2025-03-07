@@ -19,7 +19,7 @@ export const GlobalCss = createGlobalStyle`
   margin: 0;
   padding: 0:
   box-sizing: border-box;
-  color: #fff;
+  color: ${(props) => props.theme.titleColor};
   list-style: none;
   font-family: Roboto, sans-serif;
 
@@ -30,7 +30,7 @@ export const GlobalCss = createGlobalStyle`
   }
 
   body {
-    background-color: ${colors.darkBlack};
+    background-color: ${(props) => props.theme.background};
   }
 }
   html {

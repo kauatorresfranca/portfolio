@@ -1,9 +1,9 @@
 import styled from "styled-components"
-import { breakpoints, colors } from "../../styles"
+import { breakpoints} from "../../styles"
 
 
 export const Background = styled.div`
-  background-color: ${colors.darkBlack};
+  background-color: ${(props) => props.theme.background};
   padding-top: 32px;
   padding-bottom: 64px;
 
@@ -52,7 +52,7 @@ export const ContactForm = styled.div`
   }
 
   h5 {
-    color: ${colors.textColor};
+    color: ${(props) => props.theme.textColor};
     align-items: center;
     margin-top: 4px;
   }
@@ -66,7 +66,7 @@ export const ContactForm = styled.div`
     padding: 12px;
     border-radius: 20px;
     transition: .4s ease;
-    background-color: ${colors.lightBlack};
+    background-color: ${(props) => props.theme.secondaryBackground};
 
     &:hover{
       transform: scale(1.2);

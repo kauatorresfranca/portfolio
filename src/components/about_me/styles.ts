@@ -29,7 +29,7 @@ export const Description = styled.div`
 
   p {
     font-weight: 300;
-    color: #D3D3D3;
+    color: ${(props) => props.theme.textColor};
     text-align: center;
 
     @media (max-width: ${breakpoints.tablet}) {
@@ -38,7 +38,7 @@ export const Description = styled.div`
   }
 
   .bold {
-    color: #fff;
+    color: ${(props) => props.theme.titleColor};
     font-weight: 400;
   }
 `

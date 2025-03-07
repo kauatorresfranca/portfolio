@@ -36,7 +36,7 @@ export const ProjectViewContainer = styled.div`
 
 export const Overlay = styled.div`
   position: absolute;
-  background: rgba(0, 0, 0, 0.8);
+  background: ${(props) => props.theme.overlay};
   top: 0;
   left: 0;
   right: 0;
@@ -48,7 +48,7 @@ export const Overlay = styled.div`
   border-bottom: 4px solid ${colors.blue};
 
   &:hover {
-    background: rgba(0, 0, 0, 0.3);
+    background: ${(props) => props.theme.overlayminor};
     border-bottom: none;
   }
 `
@@ -61,6 +61,7 @@ export const projectViewGroup = styled.div`
   z-index: 2; /* Garante que o conteúdo fique sobre o Overlay */
 
   h2 {
+      color: ${(props) => props.theme.titleColor};
       text-align: center;
     }
 `

@@ -59,8 +59,8 @@ const Project = ({ title, description, gitHubUrl, projectViewUrl, imgUrl, skils,
           <div className='imgGroup'>
             <img src={imgUrl} alt="project image" />
             <S.ButtonGroup>
-              <a href={gitHubUrl}><S.PrimaryButton>View on github</S.PrimaryButton></a>
-              <a href={projectViewUrl}><S.SecundaryButton>View project</S.SecundaryButton></a>
+              <a href={gitHubUrl}><S.PrimaryButton>Ver no git hub</S.PrimaryButton></a>
+              <a href={projectViewUrl}><S.SecundaryButton>Ver projeto</S.SecundaryButton></a>
             </S.ButtonGroup>
           </div>
           <S.Description>

@@ -11,7 +11,7 @@ export const Container = styled.div`
   z-index: 2;
   padding-top: 24px;
   padding-bottom: 24px;
-  background-color: ${colors.darkBlack};
+  background-color: ${(props) => props.theme.background};
   border-bottom: 2px solid ${colors.blue};
 
   @media (max-width: ${breakpoints.tablet}) {
@@ -21,17 +21,17 @@ export const Container = styled.div`
 }
 
     H1 {
+    color: ${(props) => props.theme.titleColor};
     display: flex;
     align-items: center;
     font-size: 29px;
-    margin-left: 200px;
-    color: #fff;
+    margin-left: 160px;
     font-weight: 500;
 
     @media (max-width: ${breakpoints.tablet}) {
     text-align: center;
-    margin: 0;
-    margin-left: 16px;
+    margin-right: 54px;
+    margin-left: 0px;
   }
 
     svg {
@@ -59,7 +59,7 @@ export const Links = styled.ul`
     padding: 0;
     justify-content: center;
     align-items: center;
-    background-color: ${colors.lightBlack};
+    background-color: ${(props) => props.theme.background};
     overflow: hidden; /* Impede que o conteúdo vaze */
     transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out, padding 1s ease;
 
@@ -78,7 +78,7 @@ export const Links = styled.ul`
   a {
     width: 100%;
     text-decoration: none;
-    color: #D3D3D3;
+    color: ${(props) => props.theme.titleColor};
     font-size: 18px;
     position: relative;
     display: block;
@@ -106,7 +106,7 @@ export const Links = styled.ul`
       left: 0;
       width: 0; /* Começa com width 0 */
       height: 3px;
-      background-color: ${colors.blue}; /* Cor da borda */
+      background-color: ${(props) => props.theme.detach}; /* Cor da borda */
       transition: width 0.3s ease; /* Transição suave da largura */
     }
   }
@@ -131,7 +131,7 @@ export const HamburguerMenu = styled.div`
   &::after {
     content: '';
     height: 2px;
-    background-color: #fff;
+    background-color: ${(props) => props.theme.titleColor};
     width: 100%;
     position: absolute;
     transition: all 0.4s ease-out;
@@ -166,7 +166,7 @@ export const HamburguerMenu = styled.div`
       transform: translateY(-50%) rotate(45deg); /* Centraliza e rotaciona */
     }
   }
-`;
+`
 
 
 export const TopHeader = styled.div`
@@ -176,6 +176,15 @@ export const TopHeader = styled.div`
   position: relative;
   a {
     text-decoration: none;
+  }
+
+  button {
+    margin-left: 10px;
+    border: none;
+    background-color: ${(props) => props.theme.secondaryBackground};
+    color: ${(props) => props.theme.titleColor};
+    border-radius: 10px;
+    padding: 8px;
   }
 `
 

@@ -3,7 +3,7 @@ import { breakpoints, colors } from "../../styles"
 
 
 export const background = styled.div`
-  background-color: ${colors.darkBlack};
+  background-color: ${(props) => props.theme.background}
 `
 
 export const Container = styled.div`
@@ -15,6 +15,7 @@ export const Container = styled.div`
   img {
     width: 320px;
     transition: .5s ease-out;
+
     &:hover {
       transform: scale(1.1)
     }
@@ -46,7 +47,7 @@ export const Description = styled.div`
 
   h4 {
     font-size: 12px;
-    color: ${colors.textColor};
+    color: ${(props) => props.theme.textColor};
     margin-bottom: 12px;
   }
 
@@ -54,9 +55,9 @@ export const Description = styled.div`
   width: 240px;
   height: 36px;
   font-weight: 700;
-  background-color: ${colors.lightBlack};
-  color: ${colors.white};
-  border: 2px solid ${colors.blue};
+  background-color: ${(props) => props.theme.secondaryBackground};
+  color: ${(props) => props.theme.titleColor};
+  border: 2px solid ${(props) => props.theme.detach};
   border-radius: 12px;
 
   @media (max-width: ${breakpoints.tablet}) {
@@ -64,13 +65,14 @@ export const Description = styled.div`
   }
 
     &:hover {
-      color: ${colors.white};
+      color: ${(props) => props.theme.secondaryBackground};
       background-color: ${colors.blue};
     }
   }
 `
 
 export const Title = styled.h2`
+  color: ${(props) => props.theme.titleColor};
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 12px;
@@ -79,8 +81,8 @@ export const Title = styled.h2`
   white-space: nowrap;
 
   span {
-    color: ${colors.blue};
-    display: inline-block;
+    color: ${(props) => props.theme.detach};
+    display: block;
     position: relative;
     width: 0;
   }
