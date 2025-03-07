@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { breakpoints } from "../../styles"
 
-export const Container = styled.div`
+export const AboutMe = styled.div`
   display: flex;
   padding: 80px 0;
 
@@ -16,6 +16,7 @@ export const Description = styled.div`
   flex-direction: column;
   aling-items: center;
   justify-content: center;
+  margin: 0 auto;
 
   h2 {
     font-size: 24px;
@@ -28,6 +29,8 @@ export const Description = styled.div`
   }
 
   p {
+    max-width: 80vw;
+    width: 100%;
     font-weight: 300;
     color: ${(props) => props.theme.textColor};
     text-align: center;

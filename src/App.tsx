@@ -9,7 +9,7 @@ import Contact from './components/Contact'
 import Header from './components/header'
 import Projects from './components/projects'
 import Skills from './components/skils'
-import { colors, GlobalCss} from './styles'
+import {GlobalCss} from './styles'
 import {darkTheme, lightTheme} from '../theme'
 import Footer from './components/footer'
 
@@ -24,7 +24,7 @@ function App() {
   const toggleTheme = () => {
     setTheme((prev) => {
       const newTheme = prev === "light" ? "dark" : "light";
-      localStorage.setItem("theme", newTheme); // Salva a escolha do usuário
+      localStorage.setItem("theme", newTheme); // Salva a escolha do usuário (opicional)
       return newTheme;
     });
   }
@@ -42,7 +42,7 @@ function App() {
       width: "100%",
       backgroundColor: "#2a3342"
     }}>
-      <ClipLoader color={colors.blue} />
+      <ClipLoader color={darkTheme.detach} />
     </div>
 
 

@@ -5,15 +5,6 @@ export const breakpoints = {
   tablet: '768px'
 }
 
-export const colors = {
-  blue: '#8257e6',
-  lightPurple: 'rgb(46, 23, 100)',
-  white: '#fff',
-  lightBlack: '#2a3342',
-  darkBlack: '#1f2732',
-  textColor: '#D3D3D3'
-}
-
 export const GlobalCss = createGlobalStyle`
   * {
   margin: 0;

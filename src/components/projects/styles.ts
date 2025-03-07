@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import { breakpoints, colors } from "../../styles"
+import { breakpoints } from "../../styles"
 
-export const Container = styled.div`
+export const Projects = styled.div`
   padding-top: 32px;
   padding-bottom: 64px;
 
@@ -20,7 +20,7 @@ export const Project = styled.div`
   width: 280px;
   position: relative;
   max-width: 100%;
-  background-color: ${colors.lightBlack};
+  background-color: ${(props) => props.theme.secondaryBackground};
   height: 480px;
   border-radius: 20px;
   transition: transform 0.5s ease;
@@ -61,6 +61,13 @@ export const ProjectList = styled.div`
   gap: 25px;
   justify-items: center;
 
+  @media (max-width: ${breakpoints.desktop}) {
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    max-width: 80vw;
+    width: 100%;
+  }
+
   @media (max-width: ${breakpoints.tablet}) {
       grid-template-columns: 1fr;
       justify-items: center;
@@ -86,8 +93,8 @@ export const ButtonGroup = styled.div`
 `
 
 export const PrimaryButton = styled.button`
-  background-color: ${colors.blue};
-  color: ${colors.white};
+  background-color: ${(props) => props.theme.detach};
+  color: #fff;
   width: 260px;
   height: 32px;
   border: none;
@@ -105,8 +112,8 @@ export const PrimaryButton = styled.button`
 `
 
 export const SecundaryButton = styled.button`
-  background-color: ${colors.white};
-  color: ${colors.lightBlack};
+  background-color: #fff;
+  color: ${(props) => props.theme.secondaryBackground};
   width: 260px;
   height: 32px;
   border: none;

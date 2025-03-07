@@ -1,8 +1,8 @@
 import styled from "styled-components"
-import { breakpoints, colors } from "../../styles"
+import { breakpoints } from "../../styles"
 
 export const Project = styled.div`
-  background-color: ${colors.lightBlack};
+  background-color: ${(props) => props.theme.secondaryBackground};
   border-radius: 20px;
   transition: transform 0.5s ease;
 
@@ -45,7 +45,7 @@ export const Overlay = styled.div`
   z-index: 1;
   transition: background 0.4s ease-in;
   cursor: pointer;
-  border-bottom: 4px solid ${colors.blue};
+  border-bottom: 4px solid ${(props) => props.theme.detach};
 
   &:hover {
     background: ${(props) => props.theme.overlayminor};
@@ -72,21 +72,25 @@ export const TagList = styled.div`
   justify-content: center;
 
   img {
-    width: 40px;
+    width: 36px;
+    background-color: ${(props) => props.theme.overlay === 'rgba(255, 255, 255, 0.6)' ? 'rgba(0, 0, 0, 0.6)' : 'rgba(255, 255, 255, 0.6)'};
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 50%;
   }
 `
 
 export const Modal = styled.div`
   position: relative;
   display: flex;
-  background-color: ${colors.lightBlack};
+  background-color: ${(props) => props.theme.secondaryBackground};
   padding: 20px;
   border-radius: 8px;
   max-width: 100vw;
   width: 80%;
   max-height: 100vh;
   height: 50%;
-  box-shadow: 0 4px 10px rgba(1, 0, 0, 0.7);
+  box-shadow: 0 4px 10px ${(props) => props.theme.overlay};
 
   @media (max-width: ${breakpoints.tablet}) {
     height: 70%;
@@ -147,7 +151,7 @@ export const Description = styled.div`
   }
 
   .description {
-    color: ${colors.textColor};
+    color: ${(props) => props.theme.textColor};
 
     @media (max-width: ${breakpoints.tablet}) {
       font-size: 15px;
@@ -159,7 +163,7 @@ export const Description = styled.div`
     bottom: 18px;
     right: 12px;
     font-size: 14px;
-    color: ${colors.blue};
+    color: ${(props) => props.theme.detach};
   }
 
   @media (max-width: ${breakpoints.tablet}) {
@@ -198,12 +202,13 @@ export const ButtonGroup = styled.div`
 `
 
 export const PrimaryButton = styled.button`
-  background-color: ${colors.darkBlack};
-  color: ${colors.white};
+  background-color: ${(props) => props.theme.background};
+  color: ${(props) => props.theme.titleColor};
   width: 260px;
   height: 32px;
   border: none;
   border-radius: 10px;
+  transition: background 2s ease, transform 0.3s ease;
 
   &:hover{
     cursor: pointer;
@@ -217,8 +222,8 @@ export const PrimaryButton = styled.button`
 `
 
 export const SecundaryButton = styled.button`
-  background: linear-gradient(to right, ${colors.blue}, ${colors.lightPurple});
-  color: ${colors.white};
+  background: linear-gradient(to right, ${(props) => props.theme.detach}, ${(props) => props.theme.lightPurple});
+  color: #fff;
   width: 260px;
   height: 32px;
   border: none;
@@ -228,7 +233,7 @@ export const SecundaryButton = styled.button`
 
   &:hover{
     cursor: pointer;
-    background: linear-gradient(to left, ${colors.blue}, ${colors.lightPurple});
+    background: linear-gradient(to left, ${(props) => props.theme.detach}, ${(props) => props.theme.lightPurple});
     transform: scale(1.05);
   }
 

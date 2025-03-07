@@ -1,10 +1,10 @@
 import styled from "styled-components"
-import { breakpoints, colors } from "../../styles"
+import { breakpoints } from "../../styles"
 
 
-export const Container = styled.div`
+export const Header = styled.header`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   position: fixed;
   width: 100vw;
@@ -12,26 +12,25 @@ export const Container = styled.div`
   padding-top: 24px;
   padding-bottom: 24px;
   background-color: ${(props) => props.theme.background};
-  border-bottom: 2px solid ${colors.blue};
+  border-bottom: 2px solid ${(props) => props.theme.detach};
 
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.desktop}) {
     display: block;
     padding-bottom: 0;
     border-bottom: none;
 }
 
-    H1 {
+    h1 {
     color: ${(props) => props.theme.titleColor};
     display: flex;
     align-items: center;
     font-size: 29px;
-    margin-left: 160px;
     font-weight: 500;
 
-    @media (max-width: ${breakpoints.tablet}) {
-    text-align: center;
-    margin-right: 54px;
-    margin-left: 0px;
+    @media (max-width: ${breakpoints.desktop}) {
+      text-align: center;
+      margin-right: 54px;
+      margin-left: 0px;
   }
 
     svg {
@@ -43,10 +42,10 @@ export const Container = styled.div`
 export const Links = styled.ul`
   display: flex;
   gap: 124px;
-  margin-right: 200px;
+  margin-right: 210px;
   padding-bottom: 16px;
 
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.desktop}) {
     border-radius: 18px;
     display: flex;
     flex-direction: column;
@@ -59,7 +58,7 @@ export const Links = styled.ul`
     padding: 0;
     justify-content: center;
     align-items: center;
-    background-color: ${(props) => props.theme.background};
+    background-color: ${(props) => props.theme.secondaryBackground};
     overflow: hidden; /* Impede que o conteúdo vaze */
     transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out, padding 1s ease;
 
@@ -86,12 +85,11 @@ export const Links = styled.ul`
     text-align: center;
     padding-top: 16px;
 
-    @media (max-width: ${breakpoints.tablet}) {
+    @media (max-width: ${breakpoints.desktop}) {
       padding-bottom: 16px;
     }
 
     @media (min-width: ${breakpoints.desktop}) {
-
 
     /* Criando a borda animada */
     &:hover::after {
@@ -122,7 +120,7 @@ export const HamburguerMenu = styled.div`
   cursor: pointer;
   margin-right: 12px;
 
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.desktop}) {
     display: block;
   }
 
@@ -173,7 +171,7 @@ export const TopHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
+
   a {
     text-decoration: none;
   }
@@ -183,22 +181,15 @@ export const TopHeader = styled.div`
     border: none;
     background-color: ${(props) => props.theme.secondaryBackground};
     color: ${(props) => props.theme.titleColor};
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 8px;
-  }
-`
+    cursor: pointer;
+    position: absolute;
+    right: 32px;
 
-export const ExitHamburguerMenu = styled.div`
-  display: none;
-  color: #fff;
-  font-size: 18px;
-  width: 32px;
-  margin-right: 10px;
-  position: absolute;
-  right: 10px;
-  cursor: pointer;
-
-  @media (max-width: ${breakpoints.tablet}) {
-    display: block;
+    @media (max-width: ${breakpoints.desktop}) {
+    position: static;
+    right: 0;
+}
   }
 `

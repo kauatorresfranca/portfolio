@@ -13,6 +13,10 @@ export const Background = styled.div`
     align-items: center;
     text-align: center;
 
+    p {
+      color: ${(props) => props.theme.textColor}
+    }
+
     @media (max-width: ${breakpoints.tablet}) {
     p {
       max-width: 90vw;
@@ -32,6 +36,10 @@ export const ContactForms = styled.div`
   justify-content: space-evenly;
   margin-top: 32px;
   gap: 72px;
+
+  @media (max-width: ${breakpoints.desktop}){
+    grid-template-columns: 1fr 1fr;
+  }
 
   @media (max-width: ${breakpoints.tablet}){
     grid-template-columns: 1fr 1fr;

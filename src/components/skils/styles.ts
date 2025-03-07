@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { breakpoints, colors } from "../../styles"
+import { breakpoints } from "../../styles"
 
 export const Background = styled.div`
   padding-top: 32px;
@@ -53,6 +53,13 @@ export const Acordeon = styled.div`
     max-width: 80vw;
   }
 
+  @media (max-width: ${breakpoints.desktop}) {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 80vw;
+    margin-bottom: 24px;
+  }
+
   & > svg {
     transition: ease-in-out .4s;
   }
@@ -79,6 +86,10 @@ export const ListSkil = styled.div`
   }
 
   @media (max-width: ${breakpoints.desktop}) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -92,7 +103,7 @@ export const Skil = styled.div`
   padding: 16px;
   margin-bottom: 40px;
   border-radius: 18%;
-  background-color: ${colors.lightBlack};
+  background-color: ${(props) => props.theme.secondaryBackground};
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   transition: transform 0.5s ease;
 

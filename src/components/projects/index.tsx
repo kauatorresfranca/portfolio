@@ -1,5 +1,5 @@
 import * as S from './styles'
-import { colors } from '../../styles'
+import { darkTheme } from '../../../theme'
 import Project from '../project'
 
 const Projects = () => {
@@ -7,8 +7,9 @@ const Projects = () => {
   return (
     <>
       <div id="projects">
-        <S.Container>
-          <h3><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill={colors.blue} className="bi bi-diamond" viewBox="0 0 16 16">
+        <div className="container">
+        <S.Projects>
+          <h3><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill={darkTheme.detach} className="bi bi-diamond" viewBox="0 0 16 16">
             <path d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.48 1.48 0 0 1 0-2.098zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134z" />
           </svg>Projetos</h3>
           <S.ProjectList>
@@ -20,10 +21,11 @@ const Projects = () => {
             </Project>
             <Project date='21 de janeiro de 2024' skils={[{ type: 'react' }, { type: 'ts' }, { type: 'sc' }]} imgUrl='/camila_matos.png' gitHubUrl='https://github.com/kauatorresfranca/DraCamilaMatos' projectViewUrl='https://dracamilamatos.vercel.app/' title='DENTIST WEBSITE' description='Uma landing page desenvolvida para uma dentista, com um design moderno e profissional para apresentar seus serviços e informações de contato. O site conta com uma navegação fluida e uma interface responsiva para garantir uma boa experiência tanto em dispositivos móveis quanto em desktops. Construído com React, TypeScript, Styled Components e Redux para uma estrutura escalável e organizada.'>
             </Project>
-            <Project date='11 de janeiro de 2024' skils={[{ type: 'react' }, { type: 'ts' }, { type: 'sc' }]} imgUrl='/mySite.png' gitHubUrl='https://github.com/kauatorresfranca/portfolio' projectViewUrl='https://portfolio-tau-eight-25.vercel.app/' title='PORTFOLIO' description='Um site desenvolvido para apresentar meus projetos, habilidades e informações sobre minha trajetória na programação. O design foi pensado para ser moderno e responsivo, garantindo uma navegação fluida em qualquer dispositivo. O site conta com uma seção de skills, onde destaco as tecnologias que domino, uma área de projetos com descrições detalhadas, e uma página de contato para facilitar a comunicação com potenciais clientes e recrutadores. Construído com React, TypeScript, Styled Components e Redux, garantindo um fluxo de dados eficiente e uma estrutura organizada.'>
+            <Project date='11 de janeiro de 2024' skils={[{ type: 'react' }, { type: 'ts' }, { type: 'sc' }]} imgUrl='/mySite.png' gitHubUrl='https://github.com/kauatorresfranca/portfolio' projectViewUrl='https://portfolio-tau-eight-25.vercel.app/' title='PORTFOLIO' description='Um site desenvolvido para apresentar meus projetos, habilidades e informações sobre minha trajetória na programação. O design foi pensado para ser moderno e responsivo. O site conta com uma sessão de skills, onde destaco as tecnologias que domino, uma área de projetos, e uma página de contato para facilitar a comunicação com potenciais clientes e recrutadores. Foi desenvolvido com React, TypeScript, Styled Components e Redux.'>
             </Project>
           </S.ProjectList>
-        </S.Container>
+        </S.Projects>
+        </div>
       </div>
     </>
   )

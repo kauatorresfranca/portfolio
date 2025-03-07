@@ -1,12 +1,12 @@
 export const lightTheme = {
   detach: '#8257e6',
-  lightPurple: 'rgb(44, 38, 59)',
+  lightPurple: 'rgb(46, 23, 100)',
   titleColor: '#8257e6',
   secondaryBackground: '#fff',
   background: '#ebeaea',
   textColor: '#292828',
   overlay: 'rgba(255, 255, 255, 0.6)',
-  overlayminor: 'rgba(255, 255, 255, 0.1)'
+  overlayminor: 'rgba(255, 255, 255, 0.2)'
 }
 
 export const darkTheme = {
@@ -17,5 +17,5 @@ export const darkTheme = {
   background: '#1f2732',
   textColor: '#D3D3D3',
   overlay: 'rgba(0, 0, 0, 0.6)',
-  overlayminor: 'rgba(0, 0, 0, 0.1)'
+  overlayminor: 'rgba(0, 0, 0, 0.2)'
 }

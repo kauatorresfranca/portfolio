@@ -5,7 +5,8 @@ const Banner = () => {
 
   return (
     <S.background>
-      <S.Container>
+      <div className="container">
+      <S.Banner>
         <S.Description>
           <S.Title>
             Olá, eu sou<span> Kauã Torres</span>
@@ -16,7 +17,8 @@ const Banner = () => {
         <div>
           <img src={dev} alt="dev working" />
         </div>
-      </S.Container>
+      </S.Banner>
+      </div>
     </S.background>
   )
 }

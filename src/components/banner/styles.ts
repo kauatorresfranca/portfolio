@@ -1,14 +1,14 @@
 import styled from "styled-components"
-import { breakpoints, colors } from "../../styles"
+import { breakpoints } from "../../styles"
 
 
 export const background = styled.div`
   background-color: ${(props) => props.theme.background}
 `
 
-export const Container = styled.div`
+export const Banner = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding-top: 128px;
   padding-bottom: 32px;
 
@@ -19,6 +19,10 @@ export const Container = styled.div`
     &:hover {
       transform: scale(1.1)
     }
+  }
+
+  @media (max-width: ${breakpoints.desktop}) {
+    justify-content: space-around;
   }
 
   @media (max-width: ${breakpoints.tablet}) {
@@ -33,7 +37,6 @@ export const Description = styled.div`
   flex-direction: column;
   justify-content: center;
   aling-items: center;
-  margin-right: 280px;
 
   @media (max-width: ${breakpoints.tablet}) {
     justify-content: center;
@@ -66,13 +69,13 @@ export const Description = styled.div`
 
     &:hover {
       color: ${(props) => props.theme.secondaryBackground};
-      background-color: ${colors.blue};
+      background-color: ${(props) => props.theme.detach};
     }
   }
 `
 
 export const Title = styled.h2`
-  color: ${(props) => props.theme.titleColor};
+  color: ${(props) => props.theme.textColor};
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 12px;
