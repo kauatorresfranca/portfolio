@@ -171,4 +171,8 @@ export const ProgressFill = styled.div`
   &.git {
     width: 80%;
   }
+
+  &.Sass {
+    width: 50%;
+  }
 `

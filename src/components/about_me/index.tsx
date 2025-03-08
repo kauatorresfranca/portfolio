@@ -5,8 +5,7 @@ import * as S from "./styles"
 const AboutMe = () => {
 
   return (
-    <div id='about'>
-      <div className="container">
+      <div id='about' className="container">
         <S.AboutMe>
           <S.Description>
             <h2>
@@ -21,7 +20,6 @@ const AboutMe = () => {
           </S.Description>
         </S.AboutMe >
       </div>
-    </div>
   )
 }
 

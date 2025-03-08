@@ -29,7 +29,7 @@ export const Header = styled.header`
 
     @media (max-width: ${breakpoints.desktop}) {
       text-align: center;
-      margin-right: 54px;
+      margin-right: 32px;
       margin-left: 0px;
   }
 
@@ -110,7 +110,44 @@ export const Links = styled.ul`
   }
     }
 
-`;
+`
+
+export const ToggleTheme = styled.div<{ themeName: string }>`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 10px;
+    border: none;
+    background-color: ${(props) => props.theme.secondaryBackground};
+    color: ${(props) => props.theme.titleColor};
+    border-radius: 20px;
+    padding: 5px;
+    width: 50px;
+    height: 26px;
+    cursor: pointer;
+    position: absolute;
+    right: 42px;
+
+    @media (max-width: ${breakpoints.desktop}) {
+    position: relative;
+    right: 0;
+  }
+
+  .ball {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: ${(props) => props.theme.buttonThemeBall};
+    border-radius: 50%;
+    position: absolute;
+    top: 5px;
+    left: ${({themeName}) => themeName === 'dark' ? '6px' : '28px'};
+    transition: left 0.3s ease-in-out;
+
+    height: 26px;
+    width: 26px;
+  }
+`
 
 export const HamburguerMenu = styled.div`
   display: none;
@@ -175,21 +212,5 @@ export const TopHeader = styled.div`
   a {
     text-decoration: none;
   }
-
-  button {
-    margin-left: 10px;
-    border: none;
-    background-color: ${(props) => props.theme.secondaryBackground};
-    color: ${(props) => props.theme.titleColor};
-    border-radius: 15px;
-    padding: 8px;
-    cursor: pointer;
-    position: absolute;
-    right: 32px;
-
-    @media (max-width: ${breakpoints.desktop}) {
-    position: static;
-    right: 0;
-}
   }
 `

@@ -2,12 +2,13 @@ import styled from "styled-components"
 import { breakpoints} from "../../styles"
 
 
-export const Background = styled.div`
+export const Contact = styled.div`
   background-color: ${(props) => props.theme.background};
   padding-top: 32px;
   padding-bottom: 64px;
+`
 
-  .container{
+export const ContactWaysContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,10 +28,9 @@ export const Background = styled.div`
     font-size: 24px;
     padding-bottom: 24px;
   }
-  }
 `
 
-export const ContactForms = styled.div`
+export const ContactWays = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: space-evenly;
@@ -48,7 +48,7 @@ export const ContactForms = styled.div`
   }
 `
 
-export const ContactForm = styled.div`
+export const ContactWay = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;

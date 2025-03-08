@@ -4,11 +4,11 @@ const Footer = () => {
   const ano = new Date().getFullYear()
   console.log(ano)
   return (
-    <S.Background>
+    <S.Footer>
       <S.Container>
         <p>© Kauã Torres - {2025} - Todos os direitos reservados</p>
       </S.Container>
-    </S.Background>
+    </S.Footer>
   )
 }
 

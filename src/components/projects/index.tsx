@@ -5,7 +5,6 @@ import Project from '../project'
 const Projects = () => {
 
   return (
-    <>
       <div id="projects">
         <div className="container">
         <S.Projects>
@@ -27,7 +26,6 @@ const Projects = () => {
         </S.Projects>
         </div>
       </div>
-    </>
   )
 }
 

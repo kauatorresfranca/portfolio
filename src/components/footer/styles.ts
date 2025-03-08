@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Background = styled.div`
+export const Footer = styled.div`
   background-color: ${(props) => props.theme.secondaryBackground};
   padding: 18px;
 `

@@ -10,7 +10,8 @@ import redux from '/redux.svg'
 import django from '/django_icon.png'
 import sc from '/styledcomponents.svg'
 import vue from '/vue.icon.png'
-
+import sass from '/sass_icon.png'
+import cypress from '/cypress_icon.svg'
 import * as S from "./styles"
 import Skil from '../skil'
 import { darkTheme } from '../../../theme'
@@ -48,14 +49,15 @@ const Skils = () => {
               </svg>
             </S.Acordeon>
             <S.ListSkil className={frontIsOpen ? 'active' : ''}>
-              <Skil description="Linguagem de marcação usada para estruturar páginas web" percentage='90%' title='Html' img={html} />
-              <Skil description="Responsável pela estilização das páginas, permitindo layouts responsivos e designs atraentes" percentage='95%' title='Css' img={css} />
-              <Skil description="Linguagem de programação que adiciona interatividade e dinamismo às páginas web" percentage='70%' title='Js' img={js} />
-              <Skil description="Superset do JavaScript que adiciona tipagem estática, melhorando a manutenção e segurança do código" percentage='65%' title='Ts' img={ts} />
-              <Skil description="Biblioteca JavaScript para criação de interfaces interativas e componentes reutilizáveis" percentage='75%' title='React' img={react} />
-              <Skil description="Biblioteca para gerenciamento de estado global, facilitando a comunicação entre componentes" percentage='65%' title='Redux' img={redux} />
-              <Skil description="Técnica para escrever estilos dentro do JavaScript, permitindo maior modularidade e dinamismo" percentage='90%' title='Css-in-Js' img={sc} />
-              <Skil description="Framework progressivo para construção de interfaces reativas, focado em simplicidade e desempenho" percentage='40%' title='Vue' img={vue} />
+              <Skil description="É uma linguagem de marcação usada para estruturar páginas web" percentage='90%' title='Html' img={html} />
+              <Skil description="É responsável pela estilização das páginas, permitindo layouts responsivos e designs atraentes" percentage='95%' title='Css' img={css} />
+              <Skil description="É uma linguagem de programação que adiciona interatividade e dinamismo às páginas web" percentage='70%' title='Js' img={js} />
+              <Skil description="É um superset do JavaScript que adiciona tipagem estática, melhorando a manutenção e segurança do código" percentage='65%' title='Ts' img={ts} />
+              <Skil description="É uma biblioteca JavaScript para criação de interfaces interativas e componentes reutilizáveis" percentage='75%' title='React' img={react} />
+              <Skil description="É uma biblioteca para gerenciamento de estado global, facilitando a comunicação entre componentes" percentage='65%' title='Redux' img={redux} />
+              <Skil description="É uma técnica para escrever estilos dentro do JavaScript, permitindo maior modularidade e dinamismo" percentage='90%' title='Css-in-Js' img={sc} />
+              <Skil description="É um pré-processador CSS que permite escrever estilos de forma mais dinâmica e modular, com recursos como variáveis, aninhamento e mixins" percentage='50%' title='Sass' img={sass} />
+              <Skil description="É um framework progressivo para construção de interfaces reativas, focado em simplicidade e desempenho" percentage='40%' title='Vue' img={vue} />
             </S.ListSkil>
           </S.SkilArea>
           <S.SkilArea className="back">
@@ -96,6 +98,7 @@ const Skils = () => {
             </S.Acordeon>
             <S.ListSkil className={toolsIsOpen ? 'active' : ''}>
               <Skil description="Sistema de controle de versão distribuído, essencial para colaboração e gerenciamento de código-fonte" percentage='80%' title='Git' img={git} />
+              <Skil description="É um framework de testes end-to-end para aplicações web, que permite testar a interação do usuário com a interface de forma rápida e confiável, com fácil integração e depuração" percentage='45%' title='Cypress' img={cypress} />
             </S.ListSkil>
           </S.SkilArea>
         </div>
