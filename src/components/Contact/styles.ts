@@ -3,9 +3,91 @@ import { breakpoints} from "../../styles"
 
 
 export const Contact = styled.div`
-  background-color: ${(props) => props.theme.background};
   padding-top: 32px;
   padding-bottom: 64px;
+  background-color: ${(props) => props.theme.background};
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    > p {
+      color: ${(props) => props.theme.textColor};
+      margin-bottom: 24px;
+    }
+
+    @media (max-width: ${breakpoints.tablet}) {
+    p {
+      max-width: 80vw;
+    }
+  }
+
+    h3 {
+    padding-bottom: 24px;
+    text-align: center;
+    font-size: 24px;
+  }
+  }
+`
+
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+
+  input, textarea {
+    width: 100%;
+    height: 32px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    border: 1px solid transparent; /* Define uma borda inicial invisível */
+    border-radius: 10px;
+    background-color: ${(props) => props.theme.secondaryBackground};
+    color: ${(props) => props.theme.textColor};
+    box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.2);
+    outline: none; /* Remove a borda azul padrão do navegador */
+    transition: border 0.3s ease; /* Suaviza a transição da borda */
+
+    @media (max-width: ${breakpoints.desktop}) {
+      max-width: 80vw;
+      width: 100%;
+    }
+  }
+
+  textarea {
+    height: 125px;
+    resize: none;
+    max-height: 450px;
+  }
+
+  input:focus, textarea:focus {
+    border: 1px solid ${(props) => props.theme.detach}; /* Mantém apenas a borda inferior vermelha */
+  }
+
+input::placeholder, textarea::placeholder {
+  color: ${(props) => props.theme.textColor};
+}
+
+  button {
+    width: 100%;
+    height: 40px;
+    margin-top: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    background: linear-gradient(to right, ${(props) => props.theme.detach}, ${(props) => props.theme.lightPurple});
+    color: #fff;
+    border: none;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+      background: linear-gradient(to top, ${(props) => props.theme.detach}, ${(props) => props.theme.lightPurple});
+      transform: scale(1.02)
+    }
+  }
 `
 
 export const ContactWaysContainer = styled.div`
@@ -13,27 +95,12 @@ export const ContactWaysContainer = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
-
-    p {
-      color: ${(props) => props.theme.textColor}
-    }
-
-    @media (max-width: ${breakpoints.tablet}) {
-    p {
-      max-width: 90vw;
-    }
-  }
-
-    h3 {
-    font-size: 24px;
-    padding-bottom: 24px;
-  }
 `
 
 export const ContactWays = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-content: space-evenly;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
   margin-top: 32px;
   gap: 72px;
 
@@ -79,5 +146,37 @@ export const ContactWay = styled.div`
     &:hover{
       transform: scale(1.2);
     }
+  }
+`
+
+export const GitHubField = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  max-width: 40vw;
+  width: 100%;
+  margin: 24px 0;
+  background-color: ${(props) => props.theme.secondaryBackground};
+  border-radius: 15px;
+  box-shadow:;
+
+  img {
+    width: 80px;
+    padding: 3px;
+    border: 2px solid ${(props) => props.theme.detach};
+    border-radius: 50%;
+  }
+
+  p {
+    margin-bottom: 8px;
+  }
+
+  a {
+    height: 32px;
+    width: 40px;
+    color: #fff;
+    border-radius: 4px;
+    background-color: ${(props) => props.theme.detach};
+    cursor: pointer;
   }
 `

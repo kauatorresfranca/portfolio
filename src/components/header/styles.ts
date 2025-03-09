@@ -8,9 +8,9 @@ export const Header = styled.header`
   align-items: center;
   position: fixed;
   width: 100vw;
-  z-index: 2;
   padding-top: 24px;
   padding-bottom: 24px;
+  z-index: 2;
   background-color: ${(props) => props.theme.background};
   border-bottom: 2px solid ${(props) => props.theme.detach};
 
@@ -21,9 +21,9 @@ export const Header = styled.header`
 }
 
     h1 {
-    color: ${(props) => props.theme.titleColor};
     display: flex;
     align-items: center;
+    color: ${(props) => props.theme.titleColor};
     font-size: 29px;
     font-weight: 500;
 
@@ -46,18 +46,18 @@ export const Links = styled.ul`
   padding-bottom: 16px;
 
   @media (max-width: ${breakpoints.desktop}) {
-    border-radius: 18px;
     display: flex;
     flex-direction: column;
-    height: 0; /* Começa fechado */
-    opacity: 0;
-    visibility: hidden;
+    justify-content: center;
+    align-items: center;
     margin-top: 18px;
     margin-right: 0;
     gap: 0;
     padding: 0;
-    justify-content: center;
-    align-items: center;
+    height: 0; /* Começa fechado */
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 18px;
     background-color: ${(props) => props.theme.secondaryBackground};
     overflow: hidden; /* Impede que o conteúdo vaze */
     transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out, padding 1s ease;
@@ -75,15 +75,15 @@ export const Links = styled.ul`
   }
 
   a {
-    width: 100%;
-    text-decoration: none;
-    color: ${(props) => props.theme.titleColor};
-    font-size: 18px;
-    position: relative;
     display: block;
+    position: relative;
+    width: 100%;
     padding-bottom: 6px;
     text-align: center;
     padding-top: 16px;
+    text-decoration: none;
+    color: ${(props) => props.theme.titleColor};
+    font-size: 18px;
 
     @media (max-width: ${breakpoints.desktop}) {
       padding-bottom: 16px;
@@ -105,7 +105,7 @@ export const Links = styled.ul`
       width: 0; /* Começa com width 0 */
       height: 3px;
       background-color: ${(props) => props.theme.detach}; /* Cor da borda */
-      transition: width 0.3s ease; /* Transição suave da largura */
+      transition: width 0.3s ease-out; /* Transição suave da largura */
     }
   }
     }
@@ -116,14 +116,14 @@ export const ToggleTheme = styled.div<{ themeName: string }>`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 5px;
+    width: 50px;
+    height: 26px;
     margin-left: 10px;
     border: none;
     background-color: ${(props) => props.theme.secondaryBackground};
     color: ${(props) => props.theme.titleColor};
     border-radius: 20px;
-    padding: 5px;
-    width: 50px;
-    height: 26px;
     cursor: pointer;
     position: absolute;
     right: 42px;
@@ -151,11 +151,11 @@ export const ToggleTheme = styled.div<{ themeName: string }>`
 
 export const HamburguerMenu = styled.div`
   display: none;
+  position: relative;
+  margin-right: 12px;
   width: 28px;
   height: 28px;
-  position: relative;
   cursor: pointer;
-  margin-right: 12px;
 
   @media (max-width: ${breakpoints.desktop}) {
     display: block;

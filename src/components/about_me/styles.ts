@@ -31,12 +31,13 @@ export const Description = styled.div`
   p {
     max-width: 80vw;
     width: 100%;
+    margin: 0 auto;
     font-weight: 300;
     color: ${(props) => props.theme.textColor};
     text-align: center;
 
     @media (max-width: ${breakpoints.tablet}) {
-    width: 85vw;
+    max-width: 90%;
 }
   }
 

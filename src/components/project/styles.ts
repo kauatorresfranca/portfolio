@@ -10,7 +10,7 @@ export const Project = styled.div`
       transform: scale(1.05);
     }
 
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.desktop}) {
       width: 320px;
     }
 
@@ -21,14 +21,18 @@ export const Project = styled.div`
 
 export const ProjectViewContainer = styled.div`
   position: relative;
+  border-radius: 11px 11px;
+  width: 100% ;
+  max-width: 446px;
 
   > img {
-    width: 446px;
-    max-width: 100%;
+    width: 100% ;
+    max-width: 446px;
+    height: 100%;
     border-radius: 11px 11px;
 
-    @media (max-width: ${breakpoints.tablet}) {
-      width: 320px;
+    @media (max-width: ${breakpoints.desktop}) {
+      width: 100%;
     }
   }
 
@@ -45,7 +49,6 @@ export const Overlay = styled.div`
   z-index: 1;
   transition: background 0.4s ease-in;
   cursor: pointer;
-  border-bottom: 4px solid ${(props) => props.theme.detach};
 
   &:hover {
     background: ${(props) => props.theme.overlayminor};
@@ -67,9 +70,9 @@ export const projectViewGroup = styled.div`
 `
 
 export const TagList = styled.div`
-  margin-top: 6px;
   display: flex;
   justify-content: center;
+  margin-top: 6px;
 
   img {
     width: 36px;
@@ -81,8 +84,8 @@ export const TagList = styled.div`
 `
 
 export const Modal = styled.div`
-  position: relative;
   display: flex;
+  position: relative;
   background-color: ${(props) => props.theme.secondaryBackground};
   padding: 20px;
   border-radius: 8px;
@@ -92,7 +95,7 @@ export const Modal = styled.div`
   height: 50%;
   box-shadow: 0 4px 10px ${(props) => props.theme.overlay};
 
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.desktop}) {
     height: 70%;
     flex-direction: column;
   }
@@ -101,7 +104,7 @@ export const Modal = styled.div`
   width: 38vw;
   border-radius: 4px 4px 6px 6px;
 
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.desktop}) {
     margin-left: 10px;
     margin-top: 22px;
     margin-bottom: 12px;
@@ -145,7 +148,7 @@ export const Description = styled.div`
   h2 {
     margin-bottom: 18px;
 
-    @media (max-width: ${breakpoints.tablet}) {
+    @media (max-width: ${breakpoints.desktop}) {
       margin-bottom: 8px;
   }
   }
@@ -153,7 +156,7 @@ export const Description = styled.div`
   .description {
     color: ${(props) => props.theme.textColor};
 
-    @media (max-width: ${breakpoints.tablet}) {
+    @media (max-width: ${breakpoints.desktop}) {
       font-size: 15px;
   }
   }
@@ -166,7 +169,7 @@ export const Description = styled.div`
     color: ${(props) => props.theme.detach};
   }
 
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.desktop}) {
     margin-left: 8px;
     text-align: center;
 
@@ -192,7 +195,7 @@ export const ButtonGroup = styled.div`
   bottom: 18px;
   left: 18px;
 
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.desktop}) {
     position: absolute;
     left: 0;
     right: 0;
@@ -202,12 +205,12 @@ export const ButtonGroup = styled.div`
 `
 
 export const PrimaryButton = styled.button`
-  background-color: ${(props) => props.theme.background};
-  color: ${(props) => props.theme.titleColor};
   width: 260px;
   height: 32px;
   border: none;
   border-radius: 10px;
+  background-color: ${(props) => props.theme.background};
+  color: ${(props) => props.theme.titleColor};
   transition: background 2s ease, transform 0.3s ease;
 
   &:hover{
@@ -215,7 +218,7 @@ export const PrimaryButton = styled.button`
     transform: scale(1.05);
   }
 
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.desktop}) {
       width: 320px;
       height: 40px;
     }
@@ -237,7 +240,7 @@ export const SecundaryButton = styled.button`
     transform: scale(1.05);
   }
 
-  @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.desktop}) {
       width: 320px;
       height: 40px;
       margin-top: 8px;

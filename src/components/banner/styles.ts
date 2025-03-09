@@ -75,19 +75,19 @@ export const Description = styled.div`
 `
 
 export const Title = styled.h2`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
   color: ${(props) => props.theme.textColor};
   font-size: 36px;
   font-weight: 700;
-  margin-bottom: 12px;
-  display: flex;
-  flex-direction: column;
   white-space: nowrap;
 
   span {
-    color: ${(props) => props.theme.detach};
     display: block;
     position: relative;
     width: 0;
+    color: ${(props) => props.theme.detach};
   }
 `
 

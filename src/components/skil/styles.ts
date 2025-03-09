@@ -65,6 +65,14 @@ export const ProgressFill = styled.div`
   &.Vue{
     width: 40%
   }
+
+  &.Sass{
+    width: 50%
+  }
+
+  &.Cypress{
+    width: 45%
+  }
 `
 
 export const SkilContainer = styled.div`
