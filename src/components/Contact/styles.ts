@@ -53,6 +53,7 @@ export const Form = styled.form`
     transition: border 0.3s ease; /* Suaviza a transição da borda */
 
     @media (max-width: ${breakpoints.desktop}) {
+      height: 24px;
       max-width: 80vw;
       width: 100%;
     }
@@ -99,7 +100,7 @@ export const ContactWaysContainer = styled.div`
 
 export const ContactWays = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: center;
   margin-top: 32px;
   gap: 72px;
@@ -109,7 +110,7 @@ export const ContactWays = styled.div`
   }
 
   @media (max-width: ${breakpoints.tablet}){
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 24px;
     justify-content: center;
   }
@@ -146,37 +147,5 @@ export const ContactWay = styled.div`
     &:hover{
       transform: scale(1.2);
     }
-  }
-`
-
-export const GitHubField = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 200px;
-  max-width: 40vw;
-  width: 100%;
-  margin: 24px 0;
-  background-color: ${(props) => props.theme.secondaryBackground};
-  border-radius: 15px;
-  box-shadow:;
-
-  img {
-    width: 80px;
-    padding: 3px;
-    border: 2px solid ${(props) => props.theme.detach};
-    border-radius: 50%;
-  }
-
-  p {
-    margin-bottom: 8px;
-  }
-
-  a {
-    height: 32px;
-    width: 40px;
-    color: #fff;
-    border-radius: 4px;
-    background-color: ${(props) => props.theme.detach};
-    cursor: pointer;
   }
 `

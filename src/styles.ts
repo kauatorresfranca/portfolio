@@ -12,6 +12,7 @@ export const GlobalCss = createGlobalStyle`
   box-sizing: border-box;
   color: ${(props) => props.theme.titleColor};
   list-style: none;
+  text-decoration: none;
   font-family: Roboto, sans-serif;
 
   .container {
