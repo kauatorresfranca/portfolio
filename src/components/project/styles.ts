@@ -121,10 +121,18 @@ export const Modal = styled.div`
   }
 
   svg {
+    width: 18px;
+    height: 18px;
     position: absolute;
-    top: 12px;
+    padding: 3px;
+    top: 10px;
     right: 10px;
     cursor: pointer;
+
+    &:hover {
+      background-color: ${(props) => props.theme.overlayminor};
+      border-radius: 50%;
+    }
   }
 `
 

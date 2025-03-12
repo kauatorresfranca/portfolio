@@ -63,7 +63,7 @@ export const Links = styled.ul`
     transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out, padding 1s ease;
 
     &.active {
-      height: 23vh;
+      height: 24vh;
       opacity: 1;
       visibility: visible;
       padding: 12px;
