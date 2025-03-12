@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef  } from 'react'
 import * as S from './styles'
 
 type skil = {
@@ -34,11 +34,24 @@ const skillIcons: Record<skil['type'], string> = {
 const Project = ({ title, description, gitHubUrl, projectViewUrl, videoPath, imgPath, skils, date }: Props) => {
 
   const [modalIsOpen, setModalIsOpen] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  const openModal = () => {
+    setModalIsOpen(true)
+  }
+
+  const closeModal = () => {
+    setModalIsOpen(false)
+    if (videoRef.current) {
+      videoRef.current.pause(); // Pausa o vídeo ao fechar a modal
+      videoRef.current.currentTime = 0; // Opcional: Reseta o vídeo para o início
+    }
+  }
 
   return (
     <>
       <S.Project>
-        <S.ProjectViewContainer onClick={() => { setModalIsOpen(true) }}>
+        <S.ProjectViewContainer onClick={openModal}>
           <img src={imgPath} />
           <S.Overlay >
             <S.projectViewGroup>
@@ -55,10 +68,10 @@ const Project = ({ title, description, gitHubUrl, projectViewUrl, videoPath, img
         </S.ProjectViewContainer>
       </S.Project>
 
-      <S.OverlayModal onClick={() => setModalIsOpen(false)} className={modalIsOpen ? 'active' : ''}>
+      <S.OverlayModal onClick={closeModal} className={modalIsOpen ? 'active' : ''}>
         <S.Modal onClick={(e) => e.stopPropagation()}>
           <div className='imgGroup'>
-            <video controls>
+            <video ref={videoRef} controls>
                 <source src={videoPath} type="video/mp4" />
                   Seu navegador não suporta a reprodução de vídeos.
                 </video>
@@ -72,7 +85,7 @@ const Project = ({ title, description, gitHubUrl, projectViewUrl, videoPath, img
             <p className='description'>{description}</p>
             <p className='date'>{date}</p>
           </S.Description>
-          <svg onClick={() => { setModalIsOpen(false) }} xmlns="http://www.w3.org/2000/svg" width="24" height="18" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
+          <svg onClick={closeModal} xmlns="http://www.w3.org/2000/svg" width="24" height="18" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
             <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
           </svg>
         </S.Modal>
