@@ -8,7 +8,8 @@ type skil = {
 type Props = {
   title: string,
   description: string,
-  imgUrl: string,
+  imgPath: string,
+  videoPath?: string,
   gitHubUrl: string,
   projectViewUrl: string,
   skils: skil[],
@@ -30,7 +31,7 @@ const skillIcons: Record<skil['type'], string> = {
   vue: '/vue.icon.png'
 }
 
-const Project = ({ title, description, gitHubUrl, projectViewUrl, imgUrl, skils, date }: Props) => {
+const Project = ({ title, description, gitHubUrl, projectViewUrl, videoPath, imgPath, skils, date }: Props) => {
 
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
@@ -38,7 +39,7 @@ const Project = ({ title, description, gitHubUrl, projectViewUrl, imgUrl, skils,
     <>
       <S.Project>
         <S.ProjectViewContainer onClick={() => { setModalIsOpen(true) }}>
-          <img src={imgUrl} alt="image eplay" />
+          <img src={imgPath} />
           <S.Overlay >
             <S.projectViewGroup>
               <h2>{title}</h2>
@@ -57,7 +58,10 @@ const Project = ({ title, description, gitHubUrl, projectViewUrl, imgUrl, skils,
       <S.OverlayModal onClick={() => setModalIsOpen(false)} className={modalIsOpen ? 'active' : ''}>
         <S.Modal onClick={(e) => e.stopPropagation()}>
           <div className='imgGroup'>
-            <img src={imgUrl} alt="project image" />
+            <video controls>
+                <source src={videoPath} type="video/mp4" />
+                  Seu navegador não suporta a reprodução de vídeos.
+                </video>
             <S.ButtonGroup>
               <a href={gitHubUrl}><S.PrimaryButton>Ver no GitHub</S.PrimaryButton></a>
               <a href={projectViewUrl}><S.SecundaryButton>Ver Projeto</S.SecundaryButton></a>

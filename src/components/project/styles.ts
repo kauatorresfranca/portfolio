@@ -107,7 +107,7 @@ export const Modal = styled.div`
     flex-direction: column;
   }
 
-  img {
+  video {
   width: 38vw;
   border-radius: 4px 4px 6px 6px;
   box-shadow: 3px 2px 2px 1px rgba(0, 0, 0, 0.3);
