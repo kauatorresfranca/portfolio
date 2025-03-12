@@ -48,7 +48,9 @@ const Skils = () => {
                 <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67" />
               </svg>
             </S.Acordeon>
-            <S.ListSkil className={frontIsOpen ? 'active' : ''}>
+            <S.SkilContent className={frontIsOpen ? 'active' : ''}>
+              <p>Clique na tecnologia para ver o que ela é</p>
+            <S.ListSkil >
               <Skil description="É uma linguagem de marcação usada para estruturar páginas web" percentage='90%' title='Html' img={html} />
               <Skil description="É responsável pela estilização das páginas, permitindo layouts responsivos e designs atraentes" percentage='95%' title='Css' img={css} />
               <Skil description="É uma linguagem de programação que adiciona interatividade e dinamismo às páginas web" percentage='70%' title='Js' img={js} />
@@ -59,6 +61,7 @@ const Skils = () => {
               <Skil description="É um pré-processador CSS que permite escrever estilos de forma mais dinâmica e modular, com recursos como variáveis, aninhamento e mixins" percentage='50%' title='Sass' img={sass} />
               <Skil description="É um framework progressivo para construção de interfaces reativas, focado em simplicidade e desempenho" percentage='40%' title='Vue' img={vue} />
             </S.ListSkil>
+            </S.SkilContent>
           </S.SkilArea>
           <S.SkilArea className="back">
             <S.Acordeon onClick={() => { setBackIsOpen(!backIsOpen) }}>
@@ -75,11 +78,14 @@ const Skils = () => {
                 <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67" />
               </svg>
             </S.Acordeon>
-            <S.ListSkil className={backIsOpen ? 'active' : ''}>
-              <Skil description="Banco de dados relacional poderoso e escalável, conhecido por sua confiabilidade e recursos avançados" percentage='65%' title='Postgres' img={postgres} />
-              <Skil description="Linguagem de programação versátil e fácil de aprender, usada para desenvolvimento web, automação, ciência de dados e muito mais" percentage='70%' title='Python' img={py} />
-              <Skil description="Framework web em Python que facilita o desenvolvimento rápido e seguro de aplicações robustas" percentage='50%' title='django' img={django} />
-            </S.ListSkil>
+            <S.SkilContent className={backIsOpen ? 'active' : ''}>
+            <p>Clique na tecnologia para ver o que ela é</p>
+              <S.ListSkil >
+                <Skil description="Banco de dados relacional poderoso e escalável, conhecido por sua confiabilidade e recursos avançados" percentage='65%' title='Postgres' img={postgres} />
+                <Skil description="Linguagem de programação versátil e fácil de aprender, usada para desenvolvimento web, automação, ciência de dados e muito mais" percentage='70%' title='Python' img={py} />
+                <Skil description="Framework web em Python que facilita o desenvolvimento rápido e seguro de aplicações robustas" percentage='50%' title='django' img={django} />
+              </S.ListSkil>
+            </S.SkilContent>
           </S.SkilArea>
           <S.SkilArea className="tools">
             <S.Acordeon onClick={() => { setToolsIsOpen(!toolsIsOpen) }}>
@@ -96,10 +102,13 @@ const Skils = () => {
                 <path fill-rule="evenodd" d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67" />
               </svg>
             </S.Acordeon>
-            <S.ListSkil className={toolsIsOpen ? 'active' : ''}>
-              <Skil description="Sistema de controle de versão distribuído, essencial para colaboração e gerenciamento de código-fonte" percentage='80%' title='Git' img={git} />
-              <Skil description="É um framework de testes end-to-end para aplicações web, que permite testar a interação do usuário com a interface de forma rápida e confiável, com fácil integração e depuração" percentage='45%' title='Cypress' img={cypress} />
-            </S.ListSkil>
+            <S.SkilContent className={ toolsIsOpen ? 'active' : ''}>
+              <p>Clique na tecnologia para ver o que ela é</p>
+              <S.ListSkil >
+                <Skil description="Sistema de controle de versão distribuído, essencial para colaboração e gerenciamento de código-fonte" percentage='80%' title='Git' img={git} />
+                <Skil description="É um framework de testes end-to-end para aplicações web, que permite testar a interação do usuário com a interface de forma rápida e confiável." percentage='45%' title='Cypress' img={cypress} />
+              </S.ListSkil>
+            </S.SkilContent>
           </S.SkilArea>
         </div>
       </div>

@@ -199,6 +199,7 @@ export const HamburguerMenu = styled.div`
     &::after {
       top: 50%; /* Move para o centro */
       transform: translateY(-50%) rotate(45deg); /* Centraliza e rotaciona */
+      bottom: 0;
     }
   }
 `

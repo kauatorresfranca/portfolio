@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { breakpoints } from "../../styles"
 
 export const Project = styled.div`
-  background-color: ${(props) => props.theme.secondaryBackground};
+  background-color: transparent;
   border-radius: 20px;
   transition: transform 0.5s ease;
 
@@ -38,6 +38,21 @@ export const ProjectViewContainer = styled.div`
 
 `
 
+export const projectViewGroup = styled.div`
+  position: absolute; /* Para posicionar o conteúdo do grupo dentro do overlay */
+  top: 50%; /* Centraliza verticalmente */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta para centralizar o conteúdo exatamente no centro */
+  z-index: 2; /* Garante que o conteúdo fique sobre o Overlay */
+  opacity: 1;
+  transition: opacity 0.4s ease-in;
+
+  h2 {
+      color: ${(props) => props.theme.titleColor};
+      text-align: center;
+    }
+`
+
 export const Overlay = styled.div`
   position: absolute;
   background: ${(props) => props.theme.overlay};
@@ -53,21 +68,13 @@ export const Overlay = styled.div`
   &:hover {
     background: ${(props) => props.theme.overlayminor};
     border-bottom: none;
+
+    ${projectViewGroup} {
+        opacity: 0;
+    }
   }
 `
 
-export const projectViewGroup = styled.div`
-  position: absolute; /* Para posicionar o conteúdo do grupo dentro do overlay */
-  top: 50%; /* Centraliza verticalmente */
-  left: 50%; /* Centraliza horizontalmente */
-  transform: translate(-50%, -50%); /* Ajusta para centralizar o conteúdo exatamente no centro */
-  z-index: 2; /* Garante que o conteúdo fique sobre o Overlay */
-
-  h2 {
-      color: ${(props) => props.theme.titleColor};
-      text-align: center;
-    }
-`
 
 export const TagList = styled.div`
   display: flex;

@@ -48,7 +48,7 @@ export const Acordeon = styled.div`
 
   @media (max-width: ${breakpoints.tablet}) {
     margin: 0 auto;
-    margin-bottom: 24px;
+    margin-bottom: 18px;
     width: 100%;
     max-width: 80vw;
   }
@@ -57,7 +57,7 @@ export const Acordeon = styled.div`
     margin: 0 auto;
     width: 100%;
     max-width: 80vw;
-    margin-bottom: 24px;
+    margin-bottom: 18px;
   }
 
   & > svg {
@@ -69,11 +69,10 @@ export const Acordeon = styled.div`
   }
 `
 
-
-export const ListSkil = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-items: center;
+export const SkilContent = styled.div`
+  diplay: flex;
+  flex-direction: column;
+  align-items: center;
   opacity: 0;
   visibility: hidden;
   height: 0;
@@ -84,6 +83,24 @@ export const ListSkil = styled.div`
     visibility: visible;
     height: auto;
   }
+
+  > p {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 18px;
+    color: ${(props) => props.theme.overlay === 'rgba(255, 255, 255, 0.6)' ? 'rgba(0, 0, 0, 0.5)' : 'rgba(255, 255, 255, 0.5)'};;
+
+    @media (min-width: ${breakpoints.desktop}) {
+      display: none;
+    }
+    }
+`
+
+
+export const ListSkil = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
 
   @media (max-width: ${breakpoints.desktop}) {
     grid-template-columns: 1fr 1fr 1fr;
