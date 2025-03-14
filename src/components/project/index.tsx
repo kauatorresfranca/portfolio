@@ -38,6 +38,9 @@ const Project = ({ title, description, gitHubUrl, projectViewUrl, videoPath, img
 
   const openModal = () => {
     setModalIsOpen(true)
+    if (videoRef.current){
+      videoRef.current.play();
+    }
   }
 
   const closeModal = () => {
