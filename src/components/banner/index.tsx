@@ -12,7 +12,7 @@ const Banner = () => {
             Olá, eu sou<span> Kauã Torres</span>
           </S.Title>
           <h4>DESENVOLVEDOR FULL-STACK</h4>
-          <a href="/curriculo.pdf"><button>BAIXAR CURRICULO</button></a>
+          <a href="/curriculo(updated).pdf"><button>BAIXAR CURRICULO</button></a>
         </S.Description>
         <div>
           <img src={dev} alt="dev working" />

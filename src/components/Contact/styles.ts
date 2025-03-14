@@ -66,6 +66,7 @@ export const Form = styled.form`
   }
 
   input:focus, textarea:focus {
+    background-color: ${(props) => props.theme.background};
     border: 1px solid ${(props) => props.theme.detach}; /* Mantém apenas a borda inferior vermelha */
   }
 
