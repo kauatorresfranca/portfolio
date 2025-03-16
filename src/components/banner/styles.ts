@@ -63,9 +63,17 @@ export const Description = styled.div`
   border: 2px solid ${(props) => props.theme.detach};
   border-radius: 12px;
 
+  i {
+    margin-right: 6px;
+  }
+
   @media (max-width: ${breakpoints.tablet}) {
     width: 280px;
   }
+
+    &:hover i {
+      color: ${(props) => props.theme.secondaryBackground};
+    }
 
     &:hover {
       color: ${(props) => props.theme.secondaryBackground};

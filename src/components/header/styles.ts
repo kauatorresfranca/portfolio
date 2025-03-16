@@ -97,6 +97,11 @@ export const Links = styled.ul`
     text-decoration: none;
     color: ${(props) => props.theme.titleColor};
     font-size: 18px;
+    transition: all .4s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1)
+    }
 
     @media (max-width: ${breakpoints.desktop}) {
       padding-bottom: 16px;
