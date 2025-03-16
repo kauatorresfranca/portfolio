@@ -4,6 +4,7 @@ import { breakpoints } from "../../styles"
 export const Projects = styled.div`
   padding-top: 32px;
   padding-bottom: 64px;
+  scroll-margin-top: 110px;
 
   h3 {
     font-size: 24px;

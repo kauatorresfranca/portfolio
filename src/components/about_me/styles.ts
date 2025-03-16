@@ -4,6 +4,7 @@ import { breakpoints } from "../../styles"
 export const AboutMe = styled.div`
   display: flex;
   padding: 80px 0;
+  scroll-margin-top: 110px;
 
   @media (max-width: ${breakpoints.tablet}) {
     flex-direction: column-reverse;

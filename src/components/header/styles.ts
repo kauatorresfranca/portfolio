@@ -14,6 +14,18 @@ export const Header = styled.header`
   background-color: ${(props) => props.theme.background};
   border-bottom: 2px solid ${(props) => props.theme.detach};
 
+  .container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    position: relative;
+
+    @media (max-width: ${breakpoints.desktop}) {
+      display: block;
+    }
+}
+
   @media (max-width: ${breakpoints.desktop}) {
     display: block;
     padding-bottom: 0;
@@ -26,6 +38,7 @@ export const Header = styled.header`
     color: ${(props) => props.theme.titleColor};
     font-size: 29px;
     font-weight: 500;
+    margin-bottom: 9px;
 
     @media (max-width: ${breakpoints.desktop}) {
       text-align: center;
@@ -41,8 +54,8 @@ export const Header = styled.header`
 
 export const Links = styled.ul`
   display: flex;
-  gap: 124px;
-  margin-right: 210px;
+  gap: 100px;
+  margin-right: 245px;
   padding-bottom: 16px;
 
   @media (max-width: ${breakpoints.desktop}) {
@@ -117,6 +130,7 @@ export const ToggleTheme = styled.div<{ themeName: string }>`
     align-items: center;
     justify-content: space-between;
     padding: 5px;
+    margin-bottom: 9px;
     width: 50px;
     height: 26px;
     margin-left: 10px;
@@ -209,6 +223,7 @@ export const TopHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100vw;
 
   a {
     text-decoration: none;

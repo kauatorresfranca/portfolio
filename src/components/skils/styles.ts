@@ -4,6 +4,7 @@ import { breakpoints } from "../../styles"
 export const Background = styled.div`
   padding-top: 32px;
   background-color: ${(props) => props.theme.background};
+  scroll-margin-top: 110px;
 
   h3 {
     font-size: 24px;

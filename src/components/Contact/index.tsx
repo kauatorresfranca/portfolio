@@ -12,13 +12,25 @@ const Contact = () => {
         </svg> Contato
       </h3>
           <p>Fique a vontade para entrar em contato comigo, será um prazer atende-lo(a)</p>
-        <S.Form>
-          <input type="text" placeholder='Nome*'/>
-          <input type="text" placeholder='Email*'/>
-          <input type="text" placeholder='Assunto*' />
-          <textarea placeholder='Mensagem*'></textarea>
-          <button type='submit'>Enviar</button>
-        </S.Form>
+          <S.Form>
+              <div>
+                <input type="text" placeholder=" " id="name" />
+                <label htmlFor="name">Nome</label>
+              </div>
+              <div>
+                <input type="text" placeholder=" " id="email" />
+                <label htmlFor="email">Email</label>
+              </div>
+              <div>
+                <input type="text" placeholder=" " id="subject" />
+                <label htmlFor="subject">Assunto</label>
+              </div>
+              <div>
+                <textarea placeholder=" " id="message"></textarea>
+                <label htmlFor="message">Mensagem</label>
+              </div>
+              <button type="submit">Enviar</button>
+            </S.Form>
         <S.ContactWaysContainer>
           <S.ContactWays>
             <S.ContactWay>

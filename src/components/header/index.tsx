@@ -8,6 +8,7 @@ const Header = ({ toggleTheme, theme }: { theme: string ,toggleTheme: () => void
   return (
     <>
         <S.Header>
+            <div className="container">
             <S.TopHeader>
             <S.ToggleTheme themeName={theme} onClick={toggleTheme}>
               <div className='ball'>{theme === "dark" ?
@@ -30,14 +31,13 @@ const Header = ({ toggleTheme, theme }: { theme: string ,toggleTheme: () => void
                 <span></span>
               </S.HamburguerMenu>
             </S.TopHeader>
-            <nav>
               <S.Links className={menuIsOpen ? 'active' : ''}>
                 <li><a href="#about">Sobre</a></li>
                 <li><a href="#skils">Skils</a></li>
                 <li><a href="#projects">Projetos</a></li>
                 <li><a href="#contact">Contato</a></li>
               </S.Links>
-            </nav>
+            </div>
         </S.Header >
     </>
   )

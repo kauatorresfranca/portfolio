@@ -221,8 +221,8 @@ export const ButtonGroup = styled.div`
 `
 
 export const PrimaryButton = styled.button`
-  width: 260px;
-  height: 32px;
+  width: 340px;
+  height: 40px;
   border: none;
   border-radius: 10px;
   background-color: ${(props) => props.theme.background};
@@ -231,7 +231,7 @@ export const PrimaryButton = styled.button`
 
   &:hover{
     cursor: pointer;
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
 
   @media (max-width: ${breakpoints.desktop}) {
@@ -243,8 +243,8 @@ export const PrimaryButton = styled.button`
 export const SecundaryButton = styled.button`
   background: linear-gradient(to right, ${(props) => props.theme.detach}, ${(props) => props.theme.lightPurple});
   color: #fff;
-  width: 260px;
-  height: 32px;
+  width: 340px;
+  height: 40px;
   border: none;
   border-radius: 10px;
   transition: background 2s ease, transform 0.3s ease;
@@ -253,7 +253,7 @@ export const SecundaryButton = styled.button`
   &:hover{
     cursor: pointer;
     background: linear-gradient(to left, ${(props) => props.theme.detach}, ${(props) => props.theme.lightPurple});
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
 
   @media (max-width: ${breakpoints.desktop}) {

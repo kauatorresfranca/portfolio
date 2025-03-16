@@ -36,43 +36,74 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 32px;
   width: 80%;
+
+  div {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+  }
 
   input, textarea {
     width: 100%;
     height: 32px;
     padding-top: 8px;
     padding-bottom: 8px;
-    margin-bottom: 10px;
-    border: 1px solid transparent; /* Define uma borda inicial invisível */
+    border: 2px solid transparent; /* Define uma borda inicial invisível */
     border-radius: 10px;
     background-color: ${(props) => props.theme.secondaryBackground};
     color: ${(props) => props.theme.textColor};
-    box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 2px rgba(0, 0, 0, 0.2);
     outline: none; /* Remove a borda azul padrão do navegador */
     transition: border 0.3s ease; /* Suaviza a transição da borda */
-
-    @media (max-width: ${breakpoints.desktop}) {
-      height: 24px;
-      max-width: 80vw;
-      width: 100%;
-    }
   }
 
   textarea {
     height: 125px;
     resize: none;
     max-height: 450px;
+    line-height: 1.4;
+  }
+
+  /* Label para inputs normais */
+  label {
+    position: absolute;
+    left: 12px;
+    top: 18px;
+    color: ${(props) => props.theme.textColor};
+    font-size: 14px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+
+  /* Label para textarea: começa no topo */
+  textarea + label {
+    top: 16px;
+    transform: none;
   }
 
   input:focus, textarea:focus {
-    background-color: ${(props) => props.theme.background};
-    border: 1px solid ${(props) => props.theme.detach}; /* Mantém apenas a borda inferior vermelha */
+    border: 2px solid ${(props) => props.theme.detach}; /* Mantém apenas a borda inferior vermelha */
+    box-shadow: 0px 0px 0px 0px transparent;
   }
 
-input::placeholder, textarea::placeholder {
-  color: ${(props) => props.theme.textColor};
-}
+  /* Floating effect para inputs */
+  input:focus + label,
+  input:not(:placeholder-shown) + label {
+    top: 5px;
+    left: 10px;
+    font-size: 12px;
+    padding: 0 5px;
+  }
+
+  /* Floating effect para textarea */
+  textarea:focus + label,
+  textarea:not(:placeholder-shown) + label {
+    top: 5px;
+    font-size: 12px;
+    padding: 0 5px;
+  }
 
   button {
     width: 100%;
@@ -87,10 +118,11 @@ input::placeholder, textarea::placeholder {
 
     &:hover {
       background: linear-gradient(to top, ${(props) => props.theme.detach}, ${(props) => props.theme.lightPurple});
-      transform: scale(1.02)
+      transform: scale(1.02);
     }
   }
 `
+
 
 export const ContactWaysContainer = styled.div`
     display: flex;

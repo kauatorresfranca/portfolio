@@ -5,8 +5,8 @@ import * as S from "./styles"
 const AboutMe = () => {
 
   return (
-      <div id='about' className="container">
-        <S.AboutMe>
+      <div className="container">
+        <S.AboutMe id='about'>
           <S.Description>
             <h2>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill={darkTheme.detach} className="bi bi-diamond" viewBox="0 0 16 16">
