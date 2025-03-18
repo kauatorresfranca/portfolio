@@ -74,7 +74,7 @@ const Project = ({ title, description, gitHubUrl, projectViewUrl, videoPath, img
       <S.OverlayModal onClick={closeModal} className={modalIsOpen ? 'active' : ''}>
         <S.Modal onClick={(e) => e.stopPropagation()}>
           <div className='imgGroup'>
-            <video ref={videoRef} controls>
+            <video ref={videoRef} controls playsInline>
                 <source src={videoPath} type="video/mp4" />
                   Seu navegador não suporta a reprodução de vídeos.
                 </video>
