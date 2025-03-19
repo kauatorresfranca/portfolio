@@ -19,9 +19,9 @@ export const Contact = styled.div`
     }
 
     @media (max-width: ${breakpoints.tablet}) {
-    p {
-      max-width: 80vw;
-    }
+      p {
+        max-width: 80vw;
+      }
   }
 
     h3 {

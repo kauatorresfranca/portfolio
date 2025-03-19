@@ -88,23 +88,6 @@ export const SkilContainer = styled.div`
   transition: transform .6s ease-in-out;
   transform-style: preserve-3d;
 
-  @media (min-width: ${breakpoints.desktop}) {
-
-  &:hover {
-    transform: rotateY(180deg) scale(1.2);
-  }
-}
-
-  @media (max-width: ${breakpoints.desktop}) {
-    &.flip {
-    transform: rotateY(180deg) scale(1.2);
-  }
-  }
-
-  @media (max-width: ${breakpoints.tablet}) {
-    width: 80px;
-  }
-
     h4 {
       text-align: center;
       margin-bottom: 8px;
@@ -116,6 +99,19 @@ export const SkilContainer = styled.div`
       margin-top: 6px;
       font-size: 10px;
     }
+
+  @media (max-width: ${breakpoints.desktop}) {
+    width: 80px;
+
+    &.flip {
+      transform: rotateY(180deg) scale(1.2);
+  }
+
+  @media (min-width: ${breakpoints.desktop}) {
+    &:hover {
+      transform: rotateY(180deg) scale(1.2);
+    }
+}
 `
 
 export const Card = styled.div`
@@ -138,8 +134,10 @@ export const CardFront = styled.div`
   img {
       width: 65px;
       text-align: center;
+    }
 
-      @media (max-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.tablet}) {
+      img {
         width: 56px;
       }
     }

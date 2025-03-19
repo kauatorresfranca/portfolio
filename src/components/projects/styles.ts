@@ -31,19 +31,10 @@ export const Project = styled.div`
       transform: scale(1.05);
     }
 
-  @media (max-width: ${breakpoints.tablet}) {
-      height: 488px;
-      width: 320px;
-    }
-
   img {
     width: 280px;
     max-width: 100%;
     border-radius: 20px 20px 0 0;
-
-    @media (max-width: ${breakpoints.tablet}) {
-      width: 320px;
-    }
   }
 
   h2 {
@@ -53,6 +44,16 @@ export const Project = styled.div`
 
     p {
       text-align: center;
+    }
+
+    @media (max-width: ${breakpoints.tablet}) {
+      height: 488px;
+      width: 320px;
+
+      img {
+        width: 320px;
+      }
+
     }
 `
 
@@ -103,7 +104,7 @@ export const PrimaryButton = styled.button`
   border-radius: 10px;
   margin-top: 24px;
 
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 
@@ -125,7 +126,7 @@ export const SecundaryButton = styled.button`
   }
 
   @media (max-width: ${breakpoints.tablet}) {
-      width: 280px;;
+      width: 280px;
     }
 `
 

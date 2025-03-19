@@ -148,8 +148,8 @@ export const ToggleTheme = styled.div<{ themeName: string }>`
     right: 42px;
 
     @media (max-width: ${breakpoints.desktop}) {
-    position: relative;
-    right: 0;
+      position: relative;
+      right: 0;
   }
 
   .ball {
@@ -175,10 +175,6 @@ export const HamburguerMenu = styled.div`
   width: 28px;
   height: 28px;
   cursor: pointer;
-
-  @media (max-width: ${breakpoints.desktop}) {
-    display: block;
-  }
 
   span,
   &::before,
@@ -220,6 +216,10 @@ export const HamburguerMenu = styled.div`
       transform: translateY(-50%) rotate(45deg); /* Centraliza e rotaciona */
       bottom: 0;
     }
+  }
+
+  @media (max-width: ${breakpoints.desktop}) {
+    display: block;
   }
 `
 

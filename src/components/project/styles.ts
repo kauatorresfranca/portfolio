@@ -10,12 +10,12 @@ export const Project = styled.div`
       transform: scale(1.05);
     }
 
-  @media (max-width: ${breakpoints.desktop}) {
-      width: 320px;
-    }
-
     p {
       text-align: center;
+    }
+
+    @media (max-width: ${breakpoints.desktop}) {
+      width: 320px;
     }
 `
 
@@ -30,11 +30,13 @@ export const ProjectViewContainer = styled.div`
     max-width: 446px;
     height: 100%;
     border-radius: 11px 11px;
-
-    @media (max-width: ${breakpoints.desktop}) {
-      width: 100%;
-    }
   }
+
+  @media (max-width: ${breakpoints.desktop}) {
+      > img {
+        width: 100%;
+      }
+    }
 
 `
 
@@ -102,22 +104,10 @@ export const Modal = styled.div`
   height: 50%;
   box-shadow: 0 4px 10px ${(props) => props.theme.overlay};
 
-  @media (max-width: ${breakpoints.desktop}) {
-    height: 70%;
-    flex-direction: column;
-  }
-
   video {
-  width: 38vw;
-  border-radius: 4px 4px 6px 6px;
-  box-shadow: 3px 2px 2px 1px rgba(0, 0, 0, 0.3);
-
-  @media (max-width: ${breakpoints.desktop}) {
-    margin-left: 10px;
-    margin-top: 22px;
-    margin-bottom: 12px;
-    width:75vw;
-  }
+    width: 38vw;
+    border-radius: 4px 4px 6px 6px;
+    box-shadow: 3px 2px 2px 1px rgba(0, 0, 0, 0.3);
   }
 
   svg {
@@ -132,6 +122,18 @@ export const Modal = styled.div`
     &:hover {
       background-color: ${(props) => props.theme.overlayminor};
       border-radius: 50%;
+    }
+  }
+
+  @media (max-width: ${breakpoints.desktop}) {
+    height: 70%;
+    flex-direction: column;
+
+    video {
+      margin-left: 10px;
+      margin-top: 22px;
+      margin-bottom: 12px;
+      width:75vw;
     }
   }
 `
@@ -163,18 +165,10 @@ export const Description = styled.div`
 
   h2 {
     margin-bottom: 18px;
-
-    @media (max-width: ${breakpoints.desktop}) {
-      margin-bottom: 8px;
-  }
   }
 
   .description {
     color: ${(props) => props.theme.textColor};
-
-    @media (max-width: ${breakpoints.desktop}) {
-      font-size: 15px;
-  }
   }
 
   .date {
@@ -188,6 +182,14 @@ export const Description = styled.div`
   @media (max-width: ${breakpoints.desktop}) {
     margin-left: 8px;
     text-align: center;
+
+    h2 {
+      margin-bottom: 8px;
+    }
+
+    .description {
+      font-size: 15px;
+    }
 
     .date {
     position: absolute;

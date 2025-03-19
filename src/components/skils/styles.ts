@@ -47,6 +47,14 @@ export const Acordeon = styled.div`
   cursor: pointer;
   box-shadow: 2px 2px 2px 1.5px rgba(0, 0, 0, 0.2);
 
+  & > svg {
+    transition: ease-in-out .4s;
+  }
+
+  & > svg.open {
+    transform: rotate(180deg);
+  }
+
   @media (max-width: ${breakpoints.tablet}) {
     margin: 0 auto;
     margin-bottom: 18px;
@@ -59,14 +67,6 @@ export const Acordeon = styled.div`
     width: 100%;
     max-width: 80vw;
     margin-bottom: 18px;
-  }
-
-  & > svg {
-    transition: ease-in-out .4s;
-  }
-
-  & > svg.open {
-    transform: rotate(180deg);
   }
 `
 
@@ -90,10 +90,12 @@ export const SkilContent = styled.div`
     text-align: center;
     margin-bottom: 18px;
     color: ${(props) => props.theme.overlay === 'rgba(255, 255, 255, 0.6)' ? 'rgba(0, 0, 0, 0.5)' : 'rgba(255, 255, 255, 0.5)'};;
+    }
 
     @media (min-width: ${breakpoints.desktop}) {
-      display: none;
-    }
+      > p {
+        display: none;
+      }
     }
 `
 

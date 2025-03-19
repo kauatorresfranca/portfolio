@@ -38,16 +38,6 @@ export const Description = styled.div`
   justify-content: center;
   aling-items: center;
 
-  @media (max-width: ${breakpoints.tablet}) {
-    justify-content: center;
-    align-items: center;
-    margin-right: 0;
-
-    h4 {
-      margin-top: 6px;
-    }
-  }
-
   h4 {
     font-size: 12px;
     color: ${(props) => props.theme.textColor};
@@ -55,20 +45,16 @@ export const Description = styled.div`
   }
 
   button {
-  width: 240px;
-  height: 36px;
-  font-weight: 700;
-  background-color: ${(props) => props.theme.secondaryBackground};
-  color: ${(props) => props.theme.titleColor};
-  border: 2px solid ${(props) => props.theme.detach};
-  border-radius: 12px;
+    width: 240px;
+    height: 36px;
+    font-weight: 700;
+    background-color: ${(props) => props.theme.secondaryBackground};
+    color: ${(props) => props.theme.titleColor};
+    border: 2px solid ${(props) => props.theme.detach};
+    border-radius: 12px;
 
   i {
     margin-right: 6px;
-  }
-
-  @media (max-width: ${breakpoints.tablet}) {
-    width: 280px;
   }
 
     &:hover i {
@@ -78,6 +64,20 @@ export const Description = styled.div`
     &:hover {
       color: ${(props) => props.theme.secondaryBackground};
       background-color: ${(props) => props.theme.detach};
+    }
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
+
+    button {
+      width: 280px;
+    }
+
+    h4 {
+      margin-top: 6px;
     }
   }
 `
