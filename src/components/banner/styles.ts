@@ -52,6 +52,7 @@ export const Description = styled.div`
     color: ${(props) => props.theme.titleColor};
     border: 2px solid ${(props) => props.theme.detach};
     border-radius: 12px;
+    cursor: pointer;
 
   i {
     margin-right: 6px;

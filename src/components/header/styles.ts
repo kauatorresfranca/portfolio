@@ -1,18 +1,20 @@
-import styled from "styled-components"
-import { breakpoints } from "../../styles"
-
+import styled from 'styled-components'
+import { breakpoints } from '../../styles'
 
 export const Header = styled.header`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   position: fixed;
-  width: 100vw;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding: 12px 0;
+  margin: 24px auto 0 auto;
   z-index: 2;
-  background-color: ${(props) => props.theme.background};
-  border-bottom: 2px solid ${(props) => props.theme.detach};
+  background: linear-gradient(
+    -30deg,
+    ${(props) => props.theme.detach},
+    ${(props) => props.theme.lightPurple}
+  );
+  border-radius: 25px;
 
   .container {
     display: flex;
@@ -20,31 +22,37 @@ export const Header = styled.header`
     align-items: center;
     width: 100%;
     position: relative;
+    padding: 12px 0;
 
     @media (max-width: ${breakpoints.desktop}) {
       display: block;
+      width: 100%;
+      padding: 6px 0;
     }
-}
+  }
 
   @media (max-width: ${breakpoints.desktop}) {
     display: block;
     padding-bottom: 0;
     border-bottom: none;
-}
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
-    h1 {
+  h1 {
     display: flex;
     align-items: center;
     color: ${(props) => props.theme.titleColor};
     font-size: 29px;
     font-weight: 500;
-    margin-bottom: 9px;
+    margin-left: 32px;
 
     @media (max-width: ${breakpoints.desktop}) {
       text-align: center;
       margin-right: 32px;
       margin-left: 0px;
-  }
+    }
 
     svg {
       margin-right: 8px;
@@ -54,9 +62,9 @@ export const Header = styled.header`
 
 export const Links = styled.ul`
   display: flex;
-  gap: 100px;
+  gap: 80px;
   margin-right: 245px;
-  padding-bottom: 16px;
+  border: none;
 
   @media (max-width: ${breakpoints.desktop}) {
     display: flex;
@@ -73,10 +81,11 @@ export const Links = styled.ul`
     border-radius: 18px;
     background-color: ${(props) => props.theme.secondaryBackground};
     overflow: hidden; /* Impede que o conteúdo vaze */
-    transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out, padding 1s ease;
+    transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out,
+      padding 1s ease;
 
     &.active {
-      height: 24vh;
+      height: 100%;
       opacity: 1;
       visibility: visible;
       padding: 12px;
@@ -93,63 +102,60 @@ export const Links = styled.ul`
     width: 100%;
     padding-bottom: 6px;
     text-align: center;
-    padding-top: 16px;
     text-decoration: none;
-    color: ${(props) => props.theme.titleColor};
+    color: ${(props) => props.theme.white};
     font-size: 18px;
-    transition: all .4s ease-in-out;
+    transition: all 0.4s ease-in-out;
 
     &:hover {
-      transform: scale(1.1)
+      transform: scale(1.1);
     }
 
     @media (max-width: ${breakpoints.desktop}) {
       padding-bottom: 16px;
+      padding-top: 16px;
     }
 
     @media (min-width: ${breakpoints.desktop}) {
+      /* Criando a borda animada */
+      &:hover::after {
+        width: 100%; /* Quando passar o mouse, a largura da borda será 100% */
+      }
 
-    /* Criando a borda animada */
-    &:hover::after {
-      width: 100%; /* Quando passar o mouse, a largura da borda será 100% */
-    }
-
-    /* Criando o pseudo-elemento para a borda */
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0; /* Começa com width 0 */
-      height: 3px;
-      background-color: ${(props) => props.theme.detach}; /* Cor da borda */
-      transition: width 0.3s ease-out; /* Transição suave da largura */
+      /* Criando o pseudo-elemento para a borda */
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0; /* Começa com width 0 */
+        height: 3px;
+        background-color: ${(props) => props.theme.detach}; /* Cor da borda */
+        transition: width 0.3s ease-out; /* Transição suave da largura */
+      }
     }
   }
-    }
-
 `
 
 export const ToggleTheme = styled.div<{ themeName: string }>`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px;
-    margin-bottom: 9px;
-    width: 50px;
-    height: 26px;
-    margin-left: 10px;
-    border: none;
-    background-color: ${(props) => props.theme.secondaryBackground};
-    color: ${(props) => props.theme.titleColor};
-    border-radius: 20px;
-    cursor: pointer;
-    position: absolute;
-    right: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  width: 50px;
+  height: 26px;
+  margin-left: 10px;
+  border: none;
+  background-color: ${(props) => props.theme.secondaryBackground};
+  color: ${(props) => props.theme.titleColor};
+  border-radius: 20px;
+  cursor: pointer;
+  position: absolute;
+  right: 42px;
 
-    @media (max-width: ${breakpoints.desktop}) {
-      position: relative;
-      right: 0;
+  @media (max-width: ${breakpoints.desktop}) {
+    position: relative;
+    right: 0;
   }
 
   .ball {
@@ -160,7 +166,7 @@ export const ToggleTheme = styled.div<{ themeName: string }>`
     border-radius: 50%;
     position: absolute;
     top: 5px;
-    left: ${({themeName}) => themeName === 'dark' ? '6px' : '28px'};
+    left: ${({ themeName }) => (themeName === 'dark' ? '6px' : '28px')};
     transition: left 0.3s ease-in-out;
 
     height: 26px;
@@ -220,9 +226,10 @@ export const HamburguerMenu = styled.div`
 
   @media (max-width: ${breakpoints.desktop}) {
     display: block;
+    position: relative;
+    margin-right: 50px;
   }
 `
-
 
 export const TopHeader = styled.div`
   display: flex;
@@ -232,6 +239,5 @@ export const TopHeader = styled.div`
 
   a {
     text-decoration: none;
-  }
   }
 `

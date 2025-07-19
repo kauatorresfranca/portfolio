@@ -6,7 +6,7 @@ const Header = ({ toggleTheme, theme }: { theme: string ,toggleTheme: () => void
   const [menuIsOpen, setMenuIsOpen] = useState(false)
 
   return (
-    <>
+    <div className='container'>
         <S.Header>
             <div className="container">
             <S.TopHeader>
@@ -39,7 +39,7 @@ const Header = ({ toggleTheme, theme }: { theme: string ,toggleTheme: () => void
               </S.Links>
             </div>
         </S.Header >
-    </>
+    </div>
   )
 }
 

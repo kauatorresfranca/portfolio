@@ -7,7 +7,8 @@ export const lightTheme = {
   textColor: '#292828',
   buttonThemeBall: '#8257e6',
   overlay: 'rgba(255, 255, 255, 0.6)',
-  overlayminor: 'rgba(255, 255, 255, 0.1)'
+  overlayminor: 'rgba(255, 255, 255, 0.1)',
+  white: '#fff'
 }
 
 export const darkTheme = {
@@ -19,5 +20,6 @@ export const darkTheme = {
   textColor: '#D3D3D3',
   buttonThemeBall: '#fff',
   overlay: 'rgba(0, 0, 0, 0.6)',
-  overlayminor: 'rgba(0, 0, 0, 0.1)'
+  overlayminor: 'rgba(0, 0, 0, 0.1)',
+  white: '#fff'
 }

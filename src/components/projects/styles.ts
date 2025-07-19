@@ -57,6 +57,11 @@ export const Project = styled.div`
     }
 `
 
+export const ProjectStack = styled.div`
+
+
+`
+
 export const ProjectList = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

@@ -24,7 +24,7 @@ function App() {
   const toggleTheme = () => {
     setTheme((prev) => {
       const newTheme = prev === "light" ? "dark" : "light";
-      localStorage.setItem("theme", newTheme); // Salva a escolha do usuário (opicional)
+      //localStorage.setItem("theme", newTheme); // Salva a escolha do usuário (opicional)
       return newTheme;
     });
   }
