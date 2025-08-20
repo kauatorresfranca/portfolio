@@ -8,6 +8,112 @@ import toDoVideo from '../../../assets/videos/todo.mp4'
 import camilaVideo from '../../../assets/videos/camila.mp4'
 import portifolioVideo from '../../../assets/videos/portfolio.mp4'
 
+// Definir o tipo para a propriedade 'type'
+type SkillType = 'react' | 'redux' | 'ts' | 'sc' | 'django' | 'postgress' | 'git' | 'html' | 'css' | 'js' | 'python' | 'vue';
+
+// Definir a interface para os projetos
+interface ProjectData {
+  date: string;
+  skills: { type: SkillType }[];
+  videoPath: string;
+  imgPath: string;
+  gitHubUrl: string;
+  projectViewUrl: string;
+  title: string;
+  description: string;
+}
+
+const projectsData: ProjectData[] = [
+    {
+      date: '21 de agosto 2024',
+      skills: [{ type: 'react' }, { type: 'redux' }, { type: 'ts' }, { type: 'sc' }],
+      videoPath: eplayVideo,
+      imgPath: '/E_play.png',
+      gitHubUrl: 'https://github.com/kauatorresfranca/site-game-eplay',
+      projectViewUrl: 'https://site-game-eplay.vercel.app/',
+      title: 'E-play',
+      description:
+        'Uma loja fictícia de jogos, onde os usuários podem navegar por diferentes categorias, visualizar detalhes dos jogos e adicioná-los ao carrinho. A aplicação simula um ambiente real de e-commerce, incluindo funcionalidades como listagem dinâmica, filtros e gerenciamento de estado eficiente com Redux. O design foi pensado para ser intuitivo, com destaque para os jogos em promoção e novidades.',
+    },
+    {
+      date: '8 de agosto de 2024',
+      skills: [{ type: 'react' }, { type: 'redux' }, { type: 'ts' }, { type: 'sc' }],
+      videoPath: efoodVideo,
+      imgPath: '/E_food.png',
+      gitHubUrl: 'https://github.com/kauatorresfranca/Efood',
+      projectViewUrl: 'https://efood-rouge-six.vercel.app/',
+      title: 'E-food',
+      description:
+        'Um site fictício para pedidos em vários restaurantes, permitindo que os usuários explorem menus, adicionem itens ao carrinho e finalizem pedidos. A interface prioriza a usabilidade, com filtros para facilitar a busca por restaurantes e pratos específicos. A aplicação foi construída com React, TypeScript, Styled Components e Redux, garantindo um fluxo de dados eficiente e uma experiência fluida para o usuário.',
+    },
+    {
+      date: '15 de julho de 2024',
+      skills: [{ type: 'react' }, { type: 'redux' }, { type: 'ts' }, { type: 'sc' }],
+      videoPath: toDoVideo,
+      imgPath: '/to_do.png',
+      gitHubUrl: 'https://github.com/kauatorresfranca/to-do',
+      projectViewUrl: 'https://to-do-seven-steel.vercel.app/',
+      title: 'To-do List',
+      description:
+        'Uma aplicação simples e funcional para gerenciamento de tarefas, onde os usuários podem adicionar, editar, excluir e marcar tarefas como concluídas. O foco do projeto foi criar uma interface minimalista e intuitiva, garantindo que a experiência fosse fluida e responsiva. O uso de Redux permite um controle eficiente do estado, tornando a aplicação organizada e escalável.',
+    },
+    {
+      date: '21 de janeiro de 2024',
+      skills: [{ type: 'react' }, { type: 'ts' }, { type: 'sc' }],
+      videoPath: camilaVideo,
+      imgPath: '/camila_matos.png',
+      gitHubUrl: 'https://github.com/kauatorresfranca/DraCamilaMatos',
+      projectViewUrl: 'https://dracamilamatos.vercel.app/',
+      title: 'Dentist Website',
+      description:
+        'Uma landing page desenvolvida para uma dentista, com um design moderno e profissional para apresentar seus serviços e informações de contato. O site conta com uma navegação fluida e uma interface responsiva para garantir uma boa experiência tanto em dispositivos móveis quanto em desktops. Construído com React, TypeScript, Styled Components e Redux para uma estrutura escalável e organizada.',
+    },
+    {
+      date: '12 de agosto de 2025',
+      skills: [{ type: 'react' }, { type: 'ts' }, { type: 'sc' }],
+      videoPath: portifolioVideo,
+      imgPath: '/ticiana_moura.png',
+      gitHubUrl: 'https://github.com/kauatorresfranca/ticiana-moura-psic',
+      projectViewUrl: 'https://www.ticianamourapsicologa.com.br/',
+      title: 'Psychologist Website',
+      description:
+        'Um site desenvolvido para apresentar meus projetos, habilidades e informações sobre minha trajetória na programação. O design foi pensado para ser moderno e responsivo. O site conta com uma sessão de skills, onde destaco as tecnologias que domino, uma área de projetos, e uma página de contato para facilitar a comunicação com potenciais clientes e recrutadores. Foi desenvolvido com React, TypeScript, Styled Components e Redux.',
+    },
+    {
+      date: '22 de março de 2025',
+      skills: [{ type: 'react' }, { type: 'ts' }, { type: 'sc' }, { type: 'django' }, { type: 'postgress' }, { type: 'git' }],
+      videoPath: '../../../assets/images/in_developing(dark).png',
+      imgPath: '/doctorize.png',
+      gitHubUrl: 'https://github.com/kauatorresfranca/doctorize',
+      projectViewUrl: 'https://portfolio-tau-eight-25.vercel.app/',
+      title: 'Doctorize',
+      description:
+        'Uma plataforma para agendamento de consultas médicas, permitindo que pacientes encontrem médicos, marquem horários e gerenciem suas consultas. A aplicação combina um front-end moderno construído com React, TypeScript e Styled Components com um back-end robusto em Django e PostgreSQL, garantindo uma integração eficiente e segura. A interface foi projetada para ser intuitiva, com foco na usabilidade e acessibilidade.',
+    },
+    {
+      date: '22 de março de 2025',
+      skills: [{ type: 'react' }, { type: 'ts' }, { type: 'sc' }, { type: 'django' }, { type: 'postgress' }, { type: 'git' }],
+      videoPath: '../../../assets/images/in_developing(dark).png',
+      imgPath: '/barberly.jpg',
+      gitHubUrl: 'https://github.com/kauatorresfranca/barbely',
+      projectViewUrl: 'https://barbely.vercel.app/',
+      title: 'Barberly',
+      description:
+        'Uma aplicação para gerenciamento de barbearias, permitindo que clientes agendem horários, visualizem serviços disponíveis e recebam confirmações. O projeto integra um front-end responsivo feito com React, TypeScript e Styled Components, com um back-end em Django e PostgreSQL para gerenciar dados de forma eficiente. A interface prioriza a simplicidade e a experiência do usuário, com um design moderno e funcional.',
+    },
+    {
+      date: '22 de março de 2025',
+      skills: [{ type: 'react' }, { type: 'ts' }, { type: 'sc' }, { type: 'django' }, { type: 'postgress' }, { type: 'git' }],
+      videoPath: '../../../assets/images/in_developing(dark).png',
+      imgPath: '/zuppi.png',
+      gitHubUrl: 'https://github.com/kauatorresfranca/Zuppi',
+      projectViewUrl: 'https://doctorize.vercel.app/authentication',
+      title: 'Zuppi',
+      description:
+        'Uma réplica do Twitter desenvolvida durante um curso da EBAC, focada em recriar funcionalidades principais como postagem, curtidas e comentários. O front-end foi construído com React, TypeScript e Styled Components, enquanto o back-end utiliza Django e PostgreSQL para gerenciar dados de usuários e publicações. A aplicação oferece uma interface moderna e responsiva, com ênfase na interatividade e na experiência do usuário.',
+    },
+]
+
 const Projects = () => {
   return (
     <div className="container">
@@ -25,115 +131,21 @@ const Projects = () => {
           </svg>
           Projetos
         </h3>
-          <S.ProjectStack id="front-end">
-            <h3>Front-end</h3>
-            <S.ProjectList>
-            <Project
-            date="21 de agosto 2024"
-            skils={[
-              { type: 'react' },
-              { type: 'redux' },
-              { type: 'ts' },
-              { type: 'sc' }
-            ]}
-            videoPath={eplayVideo}
-            imgPath="/E_play.png"
-            gitHubUrl="https://github.com/kauatorresfranca/site-game-eplay"
-            projectViewUrl="https://site-game-eplay.vercel.app/"
-            title="E-PLAY"
-            description="Uma loja fictícia de jogos, onde os usuários podem navegar por diferentes categorias, visualizar detalhes dos jogos e adicioná-los ao carrinho. A aplicação simula um ambiente real de e-commerce, incluindo funcionalidades como listagem dinâmica, filtros e gerenciamento de estado eficiente com Redux. O design foi pensado para ser intuitivo, com destaque para os jogos em promoção e novidades."
-          ></Project>
-          <Project
-            date="8 de agosto de 2024"
-            skils={[
-              { type: 'react' },
-              { type: 'redux' },
-              { type: 'ts' },
-              { type: 'sc' }
-            ]}
-            videoPath={efoodVideo}
-            imgPath="/E_food.png"
-            gitHubUrl="https://github.com/kauatorresfranca/Efood"
-            projectViewUrl="https://efood-rouge-six.vercel.app/"
-            title="E-FOOD"
-            description="Um site fictício para pedidos em vários restaurantes, permitindo que os usuários explorem menus, adicionem itens ao carrinho e finalizem pedidos. A interface prioriza a usabilidade, com filtros para facilitar a busca por restaurantes e pratos específicos. A aplicação foi construída com React, TypeScript, Styled Components e Redux, garantindo um fluxo de dados eficiente e uma experiência fluida para o usuário."
-          ></Project>
-          <Project
-            date="15 de julho de 2024"
-            skils={[
-              { type: 'react' },
-              { type: 'redux' },
-              { type: 'ts' },
-              { type: 'sc' }
-            ]}
-            videoPath={toDoVideo}
-            imgPath="/to_do.png"
-            gitHubUrl="https://github.com/kauatorresfranca/to-do"
-            projectViewUrl="https://to-do-seven-steel.vercel.app/"
-            title="TO-DO LIST"
-            description="Uma aplicação simples e funcional para gerenciamento de tarefas, onde os usuários podem adicionar, editar, excluir e marcar tarefas como concluídas. O foco do projeto foi criar uma interface minimalista e intuitiva, garantindo que a experiência fosse fluida e responsiva. O uso de Redux permite um controle eficiente do estado, tornando a aplicação organizada e escalável."
-          ></Project>
-          <Project
-            date="21 de janeiro de 2024"
-            skils={[{ type: 'react' }, { type: 'ts' }, { type: 'sc' }]}
-            videoPath={camilaVideo}
-            imgPath="/camila_matos.png"
-            gitHubUrl="https://github.com/kauatorresfranca/DraCamilaMatos"
-            projectViewUrl="https://dracamilamatos.vercel.app/"
-            title="DENTIST WEBSITE"
-            description="Uma landing page desenvolvida para uma dentista, com um design moderno e profissional para apresentar seus serviços e informações de contato. O site conta com uma navegação fluida e uma interface responsiva para garantir uma boa experiência tanto em dispositivos móveis quanto em desktops. Construído com React, TypeScript, Styled Components e Redux para uma estrutura escalável e organizada."
-          ></Project>
-          <Project
-            date="11 de janeiro de 2024"
-            skils={[{ type: 'react' }, { type: 'ts' }, { type: 'sc' }]}
-            videoPath={portifolioVideo}
-            imgPath="/mySite.png"
-            gitHubUrl="https://github.com/kauatorresfranca/portfolio"
-            projectViewUrl="https://portfolio-tau-eight-25.vercel.app/"
-            title="PORTFOLIO"
-            description="Um site desenvolvido para apresentar meus projetos, habilidades e informações sobre minha trajetória na programação. O design foi pensado para ser moderno e responsivo. O site conta com uma sessão de skills, onde destaco as tecnologias que domino, uma área de projetos, e uma página de contato para facilitar a comunicação com potenciais clientes e recrutadores. Foi desenvolvido com React, TypeScript, Styled Components e Redux."
-          ></Project>
-          </S.ProjectList>
-          </S.ProjectStack>
-        <S.ProjectStack id="back-end">
-          <h3>Back-end</h3>
           <S.ProjectList>
-            <Project
-            date="22 de março de 2025"
-            skils={[
-              { type: 'react' },
-              { type: 'ts' },
-              { type: 'sc' },
-              { type: 'django' },
-              { type: 'postgress' },
-              { type: 'git' }
-            ]}
-            videoPath="../../../assets/images/in_developing(dark).png"
-            imgPath="../../../assets/images/in_developing(dark).png"
-            gitHubUrl="https://github.com/kauatorresfranca/portfolio"
-            projectViewUrl="https://portfolio-tau-eight-25.vercel.app/"
-            title="DOCTORIZE"
-            description="lorem"
-          ></Project>
-          <Project
-            date="22 de março de 2025"
-            skils={[
-              { type: 'react' },
-              { type: 'ts' },
-              { type: 'sc' },
-              { type: 'django' },
-              { type: 'postgress' },
-              { type: 'git' }
-            ]}
-            videoPath="../../../assets/images/in_developing(dark).png"
-            imgPath="../../../assets/images/in_developing(dark).png"
-            gitHubUrl="https://github.com/kauatorresfranca/portfolio"
-            projectViewUrl="https://portfolio-tau-eight-25.vercel.app/"
-            title="BARBERLY"
-            description="lorem"
-          ></Project>
+            {projectsData.map((project, index) => (
+              <Project
+                key={`${project.title}-${index}`}
+                date={project.date}
+                skils={project.skills}
+                videoPath={project.videoPath}
+                imgPath={project.imgPath}
+                gitHubUrl={project.gitHubUrl}
+                projectViewUrl={project.projectViewUrl}
+                title={project.title}
+                description={project.description}
+              />
+            ))}
           </S.ProjectList>
-        </S.ProjectStack>
       </S.Projects>
     </div>
   )
