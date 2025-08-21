@@ -105,11 +105,13 @@ export const SkilContainer = styled.div`
 
     &.flip {
       transform: rotateY(180deg) scale(1.2);
+    }
   }
 
   @media (min-width: ${breakpoints.desktop}) {
     &:hover {
       transform: rotateY(180deg) scale(1.2);
+      cursor: pointer;
     }
 }
 `

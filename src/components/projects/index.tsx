@@ -1,6 +1,7 @@
 import * as S from './styles'
 import { darkTheme } from '../../../theme'
 import Project from '../project'
+import { useState } from 'react'
 
 import eplayVideo from '../../../assets/videos/eplay.mp4'
 import efoodVideo from '../../../assets/videos/efood.mp4'
@@ -23,9 +24,34 @@ interface ProjectData {
   description: string;
 }
 
+const parseProjectDate = (dateStr: string): Date => {
+  const months: { [key: string]: number } = {
+    janeiro: 1,
+    fevereiro: 2,
+    março: 3,
+    abril: 4,
+    maio: 5,
+    junho: 6,
+    julho: 7,
+    agosto: 8,
+    setembro: 9,
+    outubro: 10,
+    novembro: 11,
+    dezembro: 12
+  };
+
+  const parts = dateStr.split(' ').filter(word => word !== 'de');
+  const day = parseInt(parts[0], 10);
+  const monthStr = parts[1].toLowerCase();
+  const year = parseInt(parts[2], 10);
+
+  const month = months[monthStr] - 1;
+  return new Date(year, month, day);
+};
+
 const projectsData: ProjectData[] = [
     {
-      date: '21 de agosto 2024',
+      date: '21 de agosto de 2024',
       skills: [{ type: 'react' }, { type: 'redux' }, { type: 'ts' }, { type: 'sc' }],
       videoPath: eplayVideo,
       imgPath: '/E_play.png',
@@ -115,6 +141,21 @@ const projectsData: ProjectData[] = [
 ]
 
 const Projects = () => {
+  const [sortOrder, setSortOrder] = useState<'recent' | 'oldest'>('recent');
+
+  const sortedProjects = [...projectsData];
+
+  sortedProjects.sort((a, b) => {
+    const dateA = parseProjectDate(a.date);
+    const dateB = parseProjectDate(b.date);
+
+    if (sortOrder === 'recent') {
+      return dateB.getTime() - dateA.getTime();
+    } else {
+      return dateA.getTime() - dateB.getTime();
+    }
+  });
+
   return (
     <div className="container">
       <S.Projects id="projects">
@@ -131,21 +172,25 @@ const Projects = () => {
           </svg>
           Projetos
         </h3>
-          <S.ProjectList>
-            {projectsData.map((project, index) => (
-              <Project
-                key={`${project.title}-${index}`}
-                date={project.date}
-                skils={project.skills}
-                videoPath={project.videoPath}
-                imgPath={project.imgPath}
-                gitHubUrl={project.gitHubUrl}
-                projectViewUrl={project.projectViewUrl}
-                title={project.title}
-                description={project.description}
-              />
-            ))}
-          </S.ProjectList>
+        <S.SortSelect value={sortOrder} onChange={(e) => setSortOrder(e.target.value as 'recent' | 'oldest')}>
+          <option value="recent">Mais recentes</option>
+          <option value="oldest">Mais antigos</option>
+        </S.SortSelect>
+        <S.ProjectList>
+          {sortedProjects.map((project, index) => (
+            <Project
+              key={`${project.title}-${index}`}
+              date={project.date}
+              skils={project.skills}
+              videoPath={project.videoPath}
+              imgPath={project.imgPath}
+              gitHubUrl={project.gitHubUrl}
+              projectViewUrl={project.projectViewUrl}
+              title={project.title}
+              description={project.description}
+            />
+          ))}
+        </S.ProjectList>
       </S.Projects>
     </div>
   )

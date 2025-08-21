@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import { breakpoints } from "../../styles"
+import { darkTheme } from "../../../theme"
 
 export const Projects = styled.div`
   padding-top: 32px;
@@ -134,6 +135,16 @@ export const SecundaryButton = styled.button`
       width: 280px;
     }
 `
+
+export const SortSelect = styled.select`
+  margin-bottom: 20px;
+  padding: 8px;
+  background-color: ${(props) => props.theme.secondaryBackground};
+  color: ${(props) => props.theme.detach};
+  border: 1px solid ${(props) => props.theme.detach};
+  border-radius: 4px;
+  font-size: 16px;
+`;
 
 
 
