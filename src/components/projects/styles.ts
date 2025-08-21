@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import { breakpoints } from "../../styles"
-import { darkTheme } from "../../../theme"
 
 export const Projects = styled.div`
   padding-top: 32px;
