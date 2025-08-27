@@ -10,7 +10,7 @@ import camilaVideo from '../../../assets/videos/camila.mp4'
 import portifolioVideo from '../../../assets/videos/portfolio.mp4'
 
 // Definir o tipo para a propriedade 'type'
-type SkillType = 'react' | 'redux' | 'ts' | 'sc' | 'django' | 'postgress' | 'git' | 'html' | 'css' | 'js' | 'python' | 'vue';
+type SkillType = 'react' | 'redux' | 'ts' | 'sc' | 'django' | 'postgress' | 'git' | 'html' | 'css' | 'js' | 'python' | 'vue' | 'next';
 
 // Definir a interface para os projetos
 interface ProjectData {
@@ -84,7 +84,7 @@ const projectsData: ProjectData[] = [
         'Uma aplicação simples e funcional para gerenciamento de tarefas, onde os usuários podem adicionar, editar, excluir e marcar tarefas como concluídas. O foco do projeto foi criar uma interface minimalista e intuitiva, garantindo que a experiência fosse fluida e responsiva. O uso de Redux permite um controle eficiente do estado, tornando a aplicação organizada e escalável.',
     },
     {
-      date: '21 de janeiro de 2024',
+      date: '21 de janeiro de 2025',
       skills: [{ type: 'react' }, { type: 'ts' }, { type: 'sc' }],
       videoPath: camilaVideo,
       imgPath: '/camila_matos.png',
@@ -106,18 +106,18 @@ const projectsData: ProjectData[] = [
         'Um site desenvolvido para apresentar meus projetos, habilidades e informações sobre minha trajetória na programação. O design foi pensado para ser moderno e responsivo. O site conta com uma sessão de skills, onde destaco as tecnologias que domino, uma área de projetos, e uma página de contato para facilitar a comunicação com potenciais clientes e recrutadores. Foi desenvolvido com React, TypeScript, Styled Components e Redux.',
     },
     {
-      date: '22 de março de 2025',
-      skills: [{ type: 'react' }, { type: 'ts' }, { type: 'sc' }, { type: 'django' }, { type: 'postgress' }, { type: 'git' }],
+      date: '22 de maio de 2025',
+      skills: [{ type: 'react' }, { type: 'ts' }, { type: 'git' }, { type: 'next' }],
       videoPath: '../../../assets/images/in_developing(dark).png',
       imgPath: '/doctorize.png',
       gitHubUrl: 'https://github.com/kauatorresfranca/doctorize',
-      projectViewUrl: 'https://portfolio-tau-eight-25.vercel.app/',
+      projectViewUrl: 'https://doctorize.vercel.app/authentication',
       title: 'Doctorize',
       description:
         'Uma plataforma para agendamento de consultas médicas, permitindo que pacientes encontrem médicos, marquem horários e gerenciem suas consultas. A aplicação combina um front-end moderno construído com React, TypeScript e Styled Components com um back-end robusto em Django e PostgreSQL, garantindo uma integração eficiente e segura. A interface foi projetada para ser intuitiva, com foco na usabilidade e acessibilidade.',
     },
     {
-      date: '22 de março de 2025',
+      date: '29 de abril de 2025',
       skills: [{ type: 'react' }, { type: 'ts' }, { type: 'sc' }, { type: 'django' }, { type: 'postgress' }, { type: 'git' }],
       videoPath: '../../../assets/images/in_developing(dark).png',
       imgPath: '/barberly.jpg',
@@ -128,15 +128,26 @@ const projectsData: ProjectData[] = [
         'Uma aplicação para gerenciamento de barbearias, permitindo que clientes agendem horários, visualizem serviços disponíveis e recebam confirmações. O projeto integra um front-end responsivo feito com React, TypeScript e Styled Components, com um back-end em Django e PostgreSQL para gerenciar dados de forma eficiente. A interface prioriza a simplicidade e a experiência do usuário, com um design moderno e funcional.',
     },
     {
-      date: '22 de março de 2025',
+      date: '01 de agosto de 2025',
       skills: [{ type: 'react' }, { type: 'ts' }, { type: 'sc' }, { type: 'django' }, { type: 'postgress' }, { type: 'git' }],
       videoPath: '../../../assets/images/in_developing(dark).png',
       imgPath: '/zuppi.png',
       gitHubUrl: 'https://github.com/kauatorresfranca/Zuppi',
-      projectViewUrl: 'https://doctorize.vercel.app/authentication',
+      projectViewUrl: 'https://zuppi.vercel.app/',
       title: 'Zuppi',
       description:
         'Uma réplica do Twitter desenvolvida durante um curso da EBAC, focada em recriar funcionalidades principais como postagem, curtidas e comentários. O front-end foi construído com React, TypeScript e Styled Components, enquanto o back-end utiliza Django e PostgreSQL para gerenciar dados de usuários e publicações. A aplicação oferece uma interface moderna e responsiva, com ênfase na interatividade e na experiência do usuário.',
+    },
+    {
+      date: '24 de fevereiro de 2024',
+      skills: [{ type: 'html' }, { type: 'css' }, { type: 'js' }],
+      videoPath: '../../../assets/images/in_developing(dark).png',
+      imgPath: '/clone_disney_plus.png',
+      gitHubUrl: 'https://github.com/kauatorresfranca/clone_disney_plus',
+      projectViewUrl: 'https://clone-disney-plus-henna.vercel.app/',
+      title: 'Clone Disney Plus',
+      description:
+        'Uma réplica do Disney Plus desenvolvida durante um curso da EBAC',
     },
 ]
 

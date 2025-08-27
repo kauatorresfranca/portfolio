@@ -143,6 +143,11 @@ export const SortSelect = styled.select`
   border: 1px solid ${(props) => props.theme.detach};
   border-radius: 4px;
   font-size: 16px;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 14px;
+    margin-left: 40px;
+  }
 `;
 
 
