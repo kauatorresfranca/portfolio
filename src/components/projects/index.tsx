@@ -7,7 +7,10 @@ import eplayVideo from '../../../assets/videos/eplay.mp4'
 import efoodVideo from '../../../assets/videos/efood.mp4'
 import toDoVideo from '../../../assets/videos/todo.mp4'
 import camilaVideo from '../../../assets/videos/camila.mp4'
-import portifolioVideo from '../../../assets/videos/portfolio.mp4'
+import ticiana from '../../../assets/videos/ticiana.mp4'
+import zuppi from '../../../assets/videos/zuppi.mp4'
+import barberly from '../../../assets/videos/barberly.mp4'
+
 
 // Definir o tipo para a propriedade 'type'
 type SkillType = 'react' | 'redux' | 'ts' | 'sc' | 'django' | 'postgress' | 'git' | 'html' | 'css' | 'js' | 'python' | 'vue' | 'next';
@@ -97,7 +100,7 @@ const projectsData: ProjectData[] = [
     {
       date: '12 de agosto de 2025',
       skills: [{ type: 'react' }, { type: 'ts' }, { type: 'sc' }],
-      videoPath: portifolioVideo,
+      videoPath: ticiana,
       imgPath: '/ticiana_moura.png',
       gitHubUrl: 'https://github.com/kauatorresfranca/ticiana-moura-psic',
       projectViewUrl: 'https://www.ticianamourapsicologa.com.br/',
@@ -119,7 +122,7 @@ const projectsData: ProjectData[] = [
     {
       date: '29 de abril de 2025',
       skills: [{ type: 'react' }, { type: 'ts' }, { type: 'sc' }, { type: 'django' }, { type: 'postgress' }, { type: 'git' }],
-      videoPath: '../../../assets/images/in_developing(dark).png',
+      videoPath: barberly,
       imgPath: '/barberly.jpg',
       gitHubUrl: 'https://github.com/kauatorresfranca/barbely',
       projectViewUrl: 'https://barbely.vercel.app/',
@@ -130,7 +133,7 @@ const projectsData: ProjectData[] = [
     {
       date: '01 de agosto de 2025',
       skills: [{ type: 'react' }, { type: 'ts' }, { type: 'sc' }, { type: 'django' }, { type: 'postgress' }, { type: 'git' }],
-      videoPath: '../../../assets/images/in_developing(dark).png',
+      videoPath: zuppi,
       imgPath: '/zuppi.png',
       gitHubUrl: 'https://github.com/kauatorresfranca/Zuppi',
       projectViewUrl: 'https://zuppi.vercel.app/',
