@@ -152,6 +152,16 @@ const projectsData: ProjectData[] = [
       description:
         'Uma réplica do Disney Plus desenvolvida durante um curso da EBAC',
     },
+    {
+      date: '31 de agosto de 2025',
+      skills: [{ type: 'react' }, { type: 'sc' }, { type: 'ts' }],
+      videoPath: '../../../assets/videos/ambiente.mp4',
+      imgPath: '/ambiente_de_beleza.png',
+      gitHubUrl: 'https://github.com/kauatorresfranca/ambiente_de_beleza',
+      projectViewUrl: 'https://www.ambientedebeleza.com/',
+      title: 'Ambiente de Beleza',
+      description: 'Projeto consiste em uma Landing page moderna e responsiva, com sistema de agendamento integrado, criada para apresentar de forma profissional os serviços do Ambiente de Beleza. Conta com design elegante, foco em conversão e navegação intuitiva.',
+    },
 ]
 
 const Projects = () => {
