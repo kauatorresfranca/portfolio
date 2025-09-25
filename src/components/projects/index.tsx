@@ -10,6 +10,7 @@ import camilaVideo from '../../../assets/videos/camila.mp4'
 import ticiana from '../../../assets/videos/ticiana.mp4'
 import zuppi from '../../../assets/videos/zuppi.mp4'
 import barberly from '../../../assets/videos/barberly.mp4'
+import ambiente from '../../../assets/videos/ambiente.mp4'
 
 
 // Definir o tipo para a propriedade 'type'
@@ -155,7 +156,7 @@ const projectsData: ProjectData[] = [
     {
       date: '31 de agosto de 2025',
       skills: [{ type: 'react' }, { type: 'sc' }, { type: 'ts' }],
-      videoPath: '../../../assets/videos/ambiente.mp4',
+      videoPath: ambiente,
       imgPath: '/ambiente_de_beleza.png',
       gitHubUrl: 'https://github.com/kauatorresfranca/ambiente_de_beleza',
       projectViewUrl: 'https://www.ambientedebeleza.com/',
