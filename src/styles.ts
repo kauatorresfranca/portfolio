@@ -8,6 +8,7 @@ export const breakpoints = {
 export const colors = {
   primary:'#003bcd',
   background: '#17191e',
+  headerBackground: 'rgba(255, 255, 255, 0.5)',
   title: '#ffffff',
   text: '#b0b3b8',
   detach: '#2a3342',
@@ -29,7 +30,7 @@ export const GlobalCss = createGlobalStyle`
   font-family: Roboto, sans-serif;
 
   .container {
-    max-width: 1024px;
+    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
   }

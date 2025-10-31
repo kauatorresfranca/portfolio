@@ -1,10 +1,8 @@
-import dev from '../../../assets/images/imageTest.png'
 import * as S from './styles'
 
 const Banner = () => {
   return (
     <S.background>
-      <div className="container">
         <S.Banner>
           <S.Description>
             <S.Title>
@@ -17,11 +15,7 @@ const Banner = () => {
               </button>
             </a>
           </S.Description>
-          <div>
-            <img src={dev} alt="dev working" />
-          </div>
         </S.Banner>
-      </div>
     </S.background>
   )
 }

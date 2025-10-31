@@ -9,11 +9,9 @@ export const Header = styled.header`
   padding: 12px 0;
   margin: 24px auto 0 auto;
   z-index: 2;
-  background: linear-gradient(
-    -30deg,
-    ${colors.detach},
-    ${colors.lightPurple}
-  );
+  background-color: ${colors.headerBackground};
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.18));
+  backdrop-filter: blur(10px);
   border-radius: 25px;
 
   .container {

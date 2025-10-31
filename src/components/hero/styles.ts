@@ -3,7 +3,12 @@ import { breakpoints, colors } from "../../styles"
 
 
 export const background = styled.div`
-  background-color: ${colors.background}
+  background-image: url('../../../../assets/images/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
 `
 
 export const Banner = styled.div`
