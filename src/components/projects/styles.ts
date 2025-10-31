@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { breakpoints } from "../../styles"
+import { breakpoints, colors } from "../../styles"
 
 export const Projects = styled.div`
   padding-top: 32px;
@@ -21,7 +21,7 @@ export const Project = styled.div`
   width: 280px;
   position: relative;
   max-width: 100%;
-  background-color: ${(props) => props.theme.secondaryBackground};
+  background-color: ${colors.secondaryBackground};
   height: 480px;
   border-radius: 20px;
   transition: transform 0.5s ease;
@@ -100,7 +100,7 @@ export const ButtonGroup = styled.div`
 `
 
 export const PrimaryButton = styled.button`
-  background-color: ${(props) => props.theme.detach};
+  background-color: ${colors.detach};
   color: #fff;
   width: 260px;
   height: 32px;
@@ -120,7 +120,7 @@ export const PrimaryButton = styled.button`
 
 export const SecundaryButton = styled.button`
   background-color: #fff;
-  color: ${(props) => props.theme.secondaryBackground};
+  color: ${colors.secondaryBackground};
   width: 260px;
   height: 32px;
   border: none;
@@ -138,9 +138,9 @@ export const SecundaryButton = styled.button`
 export const SortSelect = styled.select`
   margin-bottom: 20px;
   padding: 8px;
-  background-color: ${(props) => props.theme.secondaryBackground};
-  color: ${(props) => props.theme.detach};
-  border: 1px solid ${(props) => props.theme.detach};
+  background-color: ${colors.secondaryBackground};
+  color: ${colors.detach};
+  border: 1px solid ${colors.detach};
   border-radius: 4px;
   font-size: 16px;
 

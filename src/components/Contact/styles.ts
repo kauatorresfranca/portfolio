@@ -1,11 +1,11 @@
 import styled from "styled-components"
-import { breakpoints} from "../../styles"
+import { breakpoints, colors} from "../../styles"
 
 
 export const Contact = styled.div`
   padding-top: 32px;
   padding-bottom: 64px;
-  background-color: ${(props) => props.theme.background};
+  background-color: ${colors.background};
 
   .container {
     display: flex;
@@ -14,7 +14,7 @@ export const Contact = styled.div`
     text-align: center;
 
     > p {
-      color: ${(props) => props.theme.textColor};
+      color: ${colors.text};
       margin-bottom: 24px;
     }
 
@@ -52,8 +52,8 @@ export const Form = styled.form`
     padding-bottom: 8px;
     border: 2px solid transparent; /* Define uma borda inicial invisível */
     border-radius: 10px;
-    background-color: ${(props) => props.theme.secondaryBackground};
-    color: ${(props) => props.theme.textColor};
+    background-color: ${colors.secondaryBackground};
+    color: ${colors.text};
     box-shadow: 1px 2px rgba(0, 0, 0, 0.2);
     outline: none; /* Remove a borda azul padrão do navegador */
     transition: border 0.3s ease; /* Suaviza a transição da borda */
@@ -71,7 +71,7 @@ export const Form = styled.form`
     position: absolute;
     left: 12px;
     top: 18px;
-    color: ${(props) => props.theme.textColor};
+    color: ${colors.text};
     font-size: 14px;
     transition: all 0.3s ease;
     pointer-events: none;
@@ -84,7 +84,7 @@ export const Form = styled.form`
   }
 
   input:focus, textarea:focus {
-    border: 2px solid ${(props) => props.theme.detach}; /* Mantém apenas a borda inferior vermelha */
+    border: 2px solid ${colors.detach}; /* Mantém apenas a borda inferior vermelha */
     box-shadow: 0px 0px 0px 0px transparent;
   }
 
@@ -111,13 +111,13 @@ export const Form = styled.form`
     margin-top: 16px;
     cursor: pointer;
     border-radius: 10px;
-    background: linear-gradient(to right, ${(props) => props.theme.detach}, ${(props) => props.theme.lightPurple});
+    background: linear-gradient(to right, ${colors.detach}, ${colors.lightPurple});
     color: #fff;
     border: none;
     transition: all .3s ease-in-out;
 
     &:hover {
-      background: linear-gradient(to top, ${(props) => props.theme.detach}, ${(props) => props.theme.lightPurple});
+      background: linear-gradient(to top, ${colors.detach}, ${colors.lightPurple});
       transform: scale(1.02);
     }
   }
@@ -161,7 +161,7 @@ export const ContactWay = styled.div`
   }
 
   h5 {
-    color: ${(props) => props.theme.textColor};
+    color: ${colors.text};
     align-items: center;
     margin-top: 4px;
   }
@@ -175,7 +175,7 @@ export const ContactWay = styled.div`
     padding: 12px;
     border-radius: 20px;
     transition: .4s ease;
-    background-color: ${(props) => props.theme.secondaryBackground};
+    background-color: ${colors.secondaryBackground};
 
     &:hover{
       transform: scale(1.2);

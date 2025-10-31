@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { breakpoints } from "../../styles"
+import { breakpoints, colors } from "../../styles"
 
 export const AboutMe = styled.div`
   display: flex;
@@ -34,7 +34,7 @@ export const Description = styled.div`
     width: 100%;
     margin: 0 auto;
     font-weight: 300;
-    color: ${(props) => props.theme.textColor};
+    color: ${colors.text};
     text-align: center;
 
     @media (max-width: ${breakpoints.tablet}) {
@@ -43,7 +43,7 @@ export const Description = styled.div`
   }
 
   .bold {
-    color: ${(props) => props.theme.titleColor};
+    color: ${colors.title};
     font-weight: 400;
   }
 `

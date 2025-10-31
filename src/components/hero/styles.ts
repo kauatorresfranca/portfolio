@@ -1,9 +1,9 @@
 import styled from "styled-components"
-import { breakpoints } from "../../styles"
+import { breakpoints, colors } from "../../styles"
 
 
 export const background = styled.div`
-  background-color: ${(props) => props.theme.background}
+  background-color: ${colors.background}
 `
 
 export const Banner = styled.div`
@@ -40,7 +40,7 @@ export const Description = styled.div`
 
   h4 {
     font-size: 12px;
-    color: ${(props) => props.theme.textColor};
+    color: ${colors.text};
     margin-bottom: 12px;
   }
 
@@ -48,9 +48,9 @@ export const Description = styled.div`
     width: 240px;
     height: 36px;
     font-weight: 700;
-    background-color: ${(props) => props.theme.secondaryBackground};
-    color: ${(props) => props.theme.titleColor};
-    border: 2px solid ${(props) => props.theme.detach};
+    background-color: ${colors.secondaryBackground};
+    color: ${colors.title};
+    border: 2px solid ${colors.detach};
     border-radius: 12px;
     cursor: pointer;
 
@@ -59,12 +59,12 @@ export const Description = styled.div`
   }
 
     &:hover i {
-      color: ${(props) => props.theme.secondaryBackground};
+      color: ${colors.secondaryBackground};
     }
 
     &:hover {
-      color: ${(props) => props.theme.secondaryBackground};
-      background-color: ${(props) => props.theme.detach};
+      color: ${colors.secondaryBackground};
+      background-color: ${colors.detach};
     }
   }
 
@@ -87,7 +87,7 @@ export const Title = styled.h2`
   display: flex;
   flex-direction: column;
   margin-bottom: 12px;
-  color: ${(props) => props.theme.textColor};
+  color: ${colors.text};
   font-size: 36px;
   font-weight: 700;
   white-space: nowrap;
@@ -96,7 +96,7 @@ export const Title = styled.h2`
     display: block;
     position: relative;
     width: 0;
-    color: ${(props) => props.theme.detach};
+    color: ${colors.detach};
   }
 `
 

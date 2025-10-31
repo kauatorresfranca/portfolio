@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { breakpoints } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const ProgressContainer = styled.div`
   margin-top: 16px;
@@ -16,7 +16,7 @@ export const ProgressContainer = styled.div`
 
 export const ProgressFill = styled.div`
   height: 100%;
-  background: linear-gradient(90deg, ${(props) => props.theme.detach}, ${(props) => props.theme.lightPurple});
+  background: linear-gradient(90deg, ${colors.detach}, ${colors.lightPurple});
 
   &.Html {
     width: 90%;
@@ -83,7 +83,7 @@ export const SkilContainer = styled.div`
   padding: 16px;
   margin-bottom: 40px;
   border-radius: 18%;
-  background-color: ${(props) => props.theme.secondaryBackground};
+  background-color: ${colors.secondaryBackground};
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   transition: transform .6s ease-in-out;
   transform-style: preserve-3d;
@@ -91,11 +91,11 @@ export const SkilContainer = styled.div`
     h4 {
       text-align: center;
       margin-bottom: 8px;
-      color: ${(props) => props.theme.titleColor};
+      color: ${colors.title};
     }
 
     p {
-      color: ${(props) => props.theme.textColor};
+      color: ${colors.text};
       margin-top: 6px;
       font-size: 10px;
     }
@@ -150,7 +150,7 @@ export const CardBack = styled.div`
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  background-color: ${(props) => props.theme.secondaryBackground};
+  background-color: ${colors.secondaryBackground};
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -160,7 +160,7 @@ export const CardBack = styled.div`
 
   h4 {
     font-size: 14px;
-    color: ${(props) => props.theme.detach};
+    color: ${colors.detach};
   }
 
   p {

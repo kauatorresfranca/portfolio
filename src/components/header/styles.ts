@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { breakpoints } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const Header = styled.header`
   display: flex;
@@ -11,8 +11,8 @@ export const Header = styled.header`
   z-index: 2;
   background: linear-gradient(
     -30deg,
-    ${(props) => props.theme.detach},
-    ${(props) => props.theme.lightPurple}
+    ${colors.detach},
+    ${colors.lightPurple}
   );
   border-radius: 25px;
 
@@ -43,7 +43,7 @@ export const Header = styled.header`
   h1 {
     display: flex;
     align-items: center;
-    color: ${(props) => props.theme.titleColor};
+    color: ${colors.title};
     font-size: 29px;
     font-weight: 500;
     margin-left: 32px;
@@ -79,7 +79,7 @@ export const Links = styled.ul`
     opacity: 0;
     visibility: hidden;
     border-radius: 18px;
-    background-color: ${(props) => props.theme.secondaryBackground};
+    background-color: ${colors.secondaryBackground};
     overflow: hidden; /* Impede que o conteúdo vaze */
     transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out,
       padding 1s ease;
@@ -103,7 +103,7 @@ export const Links = styled.ul`
     padding-bottom: 6px;
     text-align: center;
     text-decoration: none;
-    color: ${(props) => props.theme.white};
+    color: ${colors.white};
     font-size: 18px;
     transition: all 0.4s ease-in-out;
 
@@ -130,7 +130,7 @@ export const Links = styled.ul`
         left: 0;
         width: 0; /* Começa com width 0 */
         height: 3px;
-        background-color: ${(props) => props.theme.detach}; /* Cor da borda */
+        background-color: ${colors.detach}; /* Cor da borda */
         transition: width 0.3s ease-out; /* Transição suave da largura */
       }
     }
@@ -146,8 +146,8 @@ export const ToggleTheme = styled.div<{ themeName: string }>`
   height: 26px;
   margin-left: 10px;
   border: none;
-  background-color: ${(props) => props.theme.secondaryBackground};
-  color: ${(props) => props.theme.titleColor};
+  background-color: ${colors.secondaryBackground};
+  color: ${colors.title};
   border-radius: 20px;
   cursor: pointer;
   position: absolute;
@@ -156,21 +156,6 @@ export const ToggleTheme = styled.div<{ themeName: string }>`
   @media (max-width: ${breakpoints.desktop}) {
     position: relative;
     right: 0;
-  }
-
-  .ball {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: ${(props) => props.theme.buttonThemeBall};
-    border-radius: 50%;
-    position: absolute;
-    top: 5px;
-    left: ${({ themeName }) => (themeName === 'dark' ? '6px' : '28px')};
-    transition: left 0.3s ease-in-out;
-
-    height: 26px;
-    width: 26px;
   }
 `
 
@@ -187,7 +172,7 @@ export const HamburguerMenu = styled.div`
   &::after {
     content: '';
     height: 2px;
-    background-color: ${(props) => props.theme.titleColor};
+    background-color: ${colors.title};
     width: 100%;
     position: absolute;
     transition: all 0.4s ease-out;

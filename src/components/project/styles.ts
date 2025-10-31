@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { breakpoints } from "../../styles"
+import { breakpoints, colors } from "../../styles"
 
 export const Project = styled.div`
   background-color: transparent;
@@ -50,14 +50,14 @@ export const projectViewGroup = styled.div`
   transition: opacity 0.4s ease-in;
 
   h2 {
-      color: ${(props) => props.theme.titleColor};
+      color: ${colors.title};
       text-align: center;
     }
 `
 
 export const Overlay = styled.div`
   position: absolute;
-  background: ${(props) => props.theme.overlay};
+  background: ${colors.overlay};
   top: 0;
   left: 0;
   right: 0;
@@ -68,7 +68,7 @@ export const Overlay = styled.div`
   cursor: pointer;
 
   &:hover {
-    background: ${(props) => props.theme.overlayminor};
+    background: ${colors.overlayminor};
     border-bottom: none;
 
     ${projectViewGroup} {
@@ -85,7 +85,7 @@ export const TagList = styled.div`
 
   img {
     width: 36px;
-    background-color: ${(props) => props.theme.overlay === 'rgba(255, 255, 255, 0.6)' ? 'rgba(0, 0, 0, 0.6)' : 'rgba(255, 255, 255, 0.6)'};
+    background-color: ${colors.overlay === 'rgba(255, 255, 255, 0.6)' ? 'rgba(0, 0, 0, 0.6)' : 'rgba(255, 255, 255, 0.6)'};
     margin-left: 5px;
     margin-right: 5px;
     border-radius: 50%;
@@ -95,14 +95,14 @@ export const TagList = styled.div`
 export const Modal = styled.div`
   display: flex;
   position: relative;
-  background-color: ${(props) => props.theme.secondaryBackground};
+  background-color: ${colors.secondaryBackground};
   padding: 20px;
   border-radius: 8px;
   max-width: 100vw;
   width: 80%;
   max-height: 100vh;
   height: 50%;
-  box-shadow: 0 4px 10px ${(props) => props.theme.overlay};
+  box-shadow: 0 4px 10px ${colors.overlay};
 
   video {
     width: 38vw;
@@ -120,7 +120,7 @@ export const Modal = styled.div`
     cursor: pointer;
 
     &:hover {
-      background-color: ${(props) => props.theme.overlayminor};
+      background-color: ${colors.overlayminor};
       border-radius: 50%;
     }
   }
@@ -168,7 +168,7 @@ export const Description = styled.div`
   }
 
   .description {
-    color: ${(props) => props.theme.textColor};
+    color: ${colors.text};
   }
 
   .date {
@@ -176,7 +176,7 @@ export const Description = styled.div`
     bottom: 18px;
     right: 12px;
     font-size: 14px;
-    color: ${(props) => props.theme.detach};
+    color: ${colors.detach};
   }
 
   @media (max-width: ${breakpoints.desktop}) {
@@ -227,8 +227,8 @@ export const PrimaryButton = styled.button`
   height: 40px;
   border: none;
   border-radius: 10px;
-  background-color: ${(props) => props.theme.background};
-  color: ${(props) => props.theme.titleColor};
+  background-color: ${colors.background};
+  color: ${colors.title};
   transition: background 2s ease, transform 0.3s ease;
 
   &:hover{
@@ -243,7 +243,7 @@ export const PrimaryButton = styled.button`
 `
 
 export const SecundaryButton = styled.button`
-  background: linear-gradient(to right, ${(props) => props.theme.detach}, ${(props) => props.theme.lightPurple});
+  background: linear-gradient(to right, ${colors.detach}, ${colors.lightPurple});
   color: #fff;
   width: 340px;
   height: 40px;
@@ -254,7 +254,7 @@ export const SecundaryButton = styled.button`
 
   &:hover{
     cursor: pointer;
-    background: linear-gradient(to left, ${(props) => props.theme.detach}, ${(props) => props.theme.lightPurple});
+    background: linear-gradient(to left, ${colors.detach}, ${colors.lightPurple});
     transform: scale(1.02);
   }
 

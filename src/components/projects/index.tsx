@@ -1,5 +1,4 @@
 import * as S from './styles'
-import { darkTheme } from '../../../theme'
 import Project from '../project'
 import { useState } from 'react'
 
@@ -11,6 +10,7 @@ import ticiana from '../../../assets/videos/ticiana.mp4'
 import zuppi from '../../../assets/videos/zuppi.mp4'
 import barberly from '../../../assets/videos/barberly.mp4'
 import ambiente from '../../../assets/videos/ambiente.mp4'
+import { colors } from '../../styles'
 
 
 // Definir o tipo para a propriedade 'type'
@@ -189,7 +189,7 @@ const Projects = () => {
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="16"
-            fill={darkTheme.detach}
+            fill={colors.detach}
             className="bi bi-diamond"
             viewBox="0 0 16 16"
           >

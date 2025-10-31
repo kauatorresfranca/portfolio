@@ -5,12 +5,25 @@ export const breakpoints = {
   tablet: '768px'
 }
 
+export const colors = {
+  primary:'#003bcd',
+  background: '#17191e',
+  title: '#ffffff',
+  text: '#b0b3b8',
+  detach: '#2a3342',
+  secondaryBackground: '#00aaff',
+  lightPurple: '#6c63ff',
+  white: '#ffffff',
+  overlay: 'rgba(0, 0, 0, 0.5)',
+  overlayminor: 'rgba(0, 0, 0, 0.3)',
+}
+
 export const GlobalCss = createGlobalStyle`
   * {
   margin: 0;
-  padding: 0:
+  padding: 0;
   box-sizing: border-box;
-  color: ${(props) => props.theme.titleColor};
+  color: ${colors.title};
   list-style: none;
   text-decoration: none;
   font-family: Roboto, sans-serif;
@@ -22,7 +35,7 @@ export const GlobalCss = createGlobalStyle`
   }
 
   body {
-    background-color: ${(props) => props.theme.background};
+    background-color: ${colors.background};
   }
 }
   html {

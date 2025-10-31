@@ -1,9 +1,9 @@
 import styled from "styled-components"
-import { breakpoints } from "../../styles"
+import { breakpoints, colors } from "../../styles"
 
 export const Background = styled.div`
   padding-top: 32px;
-  background-color: ${(props) => props.theme.background};
+  background-color: ${colors.background};
   scroll-margin-top: 110px;
 
   h3 {
@@ -32,7 +32,7 @@ export const AreaLeft = styled.div`
 
   p {
     font-size: 10px;
-    color: ${(props) => props.theme.textColor}
+    color: ${colors.text}
   }
 `
 
@@ -43,7 +43,7 @@ export const Acordeon = styled.div`
   padding: 24px;
   border-radius: 25px;
   margin-bottom: 32px;
-  background-color: ${(props) => props.theme.secondaryBackground};
+  background-color: ${colors.secondaryBackground};
   cursor: pointer;
   box-shadow: 2px 2px 2px 1.5px rgba(0, 0, 0, 0.2);
 
@@ -89,7 +89,7 @@ export const SkilContent = styled.div`
     font-size: 14px;
     text-align: center;
     margin-bottom: 18px;
-    color: ${(props) => props.theme.overlay === 'rgba(255, 255, 255, 0.6)' ? 'rgba(0, 0, 0, 0.5)' : 'rgba(255, 255, 255, 0.5)'};;
+    color: ${colors.overlay === 'rgba(255, 255, 255, 0.6)' ? 'rgba(0, 0, 0, 0.5)' : 'rgba(255, 255, 255, 0.5)'};;
     }
 
     @media (min-width: ${breakpoints.desktop}) {
@@ -123,7 +123,7 @@ export const Skil = styled.div`
   padding: 16px;
   margin-bottom: 40px;
   border-radius: 18%;
-  background-color: ${(props) => props.theme.secondaryBackground};
+  background-color: ${colors.secondaryBackground};
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   transition: transform 0.5s ease;
 
