@@ -176,7 +176,7 @@ export const Description = styled.div`
     bottom: 18px;
     right: 12px;
     font-size: 14px;
-    color: ${colors.detach};
+    color: ${colors.primary};
   }
 
   @media (max-width: ${breakpoints.desktop}) {
@@ -243,7 +243,7 @@ export const PrimaryButton = styled.button`
 `
 
 export const SecundaryButton = styled.button`
-  background: linear-gradient(to right, ${colors.detach}, ${colors.lightPurple});
+  background: linear-gradient(to right, ${colors.primary}, ${colors.lightPurple});
   color: #fff;
   width: 340px;
   height: 40px;
@@ -254,7 +254,7 @@ export const SecundaryButton = styled.button`
 
   &:hover{
     cursor: pointer;
-    background: linear-gradient(to left, ${colors.detach}, ${colors.lightPurple});
+    background: linear-gradient(to left, ${colors.primary}, ${colors.lightPurple});
     transform: scale(1.02);
   }
 

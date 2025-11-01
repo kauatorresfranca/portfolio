@@ -84,7 +84,7 @@ export const Form = styled.form`
   }
 
   input:focus, textarea:focus {
-    border: 2px solid ${colors.detach}; /* Mantém apenas a borda inferior vermelha */
+    border: 2px solid ${colors.primary}; /* Mantém apenas a borda inferior vermelha */
     box-shadow: 0px 0px 0px 0px transparent;
   }
 
@@ -111,13 +111,13 @@ export const Form = styled.form`
     margin-top: 16px;
     cursor: pointer;
     border-radius: 10px;
-    background: linear-gradient(to right, ${colors.detach}, ${colors.lightPurple});
+    background: linear-gradient(to right, ${colors.primary}, ${colors.lightPurple});
     color: #fff;
     border: none;
     transition: all .3s ease-in-out;
 
     &:hover {
-      background: linear-gradient(to top, ${colors.detach}, ${colors.lightPurple});
+      background: linear-gradient(to top, ${colors.primary}, ${colors.lightPurple});
       transform: scale(1.02);
     }
   }

@@ -13,7 +13,6 @@ export const colors = {
   title: '#ffffff',
   subTitle: '#C0C4CE',
   text: '#878EA1',
-  detach: '#003bcd',
   lightPurple: '#6c63ff',
   white: '#ffffff',
   overlay: 'rgba(0, 0, 0, 0.5)',

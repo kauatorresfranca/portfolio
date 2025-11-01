@@ -62,7 +62,7 @@ export const HeroContent = styled.div`
   }
 
   @media (max-width: ${breakpoints.tablet}) {
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }

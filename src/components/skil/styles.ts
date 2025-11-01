@@ -18,7 +18,7 @@ export const ProgressContainer = styled.div`
 export const ProgressFill = styled.div`
   display: none;
   height: 100%;
-  background: linear-gradient(90deg, ${colors.detach}, ${colors.lightPurple});
+  background: linear-gradient(90deg, ${colors.primary}, ${colors.lightPurple});
 
   &.Html {
     width: 90%;
@@ -168,7 +168,7 @@ export const CardBack = styled.div`
 
   h4 {
     font-size: 14px;
-    color: ${colors.detach};
+    color: ${colors.primary};
   }
 
   p {

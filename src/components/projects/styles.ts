@@ -100,7 +100,7 @@ export const ButtonGroup = styled.div`
 `
 
 export const PrimaryButton = styled.button`
-  background-color: ${colors.detach};
+  background-color: ${colors.primary};
   color: #fff;
   width: 260px;
   height: 32px;
@@ -139,8 +139,8 @@ export const SortSelect = styled.select`
   margin-bottom: 20px;
   padding: 8px;
   background-color: ${colors.secondaryBackground};
-  color: ${colors.detach};
-  border: 1px solid ${colors.detach};
+  color: ${colors.primary};
+  border: 1px solid ${colors.primary};
   border-radius: 4px;
   font-size: 16px;
 

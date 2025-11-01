@@ -122,7 +122,7 @@ export const Links = styled.ul`
         left: 0;
         width: 0; /* Começa com width 0 */
         height: 3px;
-        background-color: ${colors.detach}; /* Cor da borda */
+        background-color: ${colors.primary}; /* Cor da borda */
         transition: width 0.3s ease-out; /* Transição suave da largura */
       }
     }
