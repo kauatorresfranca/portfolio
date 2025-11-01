@@ -3,7 +3,7 @@ import Particles, {
   initParticlesEngine,
 } from "@tsparticles/react"
 import { loadSlim } from "@tsparticles/slim"
-import type { Container, ISourceOptions } from "@tsparticles/engine"
+import type { ISourceOptions } from "@tsparticles/engine"
 
 const ParticlesBackground = () => {
   const [init, setInit] = useState(false)
@@ -14,7 +14,7 @@ const ParticlesBackground = () => {
     }).then(() => setInit(true))
   }, [])
 
-  const particlesLoaded = useCallback(async (container?: Container) => {
+  const particlesLoaded = useCallback(async () => {
     // função obrigatória mas não usada — mantemos tipagem correta
   }, [])
 

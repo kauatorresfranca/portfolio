@@ -6,7 +6,7 @@ export const Header = styled.header`
   justify-content: space-evenly;
   align-items: center;
   position: fixed;
-  padding: 12px 0;
+  padding: 16px 32px;
   margin: 24px auto 0 auto;
   z-index: 2;
   background-color: ${colors.headerBackground};
@@ -16,7 +16,7 @@ export const Header = styled.header`
 
   .container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     position: relative;
@@ -44,7 +44,6 @@ export const Header = styled.header`
     color: ${colors.title};
     font-size: 29px;
     font-weight: 500;
-    margin-left: 32px;
 
     @media (max-width: ${breakpoints.desktop}) {
       text-align: center;
@@ -61,7 +60,6 @@ export const Header = styled.header`
 export const Links = styled.ul`
   display: flex;
   gap: 80px;
-  margin-right: 245px;
   border: none;
 
   @media (max-width: ${breakpoints.desktop}) {
@@ -80,7 +78,7 @@ export const Links = styled.ul`
     background-color: ${colors.secondaryBackground};
     overflow: hidden; /* Impede que o conteúdo vaze */
     transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out,
-      padding 1s ease;
+    padding 1s ease;
 
     &.active {
       height: 100%;
@@ -104,10 +102,6 @@ export const Links = styled.ul`
     color: ${colors.white};
     font-size: 18px;
     transition: all 0.4s ease-in-out;
-
-    &:hover {
-      transform: scale(1.1);
-    }
 
     @media (max-width: ${breakpoints.desktop}) {
       padding-bottom: 16px;
