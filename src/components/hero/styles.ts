@@ -1,21 +1,40 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
 import { breakpoints, colors } from "../../styles"
 
+const bounce = keyframes`
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+`
 
-export const background = styled.div`
+export const Hero = styled.div`
   background-image: url('../../../../assets/images/background.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
   width: 100%;
+
+  i {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: ${colors.text};
+    animation: ${bounce} 2s infinite;
+  }
 `
 
-export const Banner = styled.div`
+export const HeroContent = styled.div`
   display: flex;
-  justify-content: space-between;
-  padding-top: 128px;
-  padding-bottom: 32px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 
   img {
     width: 320px;
@@ -38,61 +57,18 @@ export const Banner = styled.div`
 `
 
 export const Description = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  aling-items: center;
-
-  h4 {
-    font-size: 12px;
-    color: ${colors.text};
-    margin-bottom: 12px;
-  }
-
-  button {
-    width: 240px;
-    height: 36px;
-    font-weight: 700;
-    background-color: ${colors.secondaryBackground};
-    color: ${colors.title};
-    border: 2px solid ${colors.detach};
-    border-radius: 12px;
-    cursor: pointer;
-
-  i {
-    margin-right: 6px;
-  }
-
-    &:hover i {
-      color: ${colors.secondaryBackground};
-    }
-
-    &:hover {
-      color: ${colors.secondaryBackground};
-      background-color: ${colors.detach};
-    }
-  }
-
-  @media (max-width: ${breakpoints.tablet}) {
-    justify-content: center;
-    align-items: center;
-    margin-right: 0;
-
-    button {
-      width: 280px;
-    }
-
-    h4 {
-      margin-top: 6px;
-    }
-  }
+  color: ${colors.text};
+  font-size: 14px;
+  font-weight: 400;
+  max-width: 800px;
+  text-align: center;
 `
 
 export const Title = styled.h2`
   display: flex;
   flex-direction: column;
   margin-bottom: 12px;
-  color: ${colors.text};
+  color: ${colors.title};
   font-size: 36px;
   font-weight: 700;
   white-space: nowrap;
@@ -102,6 +78,17 @@ export const Title = styled.h2`
     position: relative;
     width: 0;
     color: ${colors.detach};
+  }
+`
+
+export const SubTitle = styled.h3`
+  color: ${colors.subTitle};
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 8px;
+
+  span {
+    color: ${colors.primary};
   }
 `
 

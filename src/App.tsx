@@ -3,13 +3,13 @@ import { ClipLoader } from 'react-spinners'
 import { useEffect, useState } from 'react'
 
 import AboutMe from './components/about_me/index'
-import Banner from './components/hero'
 import Contact from './components/Contact'
 import Header from './components/header'
 import Projects from './components/projects'
 import Skills from './components/skils'
 import {colors, GlobalCss} from './styles'
 import Footer from './components/footer'
+import Hero from './components/hero'
 
 
 function App() {
@@ -37,7 +37,7 @@ function App() {
       <>
       <GlobalCss />
       <Header/>
-      <Banner />
+      <Hero />
       <AboutMe />
       <Skills />
       <Projects />

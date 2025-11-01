@@ -1,23 +1,22 @@
 import * as S from './styles'
 
-const Banner = () => {
+const Hero = () => {
   return (
-    <S.background>
-        <S.Banner>
+    <S.Hero>
+        <S.HeroContent>
+          <S.SubTitle>
+            Hello World! Meu nome é <span>Kauã Torres</span> e sou
+          </S.SubTitle>
+          <S.Title>
+              Desenvolvedor Fullstack
+          </S.Title>
           <S.Description>
-            <S.Title>
-              Olá, eu sou<span> Kauã Torres</span>
-            </S.Title>
-            <h4>DESENVOLVEDOR FULL-STACK</h4>
-            <a href="/curriculo.pdf">
-              <button>
-                <i className="ri-download-line"></i>BAIXAR CURRICULO
-              </button>
-            </a>
+            Transformo necessidades em aplicações reais, evolventes e funcionais. Desenvolvo sistemas através da minha paixão pela tecnologia, contribuindo com soluções inovadoras e eficazes para desafios complexos.
           </S.Description>
-        </S.Banner>
-    </S.background>
+        </S.HeroContent>
+        <i className="ri-arrow-down-double-fill"></i>
+    </S.Hero>
   )
 }
 
-export default Banner
+export default Hero

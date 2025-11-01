@@ -10,7 +10,8 @@ export const colors = {
   background: '#17191e',
   headerBackground: 'rgba(255, 255, 255, 0.5)',
   title: '#ffffff',
-  text: '#b0b3b8',
+  subTitle: '#C0C4CE',
+  text: '#878EA1',
   detach: '#2a3342',
   secondaryBackground: '#00aaff',
   lightPurple: '#6c63ff',
@@ -27,7 +28,7 @@ export const GlobalCss = createGlobalStyle`
   color: ${colors.title};
   list-style: none;
   text-decoration: none;
-  font-family: Roboto, sans-serif;
+  font-family: "asap", sans-serif;
 
   .container {
     max-width: 1200px;
