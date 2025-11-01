@@ -94,7 +94,7 @@ const projectsData: ProjectData[] = [
       imgPath: '/camila_matos.png',
       gitHubUrl: 'https://github.com/kauatorresfranca/DraCamilaMatos',
       projectViewUrl: 'https://dracamilamatos.vercel.app/',
-      title: 'Dentist Website',
+      title: 'Dra. Camila Matos',
       description:
         'Uma landing page desenvolvida para uma dentista, com um design moderno e profissional para apresentar seus serviços e informações de contato. O site conta com uma navegação fluida e uma interface responsiva para garantir uma boa experiência tanto em dispositivos móveis quanto em desktops. Construído com React, TypeScript, Styled Components e Redux para uma estrutura escalável e organizada.',
     },
@@ -105,7 +105,7 @@ const projectsData: ProjectData[] = [
       imgPath: '/ticiana_moura.png',
       gitHubUrl: 'https://github.com/kauatorresfranca/ticiana-moura-psic',
       projectViewUrl: 'https://www.ticianamourapsicologa.com.br/',
-      title: 'Psychologist Website',
+      title: 'Ticiana Moura',
       description:
         'Um site desenvolvido para apresentar meus projetos, habilidades e informações sobre minha trajetória na programação. O design foi pensado para ser moderno e responsivo. O site conta com uma sessão de skills, onde destaco as tecnologias que domino, uma área de projetos, e uma página de contato para facilitar a comunicação com potenciais clientes e recrutadores. Foi desenvolvido com React, TypeScript, Styled Components e Redux.',
     },

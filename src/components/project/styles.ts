@@ -55,6 +55,24 @@ export const ProjectTitle = styled.div`
     }
 `
 
+export const TagList = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 6px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.4s ease-in;
+
+  img {
+    width: 24px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 50%;
+  }
+`
+
 export const Overlay = styled.div`
   position: absolute;
   background: ${colors.overlay};
@@ -71,27 +89,9 @@ export const Overlay = styled.div`
     background: ${colors.overlayminor};
     border-bottom: none;
 
-    ${ProjectTitle} {
+    ${ProjectTitle}, ${TagList} {
         opacity: 0;
     }
-  }
-`
-
-
-export const TagList = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 6px;
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  img {
-    width: 24px;
-    margin-left: 5px;
-    margin-right: 5px;
-    border-radius: 50%;
   }
 `
 
@@ -104,11 +104,16 @@ export const Modal = styled.div`
   max-width: 100vw;
   width: 80%;
   max-height: 100vh;
-  height: 50%;
+  height: 400px;
   box-shadow: 0 4px 10px ${colors.overlay};
 
+  .imgGroup {
+    width: 100%;
+  }
+
   video {
-    width: 38vw;
+    height: 80%;
+    width: 100%;
     border-radius: 4px 4px 6px 6px;
     box-shadow: 3px 2px 2px 1px rgba(0, 0, 0, 0.3);
   }
@@ -133,10 +138,9 @@ export const Modal = styled.div`
     flex-direction: column;
 
     video {
-      margin-left: 10px;
       margin-top: 22px;
       margin-bottom: 12px;
-      width:75vw;
+      width: 100%;
     }
   }
 `
@@ -179,7 +183,7 @@ export const Description = styled.div`
     bottom: 18px;
     right: 12px;
     font-size: 14px;
-    color: ${colors.primary};
+    color: ${colors.text};
   }
 
   @media (max-width: ${breakpoints.desktop}) {
@@ -246,7 +250,7 @@ export const PrimaryButton = styled.button`
 `
 
 export const SecundaryButton = styled.button`
-  background: linear-gradient(to right, ${colors.primary}, ${colors.lightPurple});
+  background-color: ${colors.primary};
   color: #fff;
   width: 340px;
   height: 40px;
