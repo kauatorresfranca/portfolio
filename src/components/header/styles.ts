@@ -6,7 +6,7 @@ export const Header = styled.header`
   justify-content: space-evenly;
   align-items: center;
   position: fixed;
-  padding: 16px 32px;
+  padding: 16px 0;
   margin: 24px auto 0 auto;
   z-index: 2;
   background-color: rgba(82, 82, 82, 0.5); /* ✅ alterado */
@@ -40,6 +40,7 @@ export const Header = styled.header`
 
   h1 {
     display: flex;
+    margin-left: 32px;
     align-items: center;
     color: ${colors.title};
     font-size: 29px;
@@ -48,7 +49,7 @@ export const Header = styled.header`
     @media (max-width: ${breakpoints.desktop}) {
       text-align: center;
       margin-right: 32px;
-      margin-left: 0px;
+      margin-left: 16px;
     }
 
     svg {
@@ -61,6 +62,7 @@ export const Links = styled.ul`
   display: flex;
   gap: 40px;
   border: none;
+  margin-right: 32px;
 
   @media (max-width: ${breakpoints.desktop}) {
     display: flex;
@@ -179,7 +181,7 @@ export const HamburguerMenu = styled.div`
   @media (max-width: ${breakpoints.desktop}) {
     display: block;
     position: relative;
-    margin-right: 98px
+    margin-right: 60px
   }
 `
 

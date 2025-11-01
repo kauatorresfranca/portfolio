@@ -1,9 +1,7 @@
 import { colors } from "../../styles"
 import * as S from "./styles"
 
-
 const AboutMe = () => {
-
   return (
     <div className="container">
       <S.AboutMe id='about'>
@@ -16,36 +14,20 @@ const AboutMe = () => {
           </h2>
 
           <p>
-            Desde jovem, sempre fui curioso sobre como o mundo digital funciona por trás das telas.
-            Em <span className="bold">2023</span>, incentivado pelo meu tio — um desenvolvedor back-end —
-            mergulhei na programação com <span className="bold">Python</span>.
-            Meu primeiro projeto, uma automação com <span className="bold">PyAutoGUI</span>,
-            me mostrou que eu podia transformar ideias em soluções reais,
-            e desde então não parei de aprender e criar.
+            Sou um <span className="bold">desenvolvedor full stack</span> apaixonado por transformar ideias em soluções digitais completas, unindo <span className="bold">design</span>, <span className="bold">performance</span> e <span className="bold">funcionalidade</span>.
           </p>
 
           <br />
 
           <p>
-            Hoje, como <span className="bold">desenvolvedor full stack</span>,
-            trabalho com <span className="bold">Django</span>, <span className="bold">React</span>,
-            <span className="bold">TypeScript</span>, <span className="bold">Redux</span>,
-            <span className="bold">SQL</span> e <span className="bold">Sass</span>,
-            sempre buscando entregar projetos que unam técnica e impacto.
-            Destaque para o <span className="bold">Barberly</span>, um SaaS que simplifica
-            a gestão de barbearias, e o <span className="bold">Zuppi</span>, uma réplica do Twitter
-            que me desafiou a resolver problemas complexos.
-            Adoro o processo de transformar ideias em código e ver o resultado na prática.
+            Trabalho com tecnologias como <span className="bold">Django</span>, <span className="bold">React</span>, <span className="bold">TypeScript</span> e <span className="bold">SQL</span>, entre outras ferramentas que me permitem desenvolver aplicações modernas e eficientes, tanto no front-end quanto no back-end.
           </p>
 
           <br />
 
           <p>
-            Meu objetivo é crescer como <span className="bold">full stack</span>,
-            explorando áreas como <span className="bold">inteligência artificial</span>
-            e criando soluções que façam a diferença na vida das pessoas.
-            Estou sempre aprendendo e pronto para contribuir com equipes
-            que valorizam <span className="bold">inovação</span> e <span className="bold">criatividade</span>.
+            Acredito que cada projeto é uma oportunidade de criar algo útil e significativo.
+            Por isso, encaro cada desafio com dedicação e busco entregar resultados que realmente causem impacto.
           </p>
         </S.Description>
       </S.AboutMe>
