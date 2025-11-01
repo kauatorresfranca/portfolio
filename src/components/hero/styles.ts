@@ -2,19 +2,20 @@ import styled, { keyframes } from "styled-components"
 import { breakpoints, colors } from "../../styles"
 
 const bounce = keyframes`
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+`
+
+const blink = keyframes`
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
 `
 
 export const Hero = styled.div`
   position: relative;
   height: 100vh;
   width: 100%;
-  background-color: #17191e; /* cor de fundo corrigida */
+  background-color: #17191e;
   overflow: hidden;
 
   #tsparticles {
@@ -40,7 +41,7 @@ export const Hero = styled.div`
 
 export const HeroContent = styled.div`
   position: relative;
-  z-index: 1; /* garante que fique sobre o fundo animado */
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -92,7 +93,14 @@ export const SubTitle = styled.h3`
   margin-bottom: 16px;
   text-align: center;
 
-  span {
+  .cursor {
+    display: inline-block;
+    margin-left: 3px;
+    color: ${colors.text};
+    animation: ${blink} 2s step-start infinite;
+  }
+
+  .highlight {
     color: ${colors.primary};
   }
 `
