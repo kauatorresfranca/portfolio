@@ -9,7 +9,7 @@ export const Header = styled.header`
   padding: 16px 32px;
   margin: 24px auto 0 auto;
   z-index: 2;
-  background-color: ${colors.headerBackground};
+  background-color: rgba(82, 82, 82, 0.5); /* ✅ alterado */
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.18));
   backdrop-filter: blur(10px);
   border-radius: 25px;
@@ -71,14 +71,13 @@ export const Links = styled.ul`
     margin-right: 0;
     gap: 0;
     padding: 0;
-    height: 0; /* Começa fechado */
+    height: 0;
     opacity: 0;
     visibility: hidden;
     border-radius: 18px;
-    background-color: ${colors.background};
-    overflow: hidden; /* Impede que o conteúdo vaze */
-    transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out,
-    padding 1s ease;
+    background-color: transpatent;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out, padding 1s ease;
 
     &.active {
       height: 100%;
@@ -109,21 +108,19 @@ export const Links = styled.ul`
     }
 
     @media (min-width: ${breakpoints.desktop}) {
-      /* Criando a borda animada */
       &:hover::after {
-        width: 100%; /* Quando passar o mouse, a largura da borda será 100% */
+        width: 100%;
       }
 
-      /* Criando o pseudo-elemento para a borda */
       &::after {
         content: '';
         position: absolute;
         bottom: 0;
         left: 0;
-        width: 0; /* Começa com width 0 */
+        width: 0;
         height: 3px;
-        background-color: ${colors.primary}; /* Cor da borda */
-        transition: width 0.3s ease-out; /* Transição suave da largura */
+        background-color: ${colors.primary};
+        transition: width 0.3s ease-out;
       }
     }
   }
@@ -142,7 +139,7 @@ export const HamburguerMenu = styled.div`
   &::after {
     content: '';
     height: 2px;
-    background-color: ${colors.title};
+    background-color: ${colors.white};
     width: 100%;
     position: absolute;
     transition: all 0.4s ease-out;
@@ -155,11 +152,11 @@ export const HamburguerMenu = styled.div`
   }
 
   &::before {
-    top: 8px; /* Define uma posição inicial fixa */
+    top: 8px;
   }
 
   &::after {
-    bottom: 8px; /* Define uma posição inicial fixa */
+    bottom: 8px;
   }
 
   &.active {
@@ -168,13 +165,13 @@ export const HamburguerMenu = styled.div`
     }
 
     &::before {
-      top: 50%; /* Move para o centro */
-      transform: translateY(-50%) rotate(-45deg); /* Centraliza e rotaciona */
+      top: 50%;
+      transform: translateY(-50%) rotate(-45deg);
     }
 
     &::after {
-      top: 50%; /* Move para o centro */
-      transform: translateY(-50%) rotate(45deg); /* Centraliza e rotaciona */
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
       bottom: 0;
     }
   }
@@ -182,7 +179,7 @@ export const HamburguerMenu = styled.div`
   @media (max-width: ${breakpoints.desktop}) {
     display: block;
     position: relative;
-    margin-right: 50px;
+    margin-right: 98px
   }
 `
 

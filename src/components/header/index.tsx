@@ -6,23 +6,26 @@ const Header = () => {
 
   return (
     <div className='container'>
-        <S.Header>
-            <div className="container">
-            <S.TopHeader>
-              <a href="#"><h1>Kauã Torres.</h1></a>
-              <S.HamburguerMenu className={menuIsOpen ? 'active' : ''} onClick={() => setMenuIsOpen(!menuIsOpen)}>
-                <span></span>
-              </S.HamburguerMenu>
-            </S.TopHeader>
-              <S.Links className={menuIsOpen ? 'active' : ''}>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#about">Sobre</a></li>
-                <li><a href="#skils">Skils</a></li>
-                <li><a href="#projects">Projetos</a></li>
-                <li><a href="#contact">Contato</a></li>
-              </S.Links>
-            </div>
-        </S.Header >
+      <S.Header>
+        <div className="container">
+          <S.TopHeader>
+            <a href="#"><h1>Kauã Torres.</h1></a>
+            <S.HamburguerMenu
+              className={menuIsOpen ? 'active' : ''}
+              onClick={() => setMenuIsOpen(!menuIsOpen)}
+            >
+              <span></span>
+            </S.HamburguerMenu>
+          </S.TopHeader>
+          <S.Links className={menuIsOpen ? 'active' : ''}>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#skils">Skils</a></li>
+            <li><a href="#projects">Projetos</a></li>
+            <li><a href="#contact">Contato</a></li>
+          </S.Links>
+        </div>
+      </S.Header>
     </div>
   )
 }
