@@ -15,6 +15,7 @@ const Header = () => {
               </S.HamburguerMenu>
             </S.TopHeader>
               <S.Links className={menuIsOpen ? 'active' : ''}>
+                <li><a href="#">Inicio</a></li>
                 <li><a href="#about">Sobre</a></li>
                 <li><a href="#skils">Skils</a></li>
                 <li><a href="#projects">Projetos</a></li>

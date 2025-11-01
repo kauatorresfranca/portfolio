@@ -23,7 +23,7 @@ const Skil = ({ title, img, percentage, description }: Props) => {
           <S.ProgressContainer>
             <S.ProgressFill className={title} />
           </S.ProgressContainer>
-          <p>{percentage}</p>
+          <p className='porcentagem'>{percentage}</p>
         </S.CardFront>
         <S.CardBack>
           <h4>O que é {title} ?</h4>

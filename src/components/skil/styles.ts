@@ -123,6 +123,10 @@ export const Card = styled.div`
   width: 100px;
   height: 100px;
   transform-style: preserve-3d;
+
+  .porcentagem {
+    display: none;
+  }
 `
 
 export const CardFront = styled.div`
