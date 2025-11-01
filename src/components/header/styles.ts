@@ -9,7 +9,7 @@ export const Header = styled.header`
   padding: 16px 0;
   margin: 24px auto 0 auto;
   z-index: 2;
-  background-color: rgba(82, 82, 82, 0.5); /* ✅ alterado */
+  background-color: rgba(82, 82, 82, 0.5);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.18));
   backdrop-filter: blur(10px);
   border-radius: 25px;
@@ -73,19 +73,19 @@ export const Links = styled.ul`
     margin-right: 0;
     gap: 0;
     padding: 0;
-    height: 0;
+    max-height: 0; /* Começa fechado */
     opacity: 0;
     visibility: hidden;
     border-radius: 18px;
-    background-color: transpatent;
+    background-color: transparent;
     overflow: hidden;
-    transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out, padding 1s ease;
+    transition: max-height 0.5s ease-in-out, opacity 0.4s ease-in-out, padding 0.3s ease-in-out;
 
     &.active {
-      height: 100%;
+      max-height: 500px; /* Ajuste de acordo com o conteúdo */
       opacity: 1;
       visibility: visible;
-      padding: 12px;
+      padding: 12px 0;
     }
   }
 
@@ -181,7 +181,7 @@ export const HamburguerMenu = styled.div`
   @media (max-width: ${breakpoints.desktop}) {
     display: block;
     position: relative;
-    margin-right: 60px
+    margin-right: 60px;
   }
 `
 
