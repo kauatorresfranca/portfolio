@@ -15,7 +15,7 @@ export const colors = {
   text: '#878EA1',
   lightPurple: '#6c63ff',
   white: '#ffffff',
-  overlay: 'rgba(0, 0, 0, 0.5)',
+  overlay: 'rgba(0, 0, 0, 0.6)',
   overlayminor: 'rgba(0, 0, 0, 0.3)',
 }
 

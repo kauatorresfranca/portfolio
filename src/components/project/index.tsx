@@ -27,7 +27,7 @@ const skillIcons: Record<skil['type'], string> = {
   django: '/django_icon.png',
   postgress: '/postgress_icon.png',
   git: '/git_icon.png',
-  sc: '/styledcomponents.svg',
+  sc: '/styledcomponents.png',
   vue: '/vue.icon.png',
   next: '/next_icon.png'
 }
@@ -58,8 +58,9 @@ const Project = ({ title, description, gitHubUrl, projectViewUrl, videoPath, img
         <S.ProjectViewContainer onClick={openModal}>
           <img src={imgPath} />
           <S.Overlay >
-            <S.projectViewGroup>
+            <S.ProjectTitle>
               <h2>{title}</h2>
+            </S.ProjectTitle>
               <S.TagList>
                 {skils.map((skill, index) => (
                   <S.SkillTag key={index}>
@@ -67,7 +68,6 @@ const Project = ({ title, description, gitHubUrl, projectViewUrl, videoPath, img
                   </S.SkillTag>
                 ))}
               </S.TagList >
-            </S.projectViewGroup>
           </S.Overlay>
         </S.ProjectViewContainer>
       </S.Project>

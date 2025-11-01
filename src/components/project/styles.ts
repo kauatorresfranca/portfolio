@@ -40,7 +40,7 @@ export const ProjectViewContainer = styled.div`
 
 `
 
-export const projectViewGroup = styled.div`
+export const ProjectTitle = styled.div`
   position: absolute; /* Para posicionar o conteúdo do grupo dentro do overlay */
   top: 50%; /* Centraliza verticalmente */
   left: 50%; /* Centraliza horizontalmente */
@@ -71,7 +71,7 @@ export const Overlay = styled.div`
     background: ${colors.overlayminor};
     border-bottom: none;
 
-    ${projectViewGroup} {
+    ${ProjectTitle} {
         opacity: 0;
     }
   }
@@ -82,10 +82,13 @@ export const TagList = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 6px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
 
   img {
-    width: 36px;
-    background-color: ${colors.overlay === 'rgba(255, 255, 255, 0.6)' ? 'rgba(0, 0, 0, 0.6)' : 'rgba(255, 255, 255, 0.6)'};
+    width: 24px;
     margin-left: 5px;
     margin-right: 5px;
     border-radius: 50%;

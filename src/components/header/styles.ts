@@ -59,7 +59,7 @@ export const Header = styled.header`
 
 export const Links = styled.ul`
   display: flex;
-  gap: 80px;
+  gap: 40px;
   border: none;
 
   @media (max-width: ${breakpoints.desktop}) {
@@ -75,7 +75,7 @@ export const Links = styled.ul`
     opacity: 0;
     visibility: hidden;
     border-radius: 18px;
-    background-color: ${colors.secondaryBackground};
+    background-color: ${colors.background};
     overflow: hidden; /* Impede que o conteúdo vaze */
     transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out,
     padding 1s ease;
@@ -129,32 +129,10 @@ export const Links = styled.ul`
   }
 `
 
-export const ToggleTheme = styled.div<{ themeName: string }>`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px;
-  width: 50px;
-  height: 26px;
-  margin-left: 10px;
-  border: none;
-  background-color: ${colors.secondaryBackground};
-  color: ${colors.title};
-  border-radius: 20px;
-  cursor: pointer;
-  position: absolute;
-  right: 42px;
-
-  @media (max-width: ${breakpoints.desktop}) {
-    position: relative;
-    right: 0;
-  }
-`
-
 export const HamburguerMenu = styled.div`
   display: none;
   position: relative;
-  margin-right: 12px;
+  margin-right: 24px;
   width: 28px;
   height: 28px;
   cursor: pointer;
