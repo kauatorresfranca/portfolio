@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { breakpoints, colors } from '../../styles'
 
 export const ProgressContainer = styled.div`
+  display: none;
   margin-top: 16px;
   height: 8px;
   width: 100px;
@@ -15,6 +16,7 @@ export const ProgressContainer = styled.div`
 `
 
 export const ProgressFill = styled.div`
+  display: none;
   height: 100%;
   background: linear-gradient(90deg, ${colors.detach}, ${colors.lightPurple});
 
@@ -119,7 +121,7 @@ export const SkilContainer = styled.div`
 export const Card = styled.div`
   position: relative;
   width: 100px;
-  height: 140px;
+  height: 100px;
   transform-style: preserve-3d;
 `
 
@@ -134,7 +136,7 @@ export const CardFront = styled.div`
   flex-direction: column;
 
   img {
-      width: 65px;
+      width: 45px;
       text-align: center;
     }
 
@@ -143,6 +145,12 @@ export const CardFront = styled.div`
         width: 56px;
       }
     }
+`
+
+export const CardContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 
 export const CardBack = styled.div`

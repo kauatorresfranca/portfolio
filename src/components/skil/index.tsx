@@ -16,8 +16,10 @@ const Skil = ({ title, img, percentage, description }: Props) => {
     <S.SkilContainer className={back ? 'flip' : ''} onClick={() => setBack(!back)}>
       <S.Card>
         <S.CardFront>
-          <h4>{title}</h4>
-          <img src={img} alt={title} />
+          <S.CardContent>
+            <h4>{title}</h4>
+            <img src={img} alt={title} />
+          </S.CardContent>
           <S.ProgressContainer>
             <S.ProgressFill className={title} />
           </S.ProgressContainer>

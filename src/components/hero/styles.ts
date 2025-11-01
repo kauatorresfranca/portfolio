@@ -11,12 +11,20 @@ const bounce = keyframes`
 `
 
 export const Hero = styled.div`
-  background-image: url('../../../../assets/images/background2.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  position: relative;
   height: 100vh;
   width: 100%;
+  background-color: #17191e; /* cor de fundo corrigida */
+  overflow: hidden;
+
+  #tsparticles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
 
   i {
     position: absolute;
@@ -26,10 +34,13 @@ export const Hero = styled.div`
     font-size: 24px;
     color: ${colors.text};
     animation: ${bounce} 2s infinite;
+    z-index: 2;
   }
 `
 
 export const HeroContent = styled.div`
+  position: relative;
+  z-index: 1; /* garante que fique sobre o fundo animado */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,7 +56,6 @@ export const HeroContent = styled.div`
     object-fit: cover;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
-
 
   @media (max-width: ${breakpoints.desktop}) {
     justify-content: space-around;
@@ -67,20 +77,11 @@ export const Description = styled.div`
 `
 
 export const Title = styled.h2`
-  display: flex;
-  flex-direction: column;
   margin-bottom: 16px;
   color: ${colors.title};
   font-size: 36px;
   font-weight: 700;
-  white-space: nowrap;
-
-  span {
-    display: block;
-    position: relative;
-    width: 0;
-    color: ${colors.detach};
-  }
+  text-align: center;
 `
 
 export const SubTitle = styled.h3`
@@ -89,10 +90,9 @@ export const SubTitle = styled.h3`
   font-weight: 400;
   margin-top: 40px;
   margin-bottom: 16px;
+  text-align: center;
 
   span {
     color: ${colors.primary};
   }
 `
-
-
