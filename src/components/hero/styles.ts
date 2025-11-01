@@ -11,7 +11,7 @@ const bounce = keyframes`
 `
 
 export const Hero = styled.div`
-  background-image: url('../../../../assets/images/background.png');
+  background-image: url('../../../../assets/images/background2.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -37,13 +37,15 @@ export const HeroContent = styled.div`
   height: 100%;
 
   img {
-    width: 320px;
-    transition: .5s ease-out;
-
-    &:hover {
-      transform: scale(1.1)
-    }
+    width: 120px;
+    height: 120px;
+    padding: 3px;
+    border: 1px solid ${colors.primary};
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
+
 
   @media (max-width: ${breakpoints.desktop}) {
     justify-content: space-around;
@@ -67,7 +69,7 @@ export const Description = styled.div`
 export const Title = styled.h2`
   display: flex;
   flex-direction: column;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   color: ${colors.title};
   font-size: 36px;
   font-weight: 700;
@@ -85,7 +87,8 @@ export const SubTitle = styled.h3`
   color: ${colors.subTitle};
   font-size: 16px;
   font-weight: 400;
-  margin-bottom: 8px;
+  margin-top: 40px;
+  margin-bottom: 16px;
 
   span {
     color: ${colors.primary};

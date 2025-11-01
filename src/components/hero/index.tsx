@@ -1,9 +1,11 @@
 import * as S from './styles'
+import me from '../../../assets/images/me.jpg'
 
 const Hero = () => {
   return (
     <S.Hero>
         <S.HeroContent>
+          <img src={me} alt="" />
           <S.SubTitle>
             Hello World! Meu nome é <span>Kauã Torres</span> e sou
           </S.SubTitle>
