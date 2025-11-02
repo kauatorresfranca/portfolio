@@ -172,7 +172,7 @@ export const CardBack = styled.div`
 
   h4 {
     font-size: 14px;
-    color: ${colors.primary};
+    color: ${colors.title};
   }
 
   p {
