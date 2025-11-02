@@ -37,7 +37,6 @@ const Hero = () => {
     return () => clearInterval(interval)
   }, [])
 
-  // memoriza o fundo de partículas
   const memoizedParticles = useMemo(() => <ParticlesBackground />, [])
 
   return (
@@ -58,6 +57,25 @@ const Hero = () => {
           Desenvolvo sistemas através da minha paixão pela tecnologia,
           contribuindo com soluções inovadoras e eficazes para desafios complexos.
         </S.Description>
+
+        <S.SocialLinks>
+          <a
+            href="https://www.linkedin.com/in/kauatorres/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <i className="ri-linkedin-fill"></i>
+          </a>
+          <a
+            href="https://github.com/kauatorresfranca"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <i className="ri-github-fill"></i>
+          </a>
+        </S.SocialLinks>
       </S.HeroContent>
 
       <i className="ri-arrow-down-double-fill"></i>

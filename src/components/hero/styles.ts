@@ -27,7 +27,7 @@ export const Hero = styled.div`
     z-index: 0;
   }
 
-  i {
+  i.ri-arrow-down-double-fill {
     position: absolute;
     bottom: 20px;
     left: 50%;
@@ -104,3 +104,22 @@ export const SubTitle = styled.h3`
     color: ${colors.primary};
   }
 `
+
+export const SocialLinks = styled.div`
+  margin-top: 24px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+
+  a {
+    color: ${colors.primary};
+    font-size: 24px;
+    transition: transform 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      transform: scale(1.2);
+      color: ${colors.white || colors.primary};
+    }
+  }
+`
+
