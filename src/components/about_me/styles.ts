@@ -6,6 +6,10 @@ export const AboutMe = styled.div`
   padding: 80px 0;
   scroll-margin-top: 110px;
 
+  img {
+    width: 300px;
+  }
+
   @media (max-width: ${breakpoints.tablet}) {
     flex-direction: column-reverse;
     align-items: center;

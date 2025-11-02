@@ -79,7 +79,7 @@ export const Links = styled.ul`
     border-radius: 18px;
     background-color: transparent;
     overflow: hidden;
-    transition: max-height 0.5s ease-in-out, opacity 0.4s ease-in-out, padding 0.3s ease-in-out;
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, padding 0.3s ease-in-out;
 
     &.active {
       max-height: 500px; /* Ajuste de acordo com o conteúdo */

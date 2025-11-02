@@ -103,7 +103,7 @@ export const SkilContainer = styled.div`
     }
 
   @media (max-width: ${breakpoints.desktop}) {
-    width: 80px;
+    width: 110px;
 
     &.flip {
       transform: rotateY(180deg) scale(1.2);

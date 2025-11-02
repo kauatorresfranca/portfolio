@@ -138,7 +138,7 @@ export const SecundaryButton = styled.button`
 export const SortSelect = styled.select`
   margin-bottom: 20px;
   padding: 8px;
-  background-color: ${colors.secondaryBackground};
+  background-color: transparent;
   color: ${colors.title};
   border-radius: 4px;
   font-size: 16px;

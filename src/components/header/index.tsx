@@ -18,11 +18,11 @@ const Header = () => {
             </S.HamburguerMenu>
           </S.TopHeader>
           <S.Links className={menuIsOpen ? 'active' : ''}>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#about">Sobre</a></li>
-            <li><a href="#skils">Skils</a></li>
-            <li><a href="#projects">Projetos</a></li>
-            <li><a href="#contact">Contato</a></li>
+            <li onClick={() => setMenuIsOpen(!menuIsOpen)}><a href="#">Inicio</a></li>
+            <li onClick={() => setMenuIsOpen(!menuIsOpen)}><a href="#about">Sobre</a></li>
+            <li onClick={() => setMenuIsOpen(!menuIsOpen)}><a href="#skils">Skils</a></li>
+            <li onClick={() => setMenuIsOpen(!menuIsOpen)}><a href="#projects">Projetos</a></li>
+            <li onClick={() => setMenuIsOpen(!menuIsOpen)}><a href="#contact">Contato</a></li>
           </S.Links>
         </div>
       </S.Header>
