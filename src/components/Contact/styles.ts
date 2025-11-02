@@ -28,6 +28,10 @@ export const Contact = styled.div`
     padding-bottom: 24px;
     text-align: center;
     font-size: 24px;
+
+    svg {
+        margin-right: 6px;
+      }
   }
   }
 `
@@ -47,7 +51,7 @@ export const Form = styled.form`
 
   input, textarea {
     width: 100%;
-    height: 32px;
+    height: 40px;
     padding-top: 8px;
     padding-bottom: 8px;
     border: 2px solid transparent; /* Define uma borda inicial invisível */
@@ -70,7 +74,7 @@ export const Form = styled.form`
   label {
     position: absolute;
     left: 12px;
-    top: 18px;
+    top: 10px;
     color: ${colors.text};
     font-size: 14px;
     transition: all 0.3s ease;
@@ -80,6 +84,7 @@ export const Form = styled.form`
   /* Label para textarea: começa no topo */
   textarea + label {
     top: 16px;
+    left: 12px;
     transform: none;
   }
 
@@ -92,7 +97,7 @@ export const Form = styled.form`
   input:focus + label,
   input:not(:placeholder-shown) + label {
     top: 5px;
-    left: 10px;
+    left: 4px;
     font-size: 12px;
     padding: 0 5px;
   }
@@ -111,7 +116,7 @@ export const Form = styled.form`
     margin-top: 16px;
     cursor: pointer;
     border-radius: 10px;
-    background: linear-gradient(to right, ${colors.primary}, ${colors.lightPurple});
+    background-color: ${colors.primary};
     color: #fff;
     border: none;
     transition: all .3s ease-in-out;

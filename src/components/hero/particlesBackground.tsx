@@ -30,7 +30,7 @@ const ParticlesBackground = () => {
         density: { enable: true, width: 800, height: 800 },
       },
       color: { value: ["#05225eff", "#0572e7ff", "#96cbffff"] },
-      shape: { type: "circle" },
+      shape: { type: ["circle", "square"] },
       opacity: { value: { min: 0.2, max: 0.6 } },
       size: {
         value: { min: 1, max: 5 },
