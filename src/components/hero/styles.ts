@@ -66,6 +66,8 @@ export const HeroContent = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-width: 90%;
+    margin: 0 auto;
   }
 `
 
@@ -75,6 +77,10 @@ export const Description = styled.div`
   font-weight: 400;
   max-width: 800px;
   text-align: center;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 14px;
+  }
 `
 
 export const Title = styled.h2`
@@ -83,6 +89,10 @@ export const Title = styled.h2`
   font-size: 36px;
   font-weight: 700;
   text-align: center;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 28px;
+  }
 `
 
 export const SubTitle = styled.h3`
@@ -102,6 +112,10 @@ export const SubTitle = styled.h3`
 
   .highlight {
     color: ${colors.primary};
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 14px;
   }
 `
 

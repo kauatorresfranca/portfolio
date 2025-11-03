@@ -71,6 +71,17 @@ const parseProjectDate = (dateStr: string): Date => {
 const projectsData: ProjectData[] = [
   // Mantive TODOS os projetos: descrições ajustadas conforme seu currículo onde aplicável
   {
+    date: '17 de outubro de 2025',
+    skills: [{ type: 'react' }, { type: 'sc' }, { type: 'ts' }],
+    videoPath: '',
+    imgPath: '/luiz.png',
+    gitHubUrl: 'https://github.com/kauatorresfranca/luiz-miguel',
+    projectViewUrl: 'https://luiz-miguel.vercel.app/',
+    title: 'Dr. Luiz Miguel',
+    description:
+      'Landing page moderna e responsiva com sistema de agendamento integrado, design elegante e foco em conversão para dentista. Construída com React, TypeScript e Styled Components, voltada a apresentar serviços de forma profissional, transmitindo autoridade e confiança.'
+  },
+  {
     date: '31 de agosto de 2025',
     skills: [{ type: 'react' }, { type: 'sc' }, { type: 'ts' }],
     videoPath: ambiente,
