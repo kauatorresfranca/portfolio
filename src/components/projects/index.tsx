@@ -69,7 +69,17 @@ const parseProjectDate = (dateStr: string): Date => {
 }
 
 const projectsData: ProjectData[] = [
-  // Mantive TODOS os projetos: descrições ajustadas conforme seu currículo onde aplicável
+  {
+    date: '17 de dezembro de 2025',
+    skills: [{ type: 'react' }, { type: 'sc' }, { type: 'ts' }],
+    videoPath: '',
+    imgPath: '/mitre.png',
+    gitHubUrl: 'https://github.com/kauatorresfranca/mitre',
+    projectViewUrl: 'https://mitre.vercel.app/',
+    title: 'Mitre',
+    description:
+      'Landing page moderna e responsiva para uma agência de marketing digital, design elegante. Construída com React, TypeScript e Styled Components, voltada a converter leads em clientes.'
+  },
   {
     date: '17 de outubro de 2025',
     skills: [{ type: 'react' }, { type: 'sc' }, { type: 'ts' }],
