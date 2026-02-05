@@ -2,7 +2,7 @@ import { useState, useRef  } from 'react'
 import * as S from './styles'
 
 type skil = {
-  type: 'react' | 'html' | 'css' | 'js' | 'ts' | 'redux' | 'python' | 'django' | 'postgress' | 'git' | 'sc' | 'vue' | 'next'
+  type: 'react' | 'html' | 'css' | 'js' | 'ts' | 'redux' | 'python' | 'django' | 'postgress' | 'git' | 'sc' | 'tw' | 'vue' | 'next'
 }
 
 type Props = {
@@ -28,6 +28,7 @@ const skillIcons: Record<skil['type'], string> = {
   postgress: '/postgress_icon.png',
   git: '/git_icon.png',
   sc: '/styledcomponents.png',
+  tw: '/tailwind_icon.png',
   vue: '/vue.icon.png',
   next: '/next_icon.png'
 }

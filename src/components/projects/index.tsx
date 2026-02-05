@@ -13,11 +13,12 @@ import ambiente from '../../../assets/videos/ambiente.mp4'
 import { colors } from '../../styles'
 
 // Definir o tipo para a propriedade 'type'
-type SkillType =
+type SkilType =
   | 'react'
   | 'redux'
   | 'ts'
   | 'sc'
+  | 'tw'
   | 'django'
   | 'postgress'
   | 'git'
@@ -31,7 +32,7 @@ type SkillType =
 // Definir a interface para os projetos
 interface ProjectData {
   date: string
-  skills: { type: SkillType }[]
+  skils: { type: SkilType }[]
   videoPath: string
   imgPath: string
   gitHubUrl: string
@@ -69,9 +70,20 @@ const parseProjectDate = (dateStr: string): Date => {
 }
 
 const projectsData: ProjectData[] = [
+   {
+    date: '10 de janeiro de 2026',
+    skils: [{ type: 'react' }, { type: 'tw' }, { type: 'ts' }, { type: 'django' }],
+    videoPath: '',
+    imgPath: '/smartmart.png',
+    gitHubUrl: 'https://github.com/kauatorresfranca/smartmart-solutions',
+    projectViewUrl: 'https://smartmart-solutions.vercel.app/',
+    title: 'SmartMart Solutions',
+    description:
+      'projeto é uma plataforma completa para gestão e análise de vendas. A solução integra um ecossistema robusto com Django REST Framework no backend e uma interface moderna e responsiva em React (Vite) com Tailwind CSS e Shadcn/UI.'
+  },
   {
     date: '17 de dezembro de 2025',
-    skills: [{ type: 'react' }, { type: 'sc' }, { type: 'ts' }],
+    skils: [{ type: 'react' }, { type: 'sc' }, { type: 'ts' }],
     videoPath: '',
     imgPath: '/mitre.png',
     gitHubUrl: 'https://github.com/kauatorresfranca/mitre',
@@ -82,7 +94,7 @@ const projectsData: ProjectData[] = [
   },
   {
     date: '17 de outubro de 2025',
-    skills: [{ type: 'react' }, { type: 'sc' }, { type: 'ts' }],
+    skils: [{ type: 'react' }, { type: 'sc' }, { type: 'ts' }],
     videoPath: '',
     imgPath: '/luiz.png',
     gitHubUrl: 'https://github.com/kauatorresfranca/luiz-miguel',
@@ -93,7 +105,7 @@ const projectsData: ProjectData[] = [
   },
   {
     date: '31 de agosto de 2025',
-    skills: [{ type: 'react' }, { type: 'sc' }, { type: 'ts' }],
+    skils: [{ type: 'react' }, { type: 'sc' }, { type: 'ts' }],
     videoPath: ambiente,
     imgPath: '/ambiente_de_beleza.png',
     gitHubUrl: 'https://github.com/kauatorresfranca/ambiente_de_beleza',
@@ -104,7 +116,7 @@ const projectsData: ProjectData[] = [
   },
   {
     date: '12 de agosto de 2025',
-    skills: [{ type: 'react' }, { type: 'ts' }, { type: 'sc' }],
+    skils: [{ type: 'react' }, { type: 'ts' }, { type: 'sc' }],
     videoPath: ticiana,
     imgPath: '/ticiana_moura.png',
     gitHubUrl: 'https://github.com/kauatorresfranca/ticiana-moura-psic',
@@ -115,7 +127,7 @@ const projectsData: ProjectData[] = [
   },
   {
     date: '01 de agosto de 2025',
-    skills: [
+    skils: [
       { type: 'react' },
       { type: 'ts' },
       { type: 'sc' },
@@ -133,7 +145,7 @@ const projectsData: ProjectData[] = [
   },
   {
     date: '29 de abril de 2025',
-    skills: [
+    skils: [
       { type: 'react' },
       { type: 'ts' },
       { type: 'sc' },
@@ -151,7 +163,7 @@ const projectsData: ProjectData[] = [
   },
   {
     date: '22 de maio de 2025',
-    skills: [{ type: 'react' }, { type: 'ts' }, { type: 'git' }, { type: 'next' }],
+    skils: [{ type: 'react' }, { type: 'ts' }, { type: 'git' }, { type: 'next' }],
     videoPath: '../../../assets/images/in_developing(dark).png',
     imgPath: '/doctorize.png',
     gitHubUrl: 'https://github.com/kauatorresfranca/doctorize',
@@ -162,7 +174,7 @@ const projectsData: ProjectData[] = [
   },
   {
     date: '15 de março de 2025',
-    skills: [{ type: 'python' }, { type: 'django' }, { type: 'postgress' }, { type: 'git' }],
+    skils: [{ type: 'python' }, { type: 'django' }, { type: 'postgress' }, { type: 'git' }],
     videoPath: '../../../assets/images/in_developing(dark).png',
     imgPath: '/bookstore.png',
     gitHubUrl: 'https://github.com/kauatorresfranca/bookstore',
@@ -173,7 +185,7 @@ const projectsData: ProjectData[] = [
   },
   {
     date: '21 de janeiro de 2025',
-    skills: [{ type: 'react' }, { type: 'ts' }, { type: 'sc' }],
+    skils: [{ type: 'react' }, { type: 'ts' }, { type: 'sc' }],
     videoPath: camilaVideo,
     imgPath: '/camila_matos.png',
     gitHubUrl: 'https://github.com/kauatorresfranca/DraCamilaMatos',
@@ -184,7 +196,7 @@ const projectsData: ProjectData[] = [
   },
   {
     date: '21 de agosto de 2024',
-    skills: [{ type: 'react' }, { type: 'redux' }, { type: 'ts' }, { type: 'sc' }],
+    skils: [{ type: 'react' }, { type: 'redux' }, { type: 'ts' }, { type: 'sc' }],
     videoPath: eplayVideo,
     imgPath: '/E_play.png',
     gitHubUrl: 'https://github.com/kauatorresfranca/site-game-eplay',
@@ -195,7 +207,7 @@ const projectsData: ProjectData[] = [
   },
   {
     date: '08 de agosto de 2024',
-    skills: [{ type: 'react' }, { type: 'redux' }, { type: 'ts' }, { type: 'sc' }],
+    skils: [{ type: 'react' }, { type: 'redux' }, { type: 'ts' }, { type: 'sc' }],
     videoPath: efoodVideo,
     imgPath: '/E_food.png',
     gitHubUrl: 'https://github.com/kauatorresfranca/Efood',
@@ -206,7 +218,7 @@ const projectsData: ProjectData[] = [
   },
   {
     date: '15 de julho de 2024',
-    skills: [{ type: 'react' }, { type: 'redux' }, { type: 'ts' }, { type: 'sc' }],
+    skils: [{ type: 'react' }, { type: 'redux' }, { type: 'ts' }, { type: 'sc' }],
     videoPath: toDoVideo,
     imgPath: '/to_do.png',
     gitHubUrl: 'https://github.com/kauatorresfranca/to-do',
@@ -217,7 +229,7 @@ const projectsData: ProjectData[] = [
   },
   {
     date: '24 de fevereiro de 2024',
-    skills: [{ type: 'html' }, { type: 'css' }, { type: 'js' }],
+    skils: [{ type: 'html' }, { type: 'css' }, { type: 'js' }],
     videoPath: '../../../assets/images/in_developing(dark).png',
     imgPath: '/clone_disney_plus.png',
     gitHubUrl: 'https://github.com/kauatorresfranca/clone_disney_plus',
@@ -272,7 +284,7 @@ const Projects = () => {
             <Project
               key={`${project.title}-${index}`}
               date={project.date}
-              skils={project.skills}
+              skils={project.skils}
               videoPath={project.videoPath}
               imgPath={project.imgPath}
               gitHubUrl={project.gitHubUrl}
