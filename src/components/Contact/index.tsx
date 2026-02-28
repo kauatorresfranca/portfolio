@@ -5,6 +5,8 @@ import 'react-toastify/dist/ReactToastify.css'
 import * as S from './styles'
 import { colors } from '../../styles'
 
+
+
 const Contact = () => {
   const form = useRef<HTMLFormElement | null>(null)
 
@@ -21,10 +23,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        'service_gc4ohfl',       // Service ID
-        'template_18xnn6j',      // Template ID
-        form.current,            // Form reference
-        'IKkBLY7egZPWRzxpS'      // Public Key
+        'service_gc4ohfl',
+        'template_18xnn6j',
+        form.current,
+        'IKkBLY7egZPWRzxpS'
       )
       .then(() => {
         toast.success('Mensagem enviada com sucesso! 🚀')
@@ -67,7 +69,7 @@ const Contact = () => {
             <label htmlFor="message">Mensagem</label>
           </div>
 
-          <button type="submit">Enviar</button>
+          <S.SendMessage type="submit" href=''>Enviar</S.SendMessage>
         </S.Form>
 
         {/* Toast container */}

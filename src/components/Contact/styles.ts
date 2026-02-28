@@ -109,23 +109,6 @@ export const Form = styled.form`
     font-size: 12px;
     padding: 0 5px;
   }
-
-  button {
-    width: 100%;
-    height: 40px;
-    margin-top: 16px;
-    cursor: pointer;
-    border-radius: 10px;
-    background-color: ${colors.primary};
-    color: #fff;
-    border: none;
-    transition: all .3s ease-in-out;
-
-    &:hover {
-      background: linear-gradient(to top, ${colors.primary}, ${colors.lightPurple});
-      transform: scale(1.02);
-    }
-  }
 `
 
 
@@ -187,3 +170,23 @@ export const ContactWay = styled.div`
     }
   }
 `
+
+export const SendMessage = styled.a`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    margin-top: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: ${colors.primary};
+    color: #fff;
+    border: none;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+      background: linear-gradient(to top, ${colors.primary}, ${colors.lightPurple});
+      transform: scale(1.02);
+    }
+      `

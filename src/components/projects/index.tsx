@@ -70,6 +70,17 @@ const parseProjectDate = (dateStr: string): Date => {
 }
 
 const projectsData: ProjectData[] = [
+  {
+    date: '19 de fevereiro de 2026',
+    skils: [{ type: 'react' }, { type: 'tw' }, { type: 'ts' }, { type: 'django' }],
+    videoPath: '',
+    imgPath: '/psycore.png',
+    gitHubUrl: 'https://github.com/kauatorresfranca/psycore',
+    projectViewUrl: 'https://psycore-three.vercel.app/',
+    title: 'Psycore (em desenvolvimento)',
+    description:
+      'É um sistema para gestão de clinicas de psicologias com funcionalidades como agendamento, cadastro de pacientes, prontuário eletrônico e controle financeiro. O projeto é construído com Django REST Framework no backend e React (Vite) com styled components e TypeScript no frontend juntamente com o react-router-dom, para aplicar o lazy loading afim de otimizar o desempenho e a experiência do usuário.'
+  },
    {
     date: '10 de janeiro de 2026',
     skils: [{ type: 'react' }, { type: 'tw' }, { type: 'ts' }, { type: 'django' }],
