@@ -1,198 +1,105 @@
 import styled from "styled-components"
+import { motion } from "framer-motion"
 import { breakpoints, colors } from "../../styles"
 
-export const Background = styled.div`
-  padding-top: 32px;
+export const Background = styled.section`
+  padding: 100px 0;
   background-color: ${colors.background};
   scroll-margin-top: 110px;
+`
+
+export const SectionTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 50px;
+  color: ${colors.primary};
 
   h3 {
-    font-size: 24px;
-    margin-bottom: 32px;
-    text-align: center;
-
-    svg {
-      margin-right: 6px;
-    }
+    font-size: 32px;
+    color: ${colors.title};
+    font-weight: 800;
   }
 `
 
-export const SkilArea = styled.div`
+export const AccordionContainer = styled.div`
+  max-width: 1000px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  gap: 20px;
+`
+
+export const SkillArea = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+export const Acordeon = styled.div<{ isActive: boolean }>`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  border-radius: 20px;
+  background-color: ${props => props.isActive ? 'rgba(255,255,255,0.05)' : colors.secondaryBackground};
+  cursor: pointer;
+  border: 1px solid ${props => props.isActive ? colors.primary : 'transparent'};
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
 `
 
 export const AreaLeft = styled.div`
   display: flex;
   align-items: center;
+  gap: 20px;
 
-  svg {
-    margin-right: 8px;
+  .icon-wrapper {
+    font-size: 24px;
+    background: ${colors.background};
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
   }
 
-  p {
-    font-size: 10px;
-    color: ${colors.text}
-  }
-`
-
-export const Acordeon = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px;
-  border-radius: 25px;
-  margin-bottom: 32px;
-  background-color: ${colors.secondaryBackground};
-  cursor: pointer;
-  box-shadow: 2px 2px 2px 1.5px rgba(0, 0, 0, 0.2);
-
-  & > svg {
-    transition: ease-in-out .4s;
+  h4 {
+    color: ${colors.title};
+    font-size: 18px;
+    margin-bottom: 4px;
   }
 
-  & > svg.open {
-    transform: rotate(180deg);
-  }
-
-  @media (max-width: ${breakpoints.tablet}) {
-    margin: 0 auto;
-    margin-bottom: 18px;
-    width: 100%;
-    max-width: 80vw;
-  }
-
-  @media (max-width: ${breakpoints.desktop}) {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 80vw;
-    margin-bottom: 18px;
+  span {
+    font-size: 12px;
+    color: ${colors.text};
+    opacity: 0.6;
   }
 `
 
-export const SkilContent = styled.div`
-  diplay: flex;
-  flex-direction: column;
-  align-items: center;
-  opacity: 0;
-  visibility: hidden;
-  height: 0;
-  transition: opacity .9s ease-in, height .9s ease-in;
-
-  &.active {
-    opacity: 1;
-    visibility: visible;
-    height: auto;
-  }
-
-  > p {
-    font-size: 14px;
-    text-align: center;
-    margin-bottom: 18px;
-    color: ${colors.overlay === 'rgba(255, 255, 255, 0.6)' ? 'rgba(0, 0, 0, 0.5)' : 'rgba(255, 255, 255, 0.5)'};;
-    }
-
-    @media (min-width: ${breakpoints.desktop}) {
-      > p {
-        display: none;
-      }
-    }
+export const ArrowIcon = styled.div<{ isOpen: boolean }>`
+  font-size: 24px;
+  color: ${colors.text};
+  transition: transform 0.4s ease;
+  transform: rotate(${props => props.isOpen ? '180deg' : '0deg'});
 `
 
+export const SkilContent = styled(motion.div)`
+  overflow: hidden;
+`
 
 export const ListSkil = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-items: center;
-
-  @media (max-width: ${breakpoints.desktop}) {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 24px;
+  padding: 40px 0;
 
   @media (max-width: ${breakpoints.tablet}) {
     grid-template-columns: 1fr 1fr;
-  }
-
-`
-
-export const Skil = styled.div`
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  padding: 16px;
-  margin-bottom: 40px;
-  border-radius: 18%;
-  background-color: ${colors.secondaryBackground};
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  transition: transform 0.5s ease;
-
-    &:hover {
-      transform: scale(1.1);
-    }
-
-    h4 {
-      text-align: center;
-      margin-bottom: 8px;
-      color: #D3D3D3;
-    }
-
-    .diferent {
-      margin-left: 4px;
-    }
-
-    img {
-      width: 70px;
-      text-align: center;
-    }
-`
-
-export const ProgressContainer = styled.div`
-  margin-top: 16px;
-  height: 8px;
-  width: 100px;
-  background-color: #e0e0e0;
-  border-radius: 10px;
-  overflow: hidden;
-`;
-
-export const ProgressFill = styled.div`
-  height: 100%;
-  background: linear-gradient(90deg,, #133168);
-
-  &.html {
-    width: 90%;
-  }
-
-  &.css {
-    width: 80%;
-  }
-
-  &.js {
-    width: 60%;
-  }
-
-  &.ts {
-    width: 55%;
-  }
-
-  &.react {
-    width: 75%;
-  }
-
-  &.postgres {
-    width: 50%;
-  }
-
-  &.py {
-    width: 60%;
-  }
-
-  &.git {
-    width: 80%;
-  }
-
-  &.Sass {
-    width: 50%;
+    gap: 16px;
   }
 `

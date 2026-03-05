@@ -1,139 +1,161 @@
 import styled, { keyframes } from "styled-components"
-import { breakpoints, colors } from "../../styles"
+import { motion } from "framer-motion"
+import { colors } from "../../styles"
 
 const bounce = keyframes`
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -10px); }
 `
 
 const blink = keyframes`
-  0%, 50%, 100% { opacity: 1; }
-  25%, 75% { opacity: 0; }
+  50% { opacity: 0; }
 `
 
-export const Hero = styled.div`
+export const Hero = styled.section`
   position: relative;
   height: 100vh;
   width: 100%;
-  background-color: #17191e;
+  background-color: ${colors.background};
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 
   #tsparticles {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     z-index: 0;
   }
-
-  i.ri-arrow-down-double-fill {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 24px;
-    color: ${colors.text};
-    animation: ${bounce} 2s infinite;
-    z-index: 2;
-  }
 `
 
-export const HeroContent = styled.div`
+export const HeroContent = styled(motion.div)`
   position: relative;
   z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-
-  img {
-    width: 120px;
-    height: 120px;
-    padding: 3px;
-    border: 1px solid ${colors.primary};
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-
-  @media (max-width: ${breakpoints.desktop}) {
-    justify-content: space-around;
-  }
-
-  @media (max-width: ${breakpoints.tablet}) {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 90%;
-    margin: 0 auto;
-  }
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
 `
 
-export const Description = styled.div`
-  color: ${colors.text};
-  font-size: 14px;
-  font-weight: 400;
-  max-width: 800px;
-  text-align: center;
+export const ProfileWrapper = styled.div`
+  position: relative;
+  width: fit-content;
+  margin: 0 auto 32px;
 
-  @media (max-width: ${breakpoints.tablet}) {
-    font-size: 14px;
+  img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid ${colors.primary};
+    padding: 5px;
+    background: ${colors.background};
+    box-shadow: 0 0 30px ${colors.primary}44;
+  }
+
+  .status-badge {
+    position: absolute;
+    bottom: 5px;
+    right: -10px;
+    background: #10b981; // Verde esmeralda
+    color: white;
+    font-size: 10px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 2px solid ${colors.background};
   }
 `
 
 export const Title = styled.h2`
-  margin-bottom: 16px;
+  font-size: clamp(32px, 8vw, 56px);
   color: ${colors.title};
-  font-size: 36px;
-  font-weight: 700;
-  text-align: center;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.1;
 
-  @media (max-width: ${breakpoints.tablet}) {
-    font-size: 28px;
-  }
-`
-
-export const SubTitle = styled.h3`
-  color: ${colors.subTitle};
-  font-size: 16px;
-  font-weight: 400;
-  margin-top: 40px;
-  margin-bottom: 16px;
-  text-align: center;
-
-  .cursor {
-    display: inline-block;
-    margin-left: 3px;
-    color: ${colors.text};
-    animation: ${blink} 2s step-start infinite;
-  }
-
-  .highlight {
+  span {
     color: ${colors.primary};
-  }
+    position: relative;
 
-  @media (max-width: ${breakpoints.tablet}) {
-    font-size: 14px;
-  }
-`
-
-export const SocialLinks = styled.div`
-  margin-top: 24px;
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-
-  a {
-    color: ${colors.primary};
-    font-size: 24px;
-    transition: transform 0.2s ease, color 0.2s ease;
-
-    &:hover {
-      transform: scale(1.2);
-      color: ${colors.white || colors.primary};
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 5px;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: ${colors.primary}33;
+      z-index: -1;
     }
   }
 `
 
+export const SubTitle = styled.div`
+  color: ${colors.text};
+  font-size: 18px;
+  margin-bottom: 12px;
+  font-family: 'Fira Code', monospace; // Dá um ar de dev
+
+  .highlight {
+    color: ${colors.primary};
+    font-weight: 600;
+  }
+
+  .cursor {
+    margin-left: 4px;
+    color: ${colors.primary};
+    animation: ${blink} 1s infinite;
+  }
+`
+
+export const Description = styled.p`
+  color: ${colors.text};
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  opacity: 0.9;
+`
+
+export const SocialLinks = styled.div`
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: ${colors.white};
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    i { font-size: 20px; color: ${colors.primary}; }
+    span { font-size: 14px; font-weight: 500; }
+
+    &:hover {
+      background: ${colors.primary}11;
+      border-color: ${colors.primary};
+      transform: translateY(-3px);
+    }
+  }
+`
+
+export const ScrollArrow = styled.a`
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: ${colors.text};
+  font-size: 32px;
+  animation: ${bounce} 2s infinite;
+  text-decoration: none;
+  opacity: 0.5;
+  transition: 0.3s;
+
+  &:hover { opacity: 1; color: ${colors.primary}; }
+`

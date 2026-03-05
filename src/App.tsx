@@ -10,7 +10,6 @@ import Skills from './components/skils'
 import {colors, GlobalCss} from './styles'
 import Footer from './components/footer'
 import Hero from './components/hero'
-import Timeline from './components/timeline'
 
 
 function App() {
@@ -41,7 +40,6 @@ function App() {
       <Hero />
       <AboutMe />
       <Skills />
-      <Timeline />
       <Projects />
       <Contact />
       <Footer />

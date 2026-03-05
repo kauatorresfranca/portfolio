@@ -1,192 +1,173 @@
 import styled from "styled-components"
-import { breakpoints, colors} from "../../styles"
+import { motion } from "framer-motion"
+import { breakpoints, colors } from "../../styles"
 
-
-export const Contact = styled.div`
-  padding-top: 32px;
-  padding-bottom: 64px;
+export const ContactSection = styled.section`
+  padding: 100px 0;
   background-color: ${colors.background};
+`
 
-  .container {
+export const Header = styled(motion.div)`
+  text-align: center;
+  margin-bottom: 60px;
+
+  h2 {
+    font-size: 42px;
+    color: ${colors.title};
+    font-weight: 800;
+    margin-bottom: 16px;
+  }
+
+  p {
+    color: ${colors.text};
+    max-width: 500px;
+    margin: 0 auto;
+    opacity: 0.8;
+  }
+`
+
+export const ContactGrid = styled.div`
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    grid-template-columns: 1fr;
+  }
+`
+
+export const ContactInfo = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .info-card {
+    background: ${colors.secondaryBackground};
+    padding: 24px;
+    border-radius: 20px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
+    gap: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease;
 
-    > p {
-      color: ${colors.text};
-      margin-bottom: 24px;
+    &:hover {
+      transform: translateX(10px);
+      border-color: ${colors.primary};
     }
 
-    @media (max-width: ${breakpoints.tablet}) {
-      p {
-        max-width: 80vw;
-      }
-  }
+    i {
+      font-size: 32px;
+      color: ${colors.primary};
+    }
 
-    h3 {
-    padding-bottom: 24px;
-    text-align: center;
-    font-size: 24px;
+    h5 {
+      color: ${colors.text};
+      font-size: 14px;
+      margin-bottom: 4px;
+      opacity: 0.6;
+    }
 
-    svg {
-        margin-right: 6px;
-      }
+    a {
+      color: ${colors.title};
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+    }
   }
-  }
+`
+
+export const FormWrapper = styled(motion.div)`
+  background: ${colors.secondaryBackground};
+  padding: 40px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 `
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-bottom: 32px;
-  width: 80%;
+  gap: 20px;
 
-  div {
+  .input-group {
     position: relative;
     width: 100%;
-    margin-bottom: 10px;
-  }
 
-  input, textarea {
-    width: 100%;
-    height: 40px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    border: 2px solid transparent; /* Define uma borda inicial invisível */
-    border-radius: 10px;
-    background-color: ${colors.secondaryBackground};
-    color: ${colors.text};
-    box-shadow: 1px 2px rgba(0, 0, 0, 0.2);
-    outline: none; /* Remove a borda azul padrão do navegador */
-    transition: border 0.3s ease; /* Suaviza a transição da borda */
-  }
+    input, textarea {
+      width: 100%;
+      background: ${colors.background};
+      border: 2px solid transparent;
+      border-radius: 12px;
+      padding: 16px;
+      color: ${colors.title};
+      font-size: 16px;
+      outline: none;
+      transition: all 0.3s ease;
 
-  textarea {
-    height: 125px;
-    resize: none;
-    max-height: 450px;
-    line-height: 1.4;
-  }
+      &:focus {
+        border-color: ${colors.primary};
+      }
+    }
 
-  /* Label para inputs normais */
-  label {
-    position: absolute;
-    left: 12px;
-    top: 10px;
-    color: ${colors.text};
-    font-size: 14px;
-    transition: all 0.3s ease;
-    pointer-events: none;
-  }
+    textarea {
+      height: 150px;
+      resize: none;
+    }
 
-  /* Label para textarea: começa no topo */
-  textarea + label {
-    top: 16px;
-    left: 12px;
-    transform: none;
-  }
+    label {
+      position: absolute;
+      left: 16px;
+      top: 16px;
+      color: ${colors.text};
+      opacity: 0.5;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
 
-  input:focus, textarea:focus {
-    border: 2px solid ${colors.primary}; /* Mantém apenas a borda inferior vermelha */
-    box-shadow: 0px 0px 0px 0px transparent;
-  }
-
-  /* Floating effect para inputs */
-  input:focus + label,
-  input:not(:placeholder-shown) + label {
-    top: 5px;
-    left: 4px;
-    font-size: 12px;
-    padding: 0 5px;
-  }
-
-  /* Floating effect para textarea */
-  textarea:focus + label,
-  textarea:not(:placeholder-shown) + label {
-    top: 5px;
-    font-size: 12px;
-    padding: 0 5px;
+    input:focus + label,
+    input:not(:placeholder-shown) + label,
+    textarea:focus + label,
+    textarea:not(:placeholder-shown) + label {
+      top: -10px;
+      left: 12px;
+      font-size: 12px;
+      color: ${colors.primary};
+      background: ${colors.secondaryBackground};
+      padding: 0 8px;
+      opacity: 1;
+    }
   }
 `
 
-
-export const ContactWaysContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-`
-
-export const ContactWays = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-content: center;
-  margin-top: 32px;
-  gap: 72px;
-
-  @media (max-width: ${breakpoints.desktop}){
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @media (max-width: ${breakpoints.tablet}){
-    grid-template-columns: 1fr;
-    gap: 24px;
-    justify-content: center;
-  }
-`
-
-export const ContactWay = styled.div`
+export const SubmitButton = styled.button`
+  background: ${colors.primary};
+  color: #fff;
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin-top: 8px;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.3s ease;
 
-  a {
-    text-decoration: none;
+  &:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px ${colors.primary}44;
   }
 
-  h5 {
-    color: ${colors.text};
-    align-items: center;
-    margin-top: 4px;
+  i {
+    font-size: 20px;
+    transition: transform 0.3s ease;
   }
 
-  @media (max-width: ${breakpoints.tablet}){
-    margin-bottom: 16px;
-  }
-
-  svg {
-    margin-bottom: 4px;
-    padding: 12px;
-    border-radius: 20px;
-    transition: .4s ease;
-    background-color: ${colors.secondaryBackground};
-
-    &:hover{
-      transform: scale(1.2);
-    }
+  &:hover i {
+    transform: translateX(5px) rotate(-20deg);
   }
 `
-
-export const SendMessage = styled.a`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 40px;
-    margin-top: 16px;
-    cursor: pointer;
-    border-radius: 10px;
-    background-color: ${colors.primary};
-    color: #fff;
-    border: none;
-    transition: all .3s ease-in-out;
-
-    &:hover {
-      background: linear-gradient(to top, ${colors.primary}, ${colors.lightPurple});
-      transform: scale(1.02);
-    }
-      `

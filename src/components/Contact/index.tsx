@@ -3,9 +3,6 @@ import emailjs from '@emailjs/browser'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import * as S from './styles'
-import { colors } from '../../styles'
-
-
 
 const Contact = () => {
   const form = useRef<HTMLFormElement | null>(null)
@@ -13,13 +10,6 @@ const Contact = () => {
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (!form.current) return
-
-    // Adiciona automaticamente o campo 'time'
-    const timeField = document.createElement('input')
-    timeField.setAttribute('type', 'hidden')
-    timeField.setAttribute('name', 'time')
-    timeField.setAttribute('value', new Date().toLocaleString())
-    form.current.appendChild(timeField)
 
     emailjs
       .sendForm(
@@ -29,64 +19,96 @@ const Contact = () => {
         'IKkBLY7egZPWRzxpS'
       )
       .then(() => {
-        toast.success('Mensagem enviada com sucesso! 🚀')
+        toast.success('Mensagem enviada! Retornarei em breve. 🚀')
         form.current?.reset()
       })
       .catch((error) => {
-        console.error('Erro ao enviar:', error)
-        toast.error('Erro ao enviar a mensagem. Tente novamente.')
+        console.error('Erro:', error)
+        toast.error('Ocorreu um erro. Tente via WhatsApp!')
       })
   }
 
   return (
-    <S.Contact id="contact">
+    <S.ContactSection id="contact">
       <div className="container">
-        <h3><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill={colors.primary}
-                    className="bi bi-diamond"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.48 1.48 0 0 1 0-2.098zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134z" />
-                  </svg>Contato</h3>
-        <p>Fique à vontade para entrar em contato comigo. Será um prazer responder!</p>
+        <S.Header
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2>Entre em Contato</h2>
+          <p>Seja para um projeto, uma proposta ou apenas um café virtual, estou à disposição.</p>
+        </S.Header>
 
-        <S.Form ref={form} onSubmit={sendEmail}>
-          <div>
-            <input type="text" name="name" placeholder=" " id="name" required />
-            <label htmlFor="name">Nome</label>
-          </div>
+        <S.ContactGrid>
+          {/* Lado 1: Informações de Contato Rápidas */}
+          <S.ContactInfo
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="info-card">
+              <i className="ri-whatsapp-line"></i>
+              <div>
+                <h5>WhatsApp</h5>
+                <a href="https://wa.me/5582996124145" target="_blank" rel="noreferrer">
+                  (82) 99612-4145
+                </a>
+              </div>
+            </div>
 
-          <div>
-            <input type="email" name="email" placeholder=" " id="email" required />
-            <label htmlFor="email">Email</label>
-          </div>
+            <div className="info-card">
+              <i className="ri-mail-send-line"></i>
+              <div>
+                <h5>E-mail</h5>
+                <a href="mailto:kauatorresfranca2@gmail.com">kauatorresfranca2@gmail.com</a>
+              </div>
+            </div>
 
-          <div>
-            <textarea name="message" placeholder=" " id="message" required></textarea>
-            <label htmlFor="message">Mensagem</label>
-          </div>
+            <div className="info-card">
+              <i className="ri-linkedin-box-line"></i>
+              <div>
+                <h5>LinkedIn</h5>
+                <a href="https://linkedin.com/in/kauatorres" target="_blank" rel="noreferrer">
+                  in/kauatorres
+                </a>
+              </div>
+            </div>
+          </S.ContactInfo>
 
-          <S.SendMessage type="submit" href=''>Enviar</S.SendMessage>
-        </S.Form>
+          {/* Lado 2: Formulário */}
+          <S.FormWrapper
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <S.Form ref={form} onSubmit={sendEmail}>
+              <div className="input-group">
+                <input type="text" name="name" placeholder=" " required />
+                <label>Seu Nome</label>
+              </div>
 
-        {/* Toast container */}
-        <ToastContainer
-          position="top-right"
-          autoClose={4000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="colored"
-        />
+              <div className="input-group">
+                <input type="email" name="email" placeholder=" " required />
+                <label>Seu E-mail</label>
+              </div>
+
+              <div className="input-group">
+                <textarea name="message" placeholder=" " required></textarea>
+                <label>Como posso te ajudar?</label>
+              </div>
+
+              <S.SubmitButton type="submit">
+                <span>Enviar Mensagem</span>
+                <i className="ri-send-plane-fill"></i>
+              </S.SubmitButton>
+            </S.Form>
+          </S.FormWrapper>
+        </S.ContactGrid>
+
+        <ToastContainer theme="colored" position="bottom-right" />
       </div>
-    </S.Contact>
+    </S.ContactSection>
   )
 }
 

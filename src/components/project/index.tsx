@@ -1,102 +1,102 @@
-import { useState, useRef  } from 'react'
+import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
+import { AnimatePresence } from 'framer-motion'
 import * as S from './styles'
+import { ProjectData, skillIcons } from '../../data/projects'
 
-type skil = {
-  type: 'react' | 'html' | 'css' | 'js' | 'ts' | 'redux' | 'python' | 'django' | 'postgress' | 'git' | 'sc' | 'tw' | 'vue' | 'next'
-}
+const ProjectCard = (props: ProjectData) => {
+  const [isOpen, setIsOpen] = useState(false)
 
-type Props = {
-  title: string,
-  description: string,
-  imgPath: string,
-  videoPath?: string,
-  gitHubUrl: string,
-  projectViewUrl: string,
-  skils: skil[],
-  date: string
-}
-
-const skillIcons: Record<skil['type'], string> = {
-  html: '/html_icon.png',
-  css: '/css_icon.png',
-  js: '/js_icon.png',
-  react: '/react_icon.png',
-  ts: '/ts_icon.png',
-  redux: '/redux_icon.png',
-  python: '/py_icon.png',
-  django: '/django_icon.png',
-  postgress: '/postgress_icon.png',
-  git: '/git_icon.png',
-  sc: '/styledcomponents.png',
-  tw: '/tailwind_icon.png',
-  vue: '/vue.icon.png',
-  next: '/next_icon.png'
-}
-
-const Project = ({ title, description, gitHubUrl, projectViewUrl, videoPath, imgPath, skils, date }: Props) => {
-
-  const [modalIsOpen, setModalIsOpen] = useState(false)
-  const videoRef = useRef<HTMLVideoElement>(null)
-
-  const openModal = () => {
-    setModalIsOpen(true)
-    if (videoRef.current){
-      videoRef.current.play();
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
     }
-  }
-
-  const closeModal = () => {
-    setModalIsOpen(false)
-    if (videoRef.current) {
-      videoRef.current.pause(); // Pausa o vídeo ao fechar a modal
-      videoRef.current.currentTime = 0; // Opcional: Reseta o vídeo para o início
-    }
-  }
+  }, [isOpen])
 
   return (
     <>
-      <S.Project>
-        <S.ProjectViewContainer onClick={openModal}>
-          <img src={imgPath} />
-          <S.Overlay >
-            <S.ProjectTitle>
-              <h2>{title}</h2>
-            </S.ProjectTitle>
-              <S.TagList>
-                {skils.map((skill, index) => (
-                  <S.SkillTag key={index}>
-                    <img src={skillIcons[skill.type]} alt={`imagem ${skill.type}`} />
-                  </S.SkillTag>
-                ))}
-              </S.TagList >
-          </S.Overlay>
-        </S.ProjectViewContainer>
-      </S.Project>
+      <S.Card
+        layout
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.9 }}
+        whileHover={{ y: -8 }}
+        onClick={() => setIsOpen(true)}
+      >
+        <S.ImageWrapper>
+          <img src={props.imgPath} alt={props.title} />
+          <S.CardOverlay className="overlay">
+            <span>Ver Detalhes</span>
+          </S.CardOverlay>
+        </S.ImageWrapper>
 
-      <S.OverlayModal onClick={closeModal} className={modalIsOpen ? 'active' : ''}>
-        <S.Modal onClick={(e) => e.stopPropagation()}>
-          <div className='imgGroup'>
-            <video ref={videoRef} controls playsInline>
-                <source src={videoPath} type="video/mp4" />
-                  Seu navegador não suporta a reprodução de vídeos.
-                </video>
-            <S.ButtonGroup>
-              <a href={gitHubUrl}><S.PrimaryButton>Ver no GitHub</S.PrimaryButton></a>
-              <a href={projectViewUrl}><S.SecundaryButton>Ver Projeto</S.SecundaryButton></a>
-            </S.ButtonGroup>
-          </div>
-          <S.Description>
-            <h2>{title}</h2>
-            <p className='description'>{description}</p>
-            <p className='date'>{date}</p>
-          </S.Description>
-          <svg onClick={closeModal} xmlns="http://www.w3.org/2000/svg" width="24" height="18" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
-            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
-          </svg>
-        </S.Modal>
-      </S.OverlayModal>
+        <S.CardContent>
+          <h3>{props.title}</h3>
+          <S.TechListShort>
+            {props.skils.slice(0, 5).map(s => (
+              <img key={s.type} src={skillIcons[s.type]} alt={s.type} title={s.type} />
+            ))}
+          </S.TechListShort>
+        </S.CardContent>
+      </S.Card>
+
+      {createPortal(
+        <AnimatePresence>
+          {isOpen && (
+            <S.ModalOverlay
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+            >
+              <S.ModalContainer
+                onClick={e => e.stopPropagation()}
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.8, opacity: 0 }}
+              >
+                <S.CloseBtn onClick={() => setIsOpen(false)}>&times;</S.CloseBtn>
+
+                <S.ModalGrid>
+                  <div className="media-side">
+                    {props.videoPath ? (
+                      <video autoPlay loop muted playsInline controls>
+                        <source src={props.videoPath} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <img src={props.imgPath} alt={props.title} />
+                    )}
+                  </div>
+
+                  <div className="info-side">
+                    <h2>{props.title}</h2>
+                    <p className="desc">{props.description}</p>
+
+                    <S.TechRow>
+                      {props.skils.map(s => (
+                        <S.Badge key={s.type}>{s.type}</S.Badge>
+                      ))}
+                    </S.TechRow>
+
+                    <S.ModalActions>
+                      <a href={props.gitHubUrl} target="_blank" rel="noreferrer">GitHub</a>
+                      {props.projectViewUrl && (
+                        <a href={props.projectViewUrl} target="_blank" rel="noreferrer" className="primary">Ver Site</a>
+                      )}
+                    </S.ModalActions>
+                    <span className='date-label'>{props.date}</span>
+                  </div>
+                </S.ModalGrid>
+              </S.ModalContainer>
+            </S.ModalOverlay>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </>
   )
 }
 
-export default Project
+export default ProjectCard

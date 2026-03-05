@@ -1,128 +1,110 @@
 import styled from 'styled-components'
+import { motion } from 'framer-motion'
 import { breakpoints, colors } from '../../styles'
 
-export const Header = styled.header`
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+interface HeaderProps {
+  isScrolled: boolean
+}
+
+export const HeaderWrapper = styled.header<HeaderProps>`
   position: fixed;
-  padding: 16px 0;
-  margin: 24px auto 0 auto;
-  z-index: 2;
-  background-color: rgba(82, 82, 82, 0.5);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.18));
-  backdrop-filter: blur(10px);
-  border-radius: 25px;
+  top: ${(props) => (props.isScrolled ? '10px' : '24px')};
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    position: relative;
-    padding: 12px 0;
+  /* Efeito Glassmorphism */
+  background: ${(props) =>
+    props.isScrolled ? 'rgba(22, 27, 34, 0.8)' : 'rgba(82, 82, 82, 0.2)'};
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+`
 
-    @media (max-width: ${breakpoints.desktop}) {
-      display: block;
-      width: 100%;
-      padding: 6px 0;
-    }
-  }
+export const HeaderMain = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+`
 
-  @media (max-width: ${breakpoints.desktop}) {
-    display: block;
-    padding-bottom: 0;
-    border-bottom: none;
-    width: 90%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
+export const Logo = styled.a`
+  text-decoration: none;
   h1 {
-    display: flex;
-    margin-left: 32px;
-    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
     color: ${colors.title};
-    font-size: 29px;
-    font-weight: 500;
+    letter-spacing: -1px;
 
-    @media (max-width: ${breakpoints.desktop}) {
-      text-align: center;
-      margin-right: 32px;
-      margin-left: 16px;
-    }
-
-    svg {
-      margin-right: 8px;
+    span {
+      color: ${colors.primary};
     }
   }
 `
 
-export const Links = styled.ul`
+export const NavLinks = styled.ul`
   display: flex;
-  gap: 40px;
-  border: none;
-  margin-right: 32px;
+  gap: 32px;
+  list-style: none;
+
+  @media (max-width: ${breakpoints.desktop}) {
+    display: none; /* Escondemos o menu padrão no mobile */
+  }
+
+  a {
+    color: ${colors.white};
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: ${colors.primary};
+      transition: width 0.3s ease;
+    }
+
+    &:hover {
+      color: ${colors.primary};
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+`
+
+export const MobileMenu = styled(motion.div)`
+  display: none;
 
   @media (max-width: ${breakpoints.desktop}) {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 18px;
-    margin-right: 0;
-    gap: 0;
-    padding: 0;
-    max-height: 0; /* Começa fechado */
-    opacity: 0;
-    visibility: hidden;
-    border-radius: 18px;
-    background-color: transparent;
-    overflow: hidden;
-    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, padding 0.3s ease-in-out;
+    padding: 20px;
+    gap: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 
-    &.active {
-      max-height: 500px; /* Ajuste de acordo com o conteúdo */
-      opacity: 1;
-      visibility: visible;
-      padding: 12px 0;
-    }
-  }
-
-  li {
-    width: 100%;
-  }
-
-  a {
-    display: block;
-    position: relative;
-    width: 100%;
-    padding-bottom: 6px;
-    text-align: center;
-    text-decoration: none;
-    color: ${colors.white};
-    font-size: 18px;
-    transition: all 0.4s ease-in-out;
-
-    @media (max-width: ${breakpoints.desktop}) {
-      padding-bottom: 16px;
-      padding-top: 16px;
-    }
-
-    @media (min-width: ${breakpoints.desktop}) {
-      &:hover::after {
-        width: 100%;
-      }
-
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 3px;
-        background-color: ${colors.primary};
-        transition: width 0.3s ease-out;
+    a {
+      color: ${colors.white};
+      text-decoration: none;
+      font-size: 18px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 10px;
+      &:hover {
+        background: rgba(255, 255, 255, 0.05);
+        color: ${colors.primary};
       }
     }
   }
@@ -130,68 +112,32 @@ export const Links = styled.ul`
 
 export const HamburguerMenu = styled.div`
   display: none;
+  width: 30px;
+  height: 20px;
   position: relative;
-  margin-right: 24px;
-  width: 28px;
-  height: 28px;
   cursor: pointer;
 
-  span,
-  &::before,
-  &::after {
+  span, &::before, &::after {
     content: '';
-    height: 2px;
-    background-color: ${colors.white};
-    width: 100%;
     position: absolute;
-    transition: all 0.4s ease-out;
-    border-radius: 10px;
+    width: 100%;
+    height: 2px;
+    background: ${colors.white};
+    border-radius: 2px;
+    transition: all 0.3s ease;
   }
 
-  span {
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  &::before {
-    top: 8px;
-  }
-
-  &::after {
-    bottom: 8px;
-  }
+  span { top: 50%; transform: translateY(-50%); }
+  &::before { top: 0; }
+  &::after { bottom: 0; }
 
   &.active {
-    span {
-      transform: rotate(45deg);
-    }
-
-    &::before {
-      top: 50%;
-      transform: translateY(-50%) rotate(-45deg);
-    }
-
-    &::after {
-      top: 50%;
-      transform: translateY(-50%) rotate(45deg);
-      bottom: 0;
-    }
+    span { opacity: 0; transform: translateX(-20px); }
+    &::before { top: 50%; transform: translateY(-50%) rotate(45deg); }
+    &::after { top: 50%; transform: translateY(-50%) rotate(-45deg); }
   }
 
   @media (max-width: ${breakpoints.desktop}) {
     display: block;
-    position: relative;
-    margin-right: 60px;
-  }
-`
-
-export const TopHeader = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100vw;
-
-  a {
-    text-decoration: none;
   }
 `

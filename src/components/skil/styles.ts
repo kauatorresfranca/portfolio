@@ -1,182 +1,97 @@
-import styled from 'styled-components'
-import { breakpoints, colors } from '../../styles'
+import styled from "styled-components"
+import { motion } from "framer-motion"
+import { colors } from "../../styles"
 
-export const ProgressContainer = styled.div`
-  display: none;
-  margin-top: 16px;
-  height: 8px;
-  width: 100px;
-  background-color: #D3D3D3;
-  border-radius: 10px;
-  overflow: hidden;
-
-  @media (max-width: ${breakpoints.tablet}) {
-    width: 100%;
-  }
+export const SkilCard = styled(motion.div)`
+  height: 200px;
+  width: 100%;
+  perspective: 1000px;
+  cursor: pointer;
 `
 
-export const ProgressFill = styled.div`
-  display: none;
-  height: 100%;
-  background: linear-gradient(90deg, ${colors.primary}, ${colors.lightPurple});
-
-  &.Html {
-    width: 90%;
-  }
-
-  &.Css {
-    width: 95%;
-  }
-
-  &.Js {
-    width: 70%;
-  }
-
-  &.Ts {
-    width: 65%;
-  }
-
-  &.React {
-    width: 75%;
-  }
-
-  &.Postgres {
-    width: 65%;
-  }
-
-  &.Python {
-    width: 70%;
-  }
-
-  &.Git {
-    width: 80%;
-  }
-
-  &.Redux {
-    width: 65%;
-  }
-
-  &.django {
-    width: 50%;
-  }
-
-  &.Css-in-Js {
-    width: 90%;
-  }
-
-  &.Vue{
-    width: 40%
-  }
-
-  &.Sass{
-    width: 50%
-  }
-
-  &.Cypress{
-    width: 45%
-  }
-`
-
-export const SkilContainer = styled.div`
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  padding: 16px;
-  margin-bottom: 40px;
-  border-radius: 18%;
-  background-color: ${colors.secondaryBackground};
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  transition: transform .6s ease-in-out;
-  transform-style: preserve-3d;
-
-    h4 {
-      text-align: center;
-      margin-bottom: 8px;
-      color: ${colors.title};
-    }
-
-    p {
-      color: ${colors.text};
-      margin-top: 6px;
-      font-size: 10px;
-    }
-
-  @media (max-width: ${breakpoints.desktop}) {
-    width: 110px;
-
-    &.flip {
-      transform: rotateY(180deg) scale(1.2);
-    }
-  }
-
-  @media (min-width: ${breakpoints.desktop}) {
-    &:hover {
-      transform: rotateY(180deg) scale(1.2);
-      cursor: pointer;
-    }
-}
-`
-
-export const Card = styled.div`
+export const CardInner = styled(motion.div)`
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   transform-style: preserve-3d;
-
-  .porcentagem {
-    display: none;
-  }
 `
 
-export const CardFront = styled.div`
+const CardBase = styled.div`
   position: absolute;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   backface-visibility: hidden;
-  justify-content: center;
-  align-items: center;
+  background: ${colors.secondaryBackground || '#1e2128'};
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+`
 
+export const CardFront = styled(CardBase)`
   img {
-      width: 45px;
-      text-align: center;
-    }
-
-  @media (max-width: ${breakpoints.tablet}) {
-      img {
-        width: 56px;
-      }
-    }
-`
-
-export const CardContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
-export const CardBack = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  background-color: ${colors.secondaryBackground};
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  transform: rotateY(180deg);
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 12px;
+  }
 
   h4 {
-    font-size: 14px;
+    font-size: 16px;
     color: ${colors.title};
+    margin-bottom: 20px;
+  }
+`
+
+export const ProgressWrapper = styled.div`
+  width: 80%;
+  background: rgba(255, 255, 255, 0.1);
+  height: 6px;
+  border-radius: 10px;
+  position: relative;
+
+  .bar {
+    height: 100%;
+    background: linear-gradient(90deg, ${colors.primary}, #6366f1);
+    border-radius: 10px;
+  }
+
+  span {
+    position: absolute;
+    top: -18px;
+    right: 0;
+    font-size: 10px;
+    font-weight: bold;
+    color: ${colors.primary};
+  }
+`
+
+export const CardBack = styled(CardBase)`
+  transform: rotateY(180deg);
+  background: ${colors.background};
+  border: 1px solid ${colors.primary}44;
+  text-align: center;
+
+  h5 {
+    color: ${colors.primary};
+    margin-bottom: 8px;
+    font-size: 14px;
+    text-transform: uppercase;
   }
 
   p {
-    text-align: center;
+    font-size: 12px;
+    line-height: 1.5;
+    color: ${colors.text};
+  }
+
+  .tap-hint {
+    margin-top: auto;
+    font-size: 9px;
+    opacity: 0.4;
+    color: ${colors.text};
   }
 `
-

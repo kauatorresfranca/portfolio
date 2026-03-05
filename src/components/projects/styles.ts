@@ -1,154 +1,79 @@
-import styled from "styled-components"
-import { breakpoints, colors } from "../../styles"
+import styled from 'styled-components'
+import { motion } from 'framer-motion'
+import { breakpoints, colors } from '../../styles'
 
-export const Projects = styled.div`
-  padding-top: 32px;
-  padding-bottom: 64px;
-  scroll-margin-top: 110px;
+export const SectionContainer = styled.section`
+  padding: 80px 0;
+  background: ${colors.background};
+  min-height: 100vh;
 
-  h3 {
-    font-size: 24px;
-    margin-bottom: 32px;
-    text-align: center;
-
-      svg {
-        margin-right: 6px;
-      }
-  }
-`
-
-export const Project = styled.div`
-  width: 280px;
-  position: relative;
-  max-width: 100%;
-  background-color: ${colors.secondaryBackground};
-  height: 480px;
-  border-radius: 20px;
-  transition: transform 0.5s ease;
-  box-shadow: 2px 1px 1px 1px rgb(42, 48, 58);
-
-    &:hover {
-      transform: scale(1.05);
-    }
-
-  img {
-    width: 280px;
-    max-width: 100%;
-    border-radius: 20px 20px 0 0;
-  }
-
-  h2 {
-      margin-bottom: 8px;
-      text-align: center;
-    }
-
-    p {
-      text-align: center;
-    }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+    gap: 20px;
 
     @media (max-width: ${breakpoints.tablet}) {
-      height: 488px;
-      width: 320px;
-
-      img {
-        width: 320px;
-      }
-
+      flex-direction: column;
+      align-items: flex-start;
     }
-`
-
-export const ProjectStack = styled.div`
-
-
-`
-
-export const ProjectList = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 25px;
-  justify-items: center;
-
-  @media (max-width: ${breakpoints.desktop}) {
-    grid-template-columns: 1fr 1fr;
-    margin: 0 auto;
-    max-width: 80vw;
-    width: 100%;
   }
-
-  @media (max-width: ${breakpoints.tablet}) {
-      grid-template-columns: 1fr;
-      justify-items: center;
-    }
 `
 
-export const TagList = styled.div`
-  margin-top: 16px;
-  margin-bottom: 16px;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-items: center;
+export const SectionTitle = styled.h2`
+  font-size: 32px;
+  color: ${colors.title};
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  &::after {
+    content: '';
+    width: 50px;
+    height: 4px;
+    background: ${colors.primary};
+    border-radius: 2px;
+  }
 `
 
-export const ButtonGroup = styled.div`
+export const Controls = styled.div`
+  display: flex;
+  gap: 16px;
+`
+
+export const SelectGroup = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  position: absolute;
-  bottom: 12px;
-  left: 0;
-  right: 0;
-`
+  gap: 4px;
 
-export const PrimaryButton = styled.button`
-  background-color: ${colors.primary};
-  color: #fff;
-  width: 260px;
-  height: 32px;
-  border: none;
-  margin-bottom: 8px;
-  border-radius: 10px;
-  margin-top: 24px;
+  label {
+    font-size: 12px;
+    color: ${colors.text};
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
 
-  &:hover {
+  select {
+    background: ${colors.secondaryBackground};
+    color: ${colors.title};
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 12px;
+    border-radius: 8px;
     cursor: pointer;
-  }
+    outline: none;
 
-  @media (max-width: ${breakpoints.tablet}) {
-      width: 280px;;
+    &:focus {
+      border-color: ${colors.primary};
     }
+  }
 `
 
-export const SecundaryButton = styled.button`
-  background-color: #fff;
-  color: ${colors.secondaryBackground};
-  width: 260px;
-  height: 32px;
-  border: none;
-  border-radius: 10px;
-
-  &:hover{
-    cursor: pointer;
-  }
-
-  @media (max-width: ${breakpoints.tablet}) {
-      width: 280px;
-    }
+export const ProjectGrid = styled(motion.div)`
+  display: grid;
+  // O segredo do grid responsivo moderno:
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 32px;
 `
-
-export const SortSelect = styled.select`
-  margin-bottom: 20px;
-  padding: 8px;
-  background-color: transparent;
-  color: ${colors.title};
-  border-radius: 4px;
-  font-size: 16px;
-
-  @media (max-width: ${breakpoints.tablet}) {
-    font-size: 14px;
-    margin-left: 40px;
-  }
-`;
-
-
-
-
