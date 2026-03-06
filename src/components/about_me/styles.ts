@@ -38,6 +38,8 @@ export const MainContent = styled.div`
   grid-template-columns: 1.2fr 0.8fr;
   gap: 60px;
   align-items: start;
+  padding: 0 20px;
+
 
   @media (max-width: ${breakpoints.desktop}) {
     grid-template-columns: 1fr;

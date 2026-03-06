@@ -6,6 +6,8 @@ export const Background = styled.section`
   padding: 100px 0;
   background-color: ${colors.background};
   scroll-margin-top: 110px;
+  padding: 0 20px;
+
 `
 
 export const SectionTitle = styled.div`

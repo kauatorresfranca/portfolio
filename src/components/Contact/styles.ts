@@ -5,6 +5,8 @@ import { breakpoints, colors } from "../../styles"
 export const ContactSection = styled.section`
   padding: 100px 0;
   background-color: ${colors.background};
+  padding: 0 20px;
+
 `
 
 export const Header = styled(motion.div)`

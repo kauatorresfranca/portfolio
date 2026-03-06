@@ -6,6 +6,8 @@ export const SectionContainer = styled.section`
   padding: 80px 0;
   background: ${colors.background};
   min-height: 100vh;
+  padding: 0 20px;
+
 
   header {
     display: flex;
