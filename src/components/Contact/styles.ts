@@ -5,8 +5,7 @@ import { breakpoints, colors } from "../../styles"
 export const ContactSection = styled.section`
   padding: 100px 0;
   background-color: ${colors.background};
-  padding: 0 20px;
-
+  padding: 20px 20px;
 `
 
 export const Header = styled(motion.div)`
@@ -17,14 +16,20 @@ export const Header = styled(motion.div)`
     font-size: 42px;
     color: ${colors.title};
     font-weight: 800;
-    margin-bottom: 16px;
-  }
+    position: relative;
+    display: inline-block;
 
-  p {
-    color: ${colors.text};
-    max-width: 500px;
-    margin: 0 auto;
-    opacity: 0.8;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: ${colors.primary};
+      border-radius: 2px;
+    }
   }
 `
 

@@ -18,10 +18,24 @@ export const SectionTitle = styled.div`
   margin-bottom: 50px;
   color: ${colors.primary};
 
-  h3 {
-    font-size: 32px;
+  h2 {
+    font-size: 42px;
     color: ${colors.title};
     font-weight: 800;
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: ${colors.primary};
+      border-radius: 2px;
+    }
   }
 `
 

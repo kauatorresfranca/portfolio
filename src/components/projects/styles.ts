@@ -6,50 +6,67 @@ export const SectionContainer = styled.section`
   padding: 80px 0;
   background: ${colors.background};
   min-height: 100vh;
-  padding: 0 20px;
-
+  padding: 20px 20px;
 
   header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 48px;
-    flex-wrap: wrap;
     gap: 20px;
 
     @media (max-width: ${breakpoints.tablet}) {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
+      text-align: center;
     }
-  }
-`
-
-export const SectionTitle = styled.h2`
-  font-size: 32px;
-  color: ${colors.title};
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-
-  &::after {
-    content: '';
-    width: 50px;
-    height: 4px;
-    background: ${colors.primary};
-    border-radius: 2px;
   }
 `
 
 export const Controls = styled.div`
   display: flex;
   gap: 16px;
+  flex: 1; /* Ocupa espaço na esquerda */
+`
+
+export const TitleWrapper = styled.div`
+  flex: 2; /* Dá mais peso ao centro */
+  display: flex;
+  justify-content: center;
+`
+
+export const HeaderSpacer = styled.div`
+  flex: 1; /* Equilibra o flex do Controls na direita para centralizar o título perfeitamente */
+  @media (max-width: ${breakpoints.tablet}) {
+    display: none;
+  }
+`
+
+export const SectionTitle = styled.h2`
+  font-size: 42px;
+  color: ${colors.title};
+  font-weight: 800;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: ${colors.primary};
+    border-radius: 2px;
+  }
 `
 
 export const SelectGroup = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4px;
+  text-align: left;
 
   label {
     font-size: 12px;
@@ -75,7 +92,6 @@ export const SelectGroup = styled.div`
 
 export const ProjectGrid = styled(motion.div)`
   display: grid;
-  // O segredo do grid responsivo moderno:
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 32px;
 `

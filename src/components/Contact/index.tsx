@@ -37,7 +37,6 @@ const Contact = () => {
           viewport={{ once: true }}
         >
           <h2>Entre em Contato</h2>
-          <p>Seja para um projeto, uma proposta ou apenas um café virtual, estou à disposição.</p>
         </S.Header>
 
         <S.ContactGrid>
