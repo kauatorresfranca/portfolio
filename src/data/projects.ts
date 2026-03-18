@@ -78,6 +78,17 @@ export const parseProjectDate = (dateStr: string): Date => {
 }
 
 export const projectsData: ProjectData[] = [
+    {
+  date: '17 de março de 2026',
+  skils: [{ type: 'react' }, { type: 'sc' }, { type: 'ts' }],
+  videoPath: '',
+  imgPath: '/central_vision.png',
+  gitHubUrl: 'https://github.com/kauatorresfranca/central_vision',
+  projectViewUrl: 'https://central-vision.vercel.app/',
+  title: 'Central Vision',
+  description:
+  'Landing page de alta conversão para ótica em Maceió, otimizada com técnicas avançadas de SEO local para dominar as buscas orgânicas. O projeto foca em UX/UI estratégica, integrando agendamento de exames de vista e vitrine digital para transformar visitantes em clientes reais. Desenvolvido com React, TypeScript e Styled Components para máxima performance e interatividade.'
+  },
   {
     date: '19 de fevereiro de 2026',
     skils: [{ type: 'react' }, { type: 'tw' }, { type: 'ts' }, { type: 'django' }],
