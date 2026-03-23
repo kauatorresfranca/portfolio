@@ -37,9 +37,12 @@ export const GlobalCss = createGlobalStyle`
 
   body {
     background-color: ${colors.background};
-  }
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    }
 }
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 `
