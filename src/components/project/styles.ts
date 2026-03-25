@@ -76,12 +76,12 @@ export const TechListShort = styled.div`
   img {
     width: 20px;
     height: 20px;
-    filter: grayscale(1);
+    filter: grayscale(0);
     transition: 0.3s;
   }
 
   ${Card}:hover & img {
-    filter: grayscale(0);
+    filter: grayscale(1);
   }
 `
 
@@ -137,6 +137,17 @@ export const ModalGrid = styled.div`
     .desc { line-height: 1.6; color: ${colors.text}; margin-bottom: 24px; }
   }
 
+  .date-label {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    left: 0;
+    text-align: center;
+    margin-top: 20px;
+    color : ${colors.text};
+    font-size: 14px;
+  }
+
   @media (max-width: ${breakpoints.desktop}) {
     grid-template-columns: 1fr;
     height: auto;
@@ -148,10 +159,11 @@ export const ModalGrid = styled.div`
 `
 
 export const Badge = styled.span`
-  background: rgba(255, 255, 255, 0.05);
+  background: ${colors.primary}22;
   padding: 4px 12px;
   border-radius: 12px;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: bold;
   color: ${colors.primary};
   border: 1px solid ${colors.primary}44;
 `
