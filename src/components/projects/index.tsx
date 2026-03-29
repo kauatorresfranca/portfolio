@@ -8,7 +8,8 @@ const Projects = () => {
   const [sortOrder, setSortOrder] = useState<'recent' | 'oldest'>('recent')
 
   const processedProjects = useMemo(() => {
-    const filtered = [...projectsData]
+    // Primeiro filtramos apenas os visíveis, depois ordenamos
+    const filtered = projectsData.filter(project => project.visible)
 
     return filtered.sort((a, b) => {
       const dateA = parseProjectDate(a.date).getTime()
