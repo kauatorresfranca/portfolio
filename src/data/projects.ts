@@ -111,7 +111,7 @@ export const projectsData: ProjectData[] = [
     projectViewUrl: 'https://mitre.vercel.app/',
     title: 'Mitre',
     description: 'Landing page moderna e responsiva para agência...',
-    visible: true
+    visible: false
   },
   {
     date: '17 de outubro de 2025',
@@ -188,7 +188,7 @@ export const projectsData: ProjectData[] = [
     projectViewUrl: '',
     title: 'Bookstore',
     description: 'Backend de plataforma de e-commerce...',
-    visible: true
+    visible: false
   },
   {
     date: '21 de janeiro de 2025',
@@ -221,7 +221,7 @@ export const projectsData: ProjectData[] = [
     projectViewUrl: 'https://efood-rouge-six.vercel.app/',
     title: 'E-food',
     description: 'Site fictício para pedidos em restaurantes...',
-    visible: true
+    visible: false
   },
   {
     date: '15 de julho de 2024',
@@ -243,6 +243,6 @@ export const projectsData: ProjectData[] = [
     projectViewUrl: 'https://clone-disney-plus-henna.vercel.app/',
     title: 'Clone Disney Plus',
     description: 'Réplica do Disney Plus desenvolvida durante curso...',
-    visible: true
+    visible: false
   }
 ]
